@@ -1,0 +1,16 @@
+{
+  "title": "VTEX Store Block course",
+  "tagline": "Learn how to create custom blocks on VTEX Store Framework",
+  "description": "Using React and Graphql, you can export your components as VTEX blocks",
+  "languages": ["pt"],
+  "steps": [
+    {
+      "folder": "hello-world",
+      "title": { "pt": "Olá" },
+      "description": {
+        "pt": "Descrição para o step de Hello World"
+      },
+      "challenge": "none"
+    }
+  ]
+}

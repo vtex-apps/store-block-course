@@ -1,0 +1,17 @@
+{
+  "name": "store-block",
+  "vendor": "vtex",
+  "version": "0.0.1",
+  "title": "Course App for custom block development teaching",
+  "description": "VTEX Course App",
+  "dependencies": {},
+  "builders": {
+    "course": "0.x"
+  },
+  "scripts": {
+    "prereleasy": "bash lint.sh"
+  },
+  "credentialType": "absolute",
+  "policies": [],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}
