@@ -45,7 +45,19 @@ interface CountdownProps {
 ```
 Feito isso, precisamos utilizá-la no componente para efetuar o *render*, substituindo o texto de antes, "Teste Countdown" por um outro texto, através do *Site Editor*. No futuro, esse targetDate será utilizado para definir a data de término para o contador. Porém, por enquanto, esse campo pode ser genérico.
 
-Vamos, primeiramente, alterar o componente para utilizar a *prop* `targetDate` definida anteriormente. Para isso, é preciso adicionar dentro do hook a variável a ser utilizada dentro do *header*. No bloco de código referente ao *hook* mostrado nessa etapa, adicione `targetDate` como parâmetro e o utilize dentro da *tag* `h1`, como mostrado abaixo:
+Vamos, primeiramente, alterar o componente para utilizar a *prop* `targetDate` definida anteriormente. Para isso, é preciso adicionar dentro do componente React a variável a ser utilizada no *header*. Você lembra do bloco de código do componente na etapa anterior? Vamos utilizá-lo novamente para fazer as devidas alterações.
+
+O componente era definido da seguinte forma: 
+```
+const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
+    return (
+        <Fragment>
+           { <h1>Teste Countdown</h1> }
+        </Fragment>
+    )
+}
+```
+Precisamos adicionar `targetDate` como parâmetro e o utilize dentro da *tag* `h1`, como mostrado abaixo:
 
 ```
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({targetDate}) => {
