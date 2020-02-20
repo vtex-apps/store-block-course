@@ -1,5 +1,5 @@
 ### Introdução
-De forma a tornar os temas e as *apps* internacionalizadas, há um *build* para messages, que são responsáveis por manter os textos dos componentes, entre outras coisas, de acordo com o escolhido pelo usuário. Para isso, todas as *apps*  precisam seguir essa mesma estrutura. Portanto, nessa etapa, serão apresentados conceitos acerca da internacionalização de *apps* e como fazê-la. 
+De forma a tornar os temas e as *apps* internacionalizadas, a VTEX oferece um **builder** _messages_, responsável por exportar mensagens internacionalizadas,. Para isso, todas as *apps*  precisam seguir essa mesma estrutura. Portanto, nessa etapa, serão apresentados conceitos acerca da internacionalização de *apps* e como fazê-la. 
 
 ### As Messages
 O conceito de *messages* facilita a adição de novos idiomas a serem configurados para funcionarem como uma opção de idioma para os temas. Considerando isso, todas as *apps* precisam estar alinhadas em termos de línguas disponíveis, para evitar inconsistências na tradução.
