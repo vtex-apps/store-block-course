@@ -1,7 +1,7 @@
 # Implementação das *props*
 
 ## Introdução
-
+Agora que temos um *header*, podemos utilizá-lo para mostrar informações que dependam de uma *prop* do componente. Para isso, alguns conceitos serão apresentados, já que são necessários para desenvolver uma aplicação.
 
 ## Conceitos
 * O Hook
