@@ -1,7 +1,7 @@
 ### Introdução
-Para desenvolver uma *app*, utiliza-se o React com hooks. Dessa forma, para compreender como começar a implementação de uma *app*, alguns conceitos básicos serão apresentados, bem como o que é necessário para desenvolver um componente. No fim dessa etapa, você será capaz de ver uma pequena aplicação na home  do tema.
+Para desenvolver uma *app*, o VTEX suporta o React com hooks. Dessa forma, para compreender como começar a implementação de uma *app*, alguns conceitos básicos serão apresentados, bem como o que é necessário para desenvolver um componente. No fim dessa etapa, você será capaz de ver uma pequena aplicação na home da loja.
 
-### O Componente do *Countdown*
+### O Componente *Countdown*
 O que um componente React precisa para começar o desenvolvimento de uma *app*?
 
 * O Hook
@@ -23,9 +23,9 @@ O que um componente React precisa para começar o desenvolvimento de uma *app*?
     }
     ```
 
-* JSON *Schema*
+* Definição das configurações de um componente
     
-    O JSON *schema* irá gerar um formulário para o `site-editor`. Abaixo é possível ver um exemplo de *schema*:
+    Para que o seu bloco possa aceitar configurações do usuárioO JSON *schema* irá gerar um formulário para o *Site Editor*. Abaixo é possível ver um exemplo de *schema*:
     ```
     Countdown.schema = {
         title: 'editor.countdown.title',
@@ -33,10 +33,6 @@ O que um componente React precisa para começar o desenvolvimento de uma *app*?
         type: 'object',
         properties: {
             targetDate: {
-                title: 'Esse é um título',
-                description: 'Essa é uma data',
-                type: 'string',
-                default: null,
             },
         },
     }
