@@ -5,7 +5,7 @@ Antes de começar, é necessário relembrar alguns conceitos importantes para um
 
 * O campo de *vendor* 
 
-    Define o nome da companhia. O vendor pode ser `vtex`, geralmente utilizado em casos de utulização de serviços nativos. Além disso, pode ser de parceiro ou de cliente. No caso de parceiro, geralmente são *apps* de distribuição, onde há alguns clientes, não necessarimente todos, interessados em consumir um produto. Por fim, no caso de clientes, o foco está em construir algo específico para o seu negócio.
+    Define o nome da companhia. O vendor pode ser `vtex`, geralmente utilizado em casos de utilização de serviços nativos. Além disso, pode ser de parceiro ou de cliente. No caso de parceiro, geralmente são *apps* de distribuição, onde há alguns clientes, não necessariamente todos, interessados em consumir um produto. Por fim, no caso de clientes, o foco está em construir algo específico para o seu negócio.
 
 * O campo de *name*
     
@@ -56,4 +56,3 @@ No exemplo da estrutura do `manifest.json` abaixo, é possível observar caracte
 
 1. No arquivo `manifest.json`, troque o nome do *vendor* por `appliancetheme`
 2. Altere o campo de *name* para o nome da aplicação em questão. -->
-
