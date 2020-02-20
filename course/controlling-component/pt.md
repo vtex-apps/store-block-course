@@ -2,7 +2,7 @@
 
 ### Controlando o componente Countdown
 
-O JSON *schema*, como apresentado nas etapas anteriores, tem um papel importante na estrutura do formulário dentro do `site-editor`, como definição de campos de texto, títulos e descrições. Voltando ao exemplo apresentado anteriormente:
+O JSON *schema*, como apresentado nas etapas anteriores, tem um papel importante na estrutura do formulário dentro do *Site Editor*, como definição de campos de texto, títulos e descrições. Voltando ao exemplo apresentado anteriormente:
 ```
 Countdown.schema = {
         title: 'editor.countdown.title',

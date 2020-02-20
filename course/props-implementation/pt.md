@@ -10,7 +10,7 @@ Agora que temos um *header*, podemos utilizá-lo para mostrar informações que 
     
     Exemplo de uso:
     ```
-    const [timeRemaining, setTime] = useState<TimeSplit>({})
+    const [count, setCount] = useState(0);
     ```
 
 * Interface para definir as *props*
