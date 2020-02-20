@@ -5,12 +5,45 @@
   "languages": ["pt"],
   "steps": [
     {
-      "folder": "hello-world",
+      "folder": "manifest",
       "title": { "pt": "Olá" },
       "description": {
-        "pt": "Descrição para o step de Hello World"
+        "pt": "Descrição para o step de manifest"
+      },
+      "challenge": "none"
+    },
+    {
+      "folder": "component",
+      "title": { "pt": "Olá" },
+      "description": {
+        "pt": "Descrição para o step de component"
+      },
+      "challenge": "none"
+    },
+    {
+      "folder": "interface",
+      "title": { "pt": "Olá" },
+      "description": {
+        "pt": "Descrição para o step de interface"
+      },
+      "challenge": "none"
+    },
+    {
+      "folder": "controlling-component",
+      "title": { "pt": "Olá" },
+      "description": {
+        "pt": "Descrição para o step de controlling component"
+      },
+      "challenge": "none"
+    },
+    {
+      "folder": "messages",
+      "title": { "pt": "Olá" },
+      "description": {
+        "pt": "Descrição para o step de messages"
       },
       "challenge": "none"
     }
+
   ]
 }
