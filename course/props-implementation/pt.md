@@ -88,7 +88,8 @@ Countdown.schema = {
 }
 ```  
 Pronto! Agora você pode alterar o conteúdo do *header* através do *Site Editor*. Vamos ver como ficou? Vá até o *Site Editor* e clique em `Countdown` no menu lateral, isso abrirá o menu de edição da *app*, que será como a imagem abaixo.
-![image](https://user-images.githubusercontent.com/19495917/74963531-a09b2500-53f0-11ea-84a4-85a27bb752f4.png)
+
+<img src="https://user-images.githubusercontent.com/19495917/74963531-a09b2500-53f0-11ea-84a4-85a27bb752f4.png" width="350" height="750"/>
 
 Agora, no campo abaixo do título, digite alguma coisa e veja a alteração no *header*, que passará a exibir o texto que você digitou. 
 

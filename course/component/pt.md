@@ -4,7 +4,7 @@ Para desenvolver uma *app*, o VTEX suporta o React com hooks. Dessa forma, para 
 ### O Componente *Countdown*
 O que um componente React precisa para começar o desenvolvimento de uma *app*?
 
-```
+```tsx
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
     return <Fragment></Fragment>
 }

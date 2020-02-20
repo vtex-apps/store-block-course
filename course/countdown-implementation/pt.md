@@ -82,6 +82,13 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = D
     ) 
 }
 ```
-Por fim, vamos retornar no *render* os valores atuais para vermos a atualização em tempo real do contador! O resultado é esse aqui:
+Por fim, vamos retornar no *render* os valores atuais para vermos a atualização em tempo real do contador! O resultado é esse aqui na home é esse aqui:
+
 ![image](https://user-images.githubusercontent.com/19495917/74974994-00033000-5405-11ea-9e22-b461e15a9126.png)
+
+
+E veja nosso contador funcionando:
+
+<img src="https://user-images.githubusercontent.com/19495917/74975789-650b5580-5406-11ea-85b6-73ee68f83419.gif" width="500" height="350"/>
+
 
