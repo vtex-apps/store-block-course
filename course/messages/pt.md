@@ -52,8 +52,6 @@ Você já deve ter aprendido a usar o nosso **builder _messages_**, e também se
 Após isso, para **renderizar nosso título** devemos usar o componente `FormattedMessage` da biblioteca [react-intl](https://github.com/formatjs/react-intl). Não é preciso se preocupar com a configuração da biblioteca, tudo isso é feito pelo nosso *framework* :
 > A biblioteca _react-intl_ dá suporte a várias maneiras de configuração e internacionalização, vale a pena verificá-las
 
-
-
 1. Adicione a biblioteca usando `yarn add react-intl` na pasta *react*
 2. No código do seu componente `Countdown.tsx` **importe o FormattedMessage**
 ```diff
