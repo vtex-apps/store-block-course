@@ -8,7 +8,9 @@
   "builders": {
     "messages": "1.x",
     "store": "0.x",
-    "react": "3.x"
+    "react": "3.x",
+    "node": "4.x",
+    "graphql": "1.x"
   },
   "dependencies": {
     "vtex.styleguide": "9.x",

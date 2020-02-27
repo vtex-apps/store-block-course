@@ -13,6 +13,14 @@ Após a criação de um *client*, é necessário **adicioná-lo na exportação 
 1. Crie um arquivo em `node/clients` chamado `giphy.ts`.
 2. A partir do [*client* de exemplo](https://github.com/vtex-apps/service-example/blob/ffd7a86f928f9931a9353215eebb764cb3150695/node/clients/status.ts), crie um `GiphyClient` que se comunica com a API do Giphy na URL https://api.giphy.com/v1/gifs/
 3. O *client* precisa ter apenas um método chamado `translate` que aceita um `term: string` e retornará uma URL de GIF. Este método deverá chamar o _endpoint_ [translate](https://developers.giphy.com/docs/api/endpoint#translate) da API.
+4. Após criar (e exportar) o *client* em `giphy.ts`, em `node/clients/index.ts` importe `GiphyClient from './giphy'` e adicione na classe `Clients`:
+```
+public get giphy() {
+    return this.getOrSet('giphy', Giphy)
+}
+```
+5. Agora, voltando ao *resolver*, podemos utilizar `ctx.giphy.translate` para finalizar a implementação da funcionalidade. Retorne a chamada deste método, informando o termo passado como parâmetro para o _resolver_.
+6. Teste no _GraphiQL_ sua modificação!
 
 **P.S:** Use a `api_key` `dp2scGnUcDee5yLRI1qJMTRTAAJey9Tl` para testar seu _client_.
 
