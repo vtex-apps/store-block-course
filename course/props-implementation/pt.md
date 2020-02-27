@@ -48,24 +48,22 @@ Feito isso, precisamos utilizá-la no componente para efetuar o *render*, substi
 Vamos, primeiramente, alterar o componente para utilizar a *prop* `targetDate` definida anteriormente. Para isso, é preciso adicionar dentro do componente React a variável a ser utilizada no *header*. Você lembra do bloco de código do componente na etapa anterior? Vamos utilizá-lo novamente para fazer as devidas alterações.
 
 O componente era definido da seguinte forma: 
-```
+```tsx
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
     return (
         <Fragment>
-           { <h1>Teste Countdown</h1> }
+           <h1>Teste Countdown</h1>
         </Fragment>
     )
 }
 ```
 Precisamos adicionar `targetDate` como parâmetro e o utilize dentro da *tag* `h1`, como mostrado abaixo:
 
-```
+```tsx
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({targetDate}) => {
   return (
     <Fragment>
-      {
-        <h1>{targetDate}</h1>  
-      }
+        <h1>{ targetDate }</h1>
     </Fragment>
   ) 
 }
@@ -74,8 +72,8 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({targetDate}) =>
 Além disso, para alterar essa propriedade através do *Site Editor*, é necessário adicionar essa mesma *prop* ao *schema*. Isso é feito através da adição de um objeto com chave `targetDate` dentro do objeto `properties` no *schema*. Ou seja:
 ```diff
 Countdown.schema = {
-    title: 'editor.countdown.title',
-    description: 'editor.countdown.description',
+    title: 'countdown.title',
+    description: 'countdown.description',
     type: 'object',
     properties: {
 +        targetDate: {
@@ -87,11 +85,11 @@ Countdown.schema = {
     },
 }
 ```  
-Pronto! Agora você pode alterar o conteúdo do *header* através do *Site Editor*. Vamos ver como ficou? Vá até o *Site Editor* e clique em `Countdown` no menu lateral, isso abrirá o menu de edição da *app*, que será como a imagem abaixo.
+Pronto! Agora você pode alterar o conteúdo do texto através do *Site Editor*. Vamos ver como ficou? Vá até o *Site Editor* e clique em `Countdown` no menu lateral, isso abrirá o menu de edição da *app*, que será como a imagem abaixo.
 
 <img src="https://user-images.githubusercontent.com/19495917/74963531-a09b2500-53f0-11ea-84a4-85a27bb752f4.png" width="350" height="750"/>
 
-Agora, no campo abaixo do título, digite alguma coisa e veja a alteração no *header*, que passará a exibir o texto que você digitou. 
+Agora, no campo abaixo do título, digite alguma coisa e veja a alteração no texto, que passará a exibir o texto que você digitou. 
 
 ![image](https://user-images.githubusercontent.com/19495917/74963805-1acba980-53f1-11ea-8091-d05cea1341ea.png)
 

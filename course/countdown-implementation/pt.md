@@ -47,9 +47,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({targetDate}) =>
 
     return (
         <Fragment>
-        {
-            <h1>{targetDate}</h1>  
-        }
+            { targetDate }
         </Fragment>
     ) 
 }
@@ -75,20 +73,40 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = D
 
     return (
         <Fragment>
-        {
-            <h1>{targetDate}</h1>  
-        }
+            {targetDate}
         </Fragment>
     ) 
 }
 ```
-Por fim, vamos retornar no *render* os valores atuais para vermos a atualização em tempo real do contador! O resultado é esse aqui na home é esse aqui:
 
-![image](https://user-images.githubusercontent.com/19495917/74974994-00033000-5405-11ea-9e22-b461e15a9126.png)
+Por fim, vamos alterar o *header* para que ele exiba o contador que criamos. Para isso, precisamos utilizar o estado atual `timeRemaining`:
+```diff
+const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
+    const [timeRemaining, setTime] = useState<TimeSplit>({
+        hours: '00',
+        minutes: '00',
+        seconds: '00'
+    })
+
+   tick(targetDate, setTime)
+
+    return (
+        <Fragment>   
+-            <h1>{ targetDate }</h1>
++            <h1>{ `${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}` }</h1>
+        </Fragment>
+    ) 
+}
+```
+> A formatação da *string* do contador está no formato `HH:MM:SS`, feita através do *split* em `hours`, `minutes` e `seconds`.
+
+Assim, com essas alterações, veremos a atualização em tempo real do contador! O resultado na *home* é esse aqui:
+
+![image](https://user-images.githubusercontent.com/19495917/75474406-b3c06e80-5975-11ea-82ec-89ab27504873.png)
 
 
 E veja nosso contador funcionando:
 
-<img src="https://user-images.githubusercontent.com/19495917/74975789-650b5580-5406-11ea-85b6-73ee68f83419.gif" width="500" height="350"/>
+<img src="https://user-images.githubusercontent.com/19495917/75474511-e0748600-5975-11ea-825d-7e9a20f95362.gif" width="500" height="320"/>
 
 
