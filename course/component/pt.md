@@ -1,27 +1,31 @@
 ### Introdução
-Para desenvolver uma *app*, o VTEX suporta o React com hooks. Dessa forma, para compreender como começar a implementação de uma *app*, alguns conceitos básicos serão apresentados, bem como o que é necessário para desenvolver um componente. No fim dessa etapa, você será capaz de ver uma pequena aplicação na home da loja.
+Para desenvolver um bloco de frente de loja, similar aos que oferecemos nativamente no Store Framework, utilizamos a biblioteca de desenvolvimento de UIs `react`. Recomendamos o uso de function components e hooks.
+
+No fim dessa etapa, você será capaz de ver uma pequena aplicação na home page da loja.
 
 ### O Componente *Countdown*
-O que um componente React precisa para começar o desenvolvimento de uma *app*?
+Quais são os passos necessários para começar o desenvolvimento de uma componente?
+
+Segue o boilerplate necessário para a atividade:
 
 ```tsx
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
     return <Fragment></Fragment>
 }
 ```
-
+Quando você estiver desenvolvendo sua própria componente, você pode começar por nosso template de [componente de loja](https://github.com/vtex-apps/store-component-template)
 
 ### Atividade
-Agora vamos adicionar um *header* dentro do nosso componente e linkar a *app* no nosso tema.
+Agora vamos adicionar uma tag `h1` dentro do nosso componente e declarar o bloco linkar a *app* no nosso tema.
 
 No código mostrado acima, remova o `Fragment` e adicione um `h1`, como mostrado abaixo:
 ```diff
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
 -    return <Fragment></Fragment>
 +    return (
-+        <Fragment>
-+           { <h1>Teste Countdown</h1> }
-+        </Fragment>
++      <Fragment>
++        <h1>Teste Countdown</h1>
++      </Fragment>
 +    )
 }
 ```
