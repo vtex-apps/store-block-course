@@ -12,10 +12,6 @@ Se você der uma olhada na sua loja, perceberá que os componentes tem estilos s
 
 Todas essas definições podem ser alteradas, de forma que sua loja passe a ter um estilo mais customizado. Para isso, basta definir um arquivo JSON na pasta `styles/configs`; essas informações podem ser encontradas de forma mais detalhada em: [Build a store using VTEX IO - Customizing styles](https://help.vtex.com/tracks/build-a-store-using-vtex-io--5qJr8BIQXAKec9CpBWrTNv/6L2qQHU5kwbmTSiYl4MCuD).
 
-
-You can customize every style aspect of these components by defining a JSON file in the styles/configs folder. This means every Store Component will exhibit your defined look and feel automatically, without having to manually declare CSS for each of them.
-
-
 ### Tachyons
 O Tachyons é um *framework* para CSS funcional.
 
