@@ -81,11 +81,11 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({title, targetDa
 
   return (
     <Fragment>
-      <div className={`${handles.container} t-heading-2 fw3 w-100 pt7 pb6 c-muted-1`}>
+      <div className={`${handles.container} t-heading-2 fw3 w-100 c-muted-1`}>
         <div className={`${handles.title} db tc`}>
           {titleText}
         </div>
-        <div className={`${handles.countdown} t-heading-2 fw3 w-100 c-muted-1 db tc`}>
+        <div className={`${handles.countdown} db tc`}>
           {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
         </div>
       </div>
