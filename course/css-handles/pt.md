@@ -6,9 +6,15 @@ Agora que temos uma app funcional, que tal adicionarmos um pouco de customizaç�
 
 ### CSS Handles
 
-Os *handles* de CSS são utilizados para customizar os componentes da sua loja através de classes de CSS no código do tema da sua loja.
+Os *handles* de CSS são utilizados para customizar os componentes da sua loja através de classes de CSS no código do tema. Todas essas configurações são definidas no arquivo `styles.json`, responsável por declarar todas as customizações genéricas para a sua loja.
 
-Se você der uma olhada na sua loja, perceberá que os componentes tem estilos similares, mesmo sem aplicar nenhum tipo de customização. Isso acontece pois todos compartilhando estilos previamente definidos para fontes, cores de *background*, formato dos botões e etc. Todas essas configurações são definidas no arquivo `styles.json`, responsável por declarar todas as customizações genéricas para a sua loja.
+Se você der uma olhada na sua loja, perceberá que os componentes tem estilos similares, mesmo sem aplicar nenhum tipo de customização. Isso acontece pois todos compartilhando estilos previamente definidos para fontes, cores de *background*, formato dos botões e etc. 
+
+Todas essas definições podem ser alteradas, de forma que sua loja passe a ter um estilo mais customizado. Para isso, basta definir um arquivo JSON na pasta `styles/configs`; essas informações podem ser encontradas de forma mais detalhada em: [Build a store using VTEX IO - Customizing styles](https://help.vtex.com/tracks/build-a-store-using-vtex-io--5qJr8BIQXAKec9CpBWrTNv/6L2qQHU5kwbmTSiYl4MCuD).
+
+
+You can customize every style aspect of these components by defining a JSON file in the styles/configs folder. This means every Store Component will exhibit your defined look and feel automatically, without having to manually declare CSS for each of them.
+
 
 ### Tachyons
 O Tachyons é um *framework* para CSS funcional.
