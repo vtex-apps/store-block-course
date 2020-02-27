@@ -1,3 +1,6 @@
+# Definindo um *resolver*
+
+## Introdução
 Agora que já certificamos que o tipo foi configurado corretamente, vamos definir a **função que resolve nossa query**. Em GraphQL, podemos definir _resolvers_ para qualquer campo do _schema_ e também para tipos. Para saber mais, leia [aqui](https://graphql.org/learn/execution/).
 
 Definiremos a **função resolver** para a nossa query `NOME-DA-QUERY-TODO` no serviço _node_ da nossa aplicação. Esta função será, propriamente, a implementação da funcionalidade que estamos criando. (Obs: O VTEX IO também oferece suporte para apps .NET exportarem resolvers GraphQL).

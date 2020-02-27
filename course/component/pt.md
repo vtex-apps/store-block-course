@@ -1,9 +1,11 @@
-### Introdução
+# O Componente Countdown
+
+## Introdução
 Para desenvolver um bloco de frente de loja, similar aos que oferecemos nativamente no Store Framework, utilizamos a biblioteca de desenvolvimento de UIs `react`. Recomendamos o uso de function components e hooks.
 
 No fim dessa etapa, você será capaz de ver uma pequena aplicação na home page da loja.
 
-### O Componente *Countdown*
+## O Componente *Countdown*
 Quais são os passos necessários para começar o desenvolvimento de uma componente?
 
 Segue o boilerplate necessário para a atividade:
@@ -15,7 +17,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
 ```
 Quando você estiver desenvolvendo sua própria componente, você pode começar por nosso template de [componente de loja](https://github.com/vtex-apps/store-component-template)
 
-### Atividade
+## Atividade
 Agora vamos adicionar uma tag `h1` dentro do nosso componente e declarar o bloco linkar a *app* no nosso tema.
 
 No código mostrado acima, remova o `Fragment` e adicione um `h1`, como mostrado abaixo:
