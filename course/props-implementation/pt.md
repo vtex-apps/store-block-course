@@ -9,21 +9,21 @@ Agora que temos um *header*, podemos utilizá-lo para mostrar informações que 
     Hooks são funções que permitem que você se "ligue" aos recursos de ciclo de vida e *states* do React. Eles não funcionam dentro de classes e permitem o uso do React utilizar classes propriamente ditas.
     
     Exemplo de uso:
-    ```
+    ```tsx
     const [count, setCount] = useState(0);
     ```
 
 * Interface para definir as *props*
     
     Define as *props* e também os tipos associados.
-    ```
+    ```tsx
     interface CountdownProps {}
     ```
 
 * Definição das configurações de um componente
     
     Para que o seu bloco possa aceitar configurações do usuárioO JSON *schema* irá gerar um formulário para o *Site Editor*. Abaixo é possível ver um exemplo de *schema*:
-    ```
+    ```js
     Countdown.schema = {
         title: 'editor.countdown.title',
         description: 'editor.countdown.description',

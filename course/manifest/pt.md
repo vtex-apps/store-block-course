@@ -37,7 +37,7 @@ Antes de começar, é necessário relembrar alguns conceitos importantes para um
 
 No exemplo da estrutura do `manifest.json` abaixo, é possível observar características mencionadas acima. Em particular, a versão é `0.0.1`, onde os números são, respectivamente, *major*, *minor* e *patch*.
 
-```
+```json
 {
   "vendor": "vtex",
   "name": "countdown",
