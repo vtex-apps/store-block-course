@@ -27,11 +27,7 @@ const queryLoggedUser = (request) => request.auth.user
 const userOrders = (user) => user.getOrders()
 ```
 
-<<<<<<< Updated upstream
 ### GraphQL no VTEX IO
-=======
-## GraphQL no VTEX IO
->>>>>>> Stashed changes
 Conforme vimos anteriormente, no VTEX IO, builders são usados para abstrair configurações e complexidades no uso de tecnologias chave. No caso de aplicações back-end, assim como no caso de React, utilizamos [TypeScript](https://www.typescriptlang.org/) e oferecemos builders de `node` e `graphql` que são utilizados em conjunto.
 
 O builder de `graphql` é utilizado para criar o *schema* com seus respectivos tipos e campos. E o de `node` para criar as funções que resolvem os tipos e campos definidos no schema.
