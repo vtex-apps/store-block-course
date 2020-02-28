@@ -25,28 +25,28 @@ Você já deve ter aprendido a usar o nosso **builder _messages_**, e também se
 ```diff
 {
 	...,
-+	"editor.countdown.title": "Contagem Regressiva"
++	"countdown.title": "Contagem Regressiva"
 }
 ```
 `messages/en.json`
 ```diff
 {
 	...,
-+	"editor.countdown.title": "Countdown"
++	"countdown.title": "Countdown"
 }
 ```
 `messages/es.json`
 ```diff
 {
 	...,
-+	"editor.countdown.title": "Cuenta Regresiva"
++	"countdown.title": "Cuenta Regresiva"
 }
 ```
 `messages/context.json`
 ```diff
 {
 	...,
-+	"editor.countdown.title": "Countdown"
++	"countdown.title": "Countdown"
 }
 ```
 
@@ -96,6 +96,28 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({title, targetDa
 Note que utilizamos três handles: *container*, *countdown* e *title*. Dessa forma, lembre-se de declará-los na constante `CSS_HANDLES`, vista na etapa anterior:
 ```tsx
 const CSS_HANDLES = ['container', 'countdown', 'title']
+```
+
+Por fim, precisamos adicionar a *prop* de `title` no *schema*:
+```diff
+Countdown.schema = {
+  title: 'editor.countdown.title',
+  description: 'editor.countdown.description',
+  type: 'object',
+  properties: {
++    title: {
++      title: 'Sou um título',
++      type: 'string',
++      default: null,
++    },
+    targetDate: {
+      title: 'Sou um título',
+      description: 'Sou uma descrição',
+      type: 'string',
+      default: null,
+    },
+  },
+}
 ```
 
 Pronto! Agora, para testar sua loja em outros idiomas basta adicionar a *query string* `/?cultureInfo=pt-br` na URL, por exemplo. Ao utilizar tal URL, o resultado esperado é esse aqui:
