@@ -19,11 +19,11 @@ Antes de começar, é necessário relembrar alguns conceitos importantes para um
 
     - *Patches*: você deve criar um *patch* quando está consertando um bug de forma retrocompatível
     - *Minors*: você deve criar uma versão *minor* quando adicionar funcionalidade de forma retrocompatível.
-    - *Majors*: você deve criar uma versão *major* quando você realiza mudanças incompatíveis de API (o que costumamos chamar de **breaking changes**)
+    - *Majors*: você deve criar uma versão *major* quando você realiza mudanças incompatíveis de API (o que costumamos chamar de ***breaking changes***)
 
     No caso de *minors* e *patches*, o *housekeeper* atualiza a app automaticamente em todas as contas, já que as mudanças são retrocompatíveis. Já atualizações de *majors* possuem mudanças sem retrocompatibilidade, por isso o *housekeeper* não atualiza a app em todas as contas, sendo assim a atualização deve ser manual.
 
-    Exemplo: Se uma API que está na versão `2.3.2` e uma nova funcionalidade não tiver breaking changes, você pode atualizar a versão para `2.4.0`.
+    Exemplo: Se uma API que está na versão `2.3.2` e uma nova funcionalidade não tiver *breaking changes*, você pode atualizar a versão para `2.4.0`.
 
 * O campo de *builders*
 
@@ -61,8 +61,3 @@ No exemplo da estrutura do `manifest.json` abaixo, é possível observar caracte
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-a pi/master/gen/manifest.schema"
 }
 ```
-<!--
-### Atividade
-
-1. No arquivo `manifest.json`, troque o nome do *vendor* por `appliancetheme`
-2. Altere o campo de *name* para o nome da aplicação em questão. -->

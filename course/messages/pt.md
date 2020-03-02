@@ -55,73 +55,73 @@ Após isso, para **renderizar nosso título** devemos usar o componente `Formatt
 
 1. Adicione a biblioteca usando `yarn add react-intl` na pasta *react*
 2. No código do seu componente `Countdown.tsx` **importe o FormattedMessage**
-```diff
-+	import { FormattedMessage } from 'react-intl'
-```
+    ```diff
+    +	import { FormattedMessage } from 'react-intl'
+    ```
 3. Adicione uma constante que será o seu título:
-```tsx
-const titleText = title || <FormattedMessage id="countdown.title"/>
-```
+    ```tsx
+    const titleText = title || <FormattedMessage id="countdown.title"/>
+    ```
 4. Agora, vamos juntar o título e o contador para renderizá-los. Para isso, vamos definir um container por fora. Além disso, o texto do título será passado através da *prop* `title`:
-```tsx
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({title, targetDate}) => {
-  const [
-    timeRemaining, 
-    setTime
-  ] = useState<TimeSplit>({
-    hours: '00', 
-    minutes: '00', 
-    seconds: '00'
-  })
-  
-  const titleText = title || <FormattedMessage id="countdown.title" /> 
-  const handles = useCssHandles(CSS_HANDLES)
+    ```tsx
+    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({title, targetDate}) => {
+      const [
+        timeRemaining, 
+        setTime
+      ] = useState<TimeSplit>({
+        hours: '00', 
+        minutes: '00', 
+        seconds: '00'
+      })
+      
+      const titleText = title || <FormattedMessage id="countdown.title" /> 
+      const handles = useCssHandles(CSS_HANDLES)
 
-  tick(targetDate, setTime)
+      tick(targetDate, setTime)
 
-  return (
-    <Fragment>
-      <div className={`${handles.container} t-heading-2 fw3 w-100 c-muted-1`}>
-        <div className={`${handles.title} db tc`}>
-          {titleText}
-        </div>
-        <div className={`${handles.countdown} db tc`}>
-          {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
-        </div>
-      </div>
-    </Fragment>
-  )
-}
-```
-Note que utilizamos três handles: *container*, *countdown* e *title*. Dessa forma, lembre-se de declará-los na constante `CSS_HANDLES`, vista na etapa anterior:
-```tsx
-const CSS_HANDLES = ['container', 'countdown', 'title']
-```
+      return (
+        <Fragment>
+          <div className={`${handles.container} t-heading-2 fw3 w-100 c-muted-1`}>
+            <div className={`${handles.title} db tc`}>
+              {titleText}
+            </div>
+            <div className={`${handles.countdown} db tc`}>
+              {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
+            </div>
+          </div>
+        </Fragment>
+      )
+    }
+    ```
+    Note que utilizamos três handles: *container*, *countdown* e *title*. Dessa forma, lembre-se de declará-los na constante `CSS_HANDLES`, vista na etapa anterior:
+    ```tsx
+    const CSS_HANDLES = ['container', 'countdown', 'title']
+    ```
 
-Por fim, precisamos adicionar a *prop* de `title` no *schema*:
-```diff
-Countdown.schema = {
-  title: 'editor.countdown.title',
-  description: 'editor.countdown.description',
-  type: 'object',
-  properties: {
-+    title: {
-+      title: 'Sou um título',
-+      type: 'string',
-+      default: null,
-+    },
-    targetDate: {
-      title: 'Sou um título',
-      description: 'Sou uma descrição',
-      type: 'string',
-      default: null,
-    },
-  },
-}
-```
+    Por fim, precisamos adicionar a *prop* de `title` no *schema*:
+    ```diff
+    Countdown.schema = {
+      title: 'editor.countdown.title',
+      description: 'editor.countdown.description',
+      type: 'object',
+      properties: {
+    +    title: {
+    +      title: 'Sou um título',
+    +      type: 'string',
+    +      default: null,
+    +    },
+        targetDate: {
+          title: 'Sou um título',
+          description: 'Sou uma descrição',
+          type: 'string',
+          default: null,
+        },
+      },
+    }
+    ```
 
-Pronto! Agora, para testar sua loja em outros idiomas basta adicionar a *query string* `/?cultureInfo=pt-br` na URL, por exemplo. Ao utilizar tal URL, o resultado esperado é esse aqui:
+    Pronto! Agora, para testar sua loja em outros idiomas basta adicionar a *query string* `/?cultureInfo=pt-br` na URL, por exemplo. Ao utilizar tal URL, o resultado esperado é esse aqui:
 
-![image](https://user-images.githubusercontent.com/19495917/75484759-23d7f000-5988-11ea-8b0a-63a5fce4ea7e.png)
+    ![image](https://user-images.githubusercontent.com/19495917/75484759-23d7f000-5988-11ea-8b0a-63a5fce4ea7e.png)
 
 

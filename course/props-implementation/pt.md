@@ -6,7 +6,7 @@ Agora que temos um *header*, podemos utilizá-lo para mostrar informações que 
 ## Conceitos
 * O Hook
 
-    Hooks são funções que permitem que você se "ligue" aos recursos de ciclo de vida e *states* do React. Eles não funcionam dentro de classes e permitem o uso do React utilizar classes propriamente ditas.
+    *Hooks* são funções que permitem que você se "ligue" aos recursos de ciclo de vida e *states* do React. Eles não funcionam dentro de classes e permitem o uso do React utilizar classes propriamente ditas.
     
     Exemplo de uso:
     ```tsx
@@ -57,7 +57,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
     )
 }
 ```
-Precisamos adicionar `targetDate` como parâmetro e o utilize dentro da *tag* `h1`, como mostrado abaixo:
+Precisamos adicionar `targetDate` como parâmetro e utilizá-lo dentro da *tag* `h1`, como mostrado abaixo:
 
 ```tsx
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({targetDate}) => {

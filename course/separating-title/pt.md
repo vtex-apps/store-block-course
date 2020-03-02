@@ -1,7 +1,7 @@
 # Separando o título
 
 ## Introdução
-Nessa etapa, temos em nossa *app* dois pedaços: o título e o contador. Porém, para obter uma maior flexibilidade em termos de posicionamento, customização e etc., é interessante que nós as separemos em dois componentes distinos. Para isso, precisamos apresentar brevemente o conceito de interfaces para, em seguida, desenvolvermos um novo componente `Title`. Um exemplo de customização em termos de posicionamento, que será abordada nessa etapa é: e se quiséssemos que nosso título estivesse embaixo do contador?
+Nessa etapa, temos em nossa *app* dois pedaços: o título e o contador. Porém, para obter uma maior flexibilidade em termos de posicionamento, customização e etc., é interessante que nós as separemos em dois componentes distinos. Para isso, precisamos apresentar brevemente o conceito de interfaces para, em seguida, desenvolvermos um novo componente `Title`. Um exemplo de customização em termos de posicionamento, que será abordada nessa etapa, é: e se quiséssemos que nosso título estivesse embaixo do contador?
 
 Um conceito muito importante para efetuar essa mudança é a interface. Por isso, vamos apresentar brevemente o que são as interfaces para, em seguida, fazermos nossa atividade.
 

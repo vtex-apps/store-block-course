@@ -16,11 +16,11 @@ const resolver = (parent, args, context, info) => {};
 | `parent`  | O último objeto que foi resolvido (o parente de tal elemento no grafo do schema). Não é muito útil para queries principais          |
 | `args`    | O objeto de argumentos que foram passados para aquela query                                                                         |
 | `context` | Um valor de contexto provido para todo resolver. Aqui você poderá ler informações sobre a requisição, ou usar algum serviço da VTEX |
-| `parent`  | The previous object, which for a field on the root Query type is often not used.                                                    |
+| `parent`  | O objeto anterior, que para um campo no tipo Query *root* não é muito utilizado                                                    |
 
 ## Atividade
 
-No objeto exportado com os resolvers, adicione uma função chamada `NOME-DA-QUERY-TODO`, **este nome deve ser igual ao nome da query definida no schema.graphql**.
+No objeto exportado com os *resolvers*, adicione uma função chamada `NOME-DA-QUERY-TODO`, **este nome deve ser igual ao nome da query definida no schema.graphql**.
 
 ```diff
 {

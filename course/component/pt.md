@@ -1,14 +1,14 @@
 # O Componente Countdown
 
 ## Introdução
-Para desenvolver um bloco de frente de loja, similar aos que oferecemos nativamente no Store Framework, utilizamos a biblioteca de desenvolvimento de UIs `react`. Recomendamos o uso de function components e hooks.
+Para desenvolver um bloco de frente de loja, similar aos que oferecemos nativamente no Store Framework, utilizamos a biblioteca de desenvolvimento de UIs `react`. Recomendamos o uso de *function components* e *hooks*.
 
 No fim dessa etapa, você será capaz de ver uma pequena aplicação na home page da loja.
 
 ## O Componente *Countdown*
 Quais são os passos necessários para começar o desenvolvimento de uma componente?
 
-Segue o boilerplate necessário para a atividade:
+Segue o *boilerplate* necessário para a atividade:
 
 ```tsx
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
@@ -32,7 +32,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
 }
 ```
 
-Agora, para vermos o nosso componente, precisamos linkar a *app* no nosso tema. Em primeiro lugar, será necessário ter um tema para adicionarmos a *app*, para isso, será necessário cloná-lo do *Github*. Nesse curso, utilizaremos o `store-theme`. Para clonar o repositório, basta executar o seguinte comando:
+Para vermos o nosso componente, precisamos linkar a *app* no nosso tema. Em primeiro lugar, será necessário ter um tema para adicionarmos a *app*, para isso, será necessário cloná-lo do *Github*. Nesse curso, utilizaremos o `store-theme`. Para clonar o repositório, basta executar o seguinte comando:
 
 ```
 git clone https://github.com/vtex-apps/store-theme.git
@@ -52,6 +52,6 @@ Adicione ao manifesto do tema `"vtex.countdown"` como dependência. A versão de
     ...
 }
 ```
-Agora precisamos adicionar o bloco na nossa loja. Dentro do arquivo `home.jsonc`, declare um bloco chamado `"countdown"`. Feito isso, é necessário fazer o *link* para o ambiente de desenvolvimento. Para isso, tanto no diretório da *app* quanto no diretório do tema, execute o comando `vtex link`. Após o login, o resultado esperado é encontrar um *header* na home da sua loja, como a imagem abaixo:
+Por fim, precisamos adicionar o bloco na nossa loja. Dentro do arquivo `home.jsonc`, declare um bloco chamado `"countdown"`. Feito isso, é necessário fazer o *link* para o ambiente de desenvolvimento. Para isso, tanto no diretório da *app* quanto no diretório do tema, execute o comando `vtex link`. Após o login, o resultado esperado é encontrar um *header* na home da sua loja, como a imagem abaixo:
 ![image](https://user-images.githubusercontent.com/19495917/74960422-11d7d980-53eb-11ea-9d32-f0aa1340f0af.png)
 
