@@ -1,14 +1,12 @@
 # Componentizando o bloco countdown
 
 ## Introdução
-Nessa etapa, temos em nossa *app* dois pedaços: o título e o contador. Porém, para obter uma maior flexibilidade em termos de posicionamento, customização e etc., é interessante que nós as separemos em dois componentes distinos. Para isso, precisamos apresentar brevemente o conceito de interfaces para, em seguida, desenvolvermos um novo componente `Title`. Um exemplo de customização em termos de posicionamento, que será abordada nessa etapa, é: e se quiséssemos que nosso título estivesse embaixo do contador?
-
-Um conceito muito importante para efetuar essa mudança é a interface. Por isso, vamos apresentar brevemente o que são as interfaces para, em seguida, fazermos nossa atividade.
+Nessa etapa, temos em nossa *app* dois pedaços: o título e o contador. Porém, para obter uma maior flexibilidade em termos de posicionamento, customização e etc., é interessante que nós as separemos em dois blocos distintos. Para isso, precisamos apresentar brevemente o conceito de interfaces para, em seguida, desenvolvermos um novo componente `Title`. Um exemplo de customização em termos de posicionamento, que será abordada nessa etapa, é: e se quiséssemos que nosso título estivesse embaixo ou ao lado do contador?
 
 ## Interface
-Uma interface é formada por um conjunto de blocos e funciona como um contrato, com restrições bem definidas de como os blocos funcionarão juntos. É definida como a maneira de expor o componente desenvolvido para um bloco. 
+Uma interface funciona como um contrato, com restrições bem definidas de como os blocos funcionarão juntos. Define, então, um mapeamento que cria um bloco do Store Framework, a partir de um componente React. É importante destacar que o uso de interfaces, de forma a quebrar nossa *app* em diversas interfaces associadas a diferentes blocos torna o poder de customização muito maior.
 
-Ao definir a *app* na interface, a propriedade `component` é responsável por definir o componente React que será chamado. É importante ressaltar que o nome do `component` tem que ser igual ao nome do arquivo do componente dentro da pasta `react/`.
+Ao definir a *app* na interface, a propriedade `component` é responsável por definir o componente React que será usado. É importante ressaltar que o nome do `component` tem que ser igual ao nome do arquivo do componente dentro da pasta `react/`.
 
 Exemplo de `interfaces.json`:
 ```json
@@ -20,11 +18,10 @@ Exemplo de `interfaces.json`:
 ```
 
 ## Atividade
-Nessa atividade, vamos separar o título e adicionado à nossa loja embaixo do contador. Vamos lá?
-### Criando um novo componente
-Crie um novo arquivo dentro da pasta `/react`, chamado `Title.tsx`, ele será o novo componente do título. Nele, alguns *imports* precisam ser feitos. A estrutura básica do código é muito similar a do componente `Countdown`.
+Nessa atividade, vamos separar o título e adicionar à nossa loja embaixo do contador. Vamos lá?
 
-No arquivo `Countdown.tsx`, é preciso remover as linhas de código relacionadas ao título, ou seja, *imports* utilizados, interface do *title*, o *render* do elemento em si entre outros.
+### Alterando o componente `Countdown`
+No arquivo `Countdown.tsx`, é preciso remover algumas linhas de código.
 
 1. Vamos remover os *imports*, o `title` da interface e alterar a constante do CSS *handles*:
     ```diff
@@ -45,6 +42,7 @@ No arquivo `Countdown.tsx`, é preciso remover as linhas de código relacionadas
     ```
 2. Agora, no componente React em si, precisamos retirar o `title` como *prop* recebida e a constante do texto do título, além de alterar o que é renderizá-lo em sim:
     ```diff
+    //Countdown.tsx
     -const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ title, targetDate = DEFAULT_TARGET_DATE }) => {
     +const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
       const [
@@ -97,10 +95,14 @@ No arquivo `Countdown.tsx`, é preciso remover as linhas de código relacionadas
     }
     ```
 
+### Criando um novo componente
+Crie um novo arquivo dentro da pasta `/react`, chamado `Title.tsx`, ele será o novo componente do título. Nele, alguns *imports* precisam ser feitos. A estrutura básica do código é muito similar a do componente `Countdown`.
+
 Agora, vamos colocar a mão na massa e criar nosso novo componente! Em um primeiro momento, vamos começar com o esqueleto no `Title.tsx`:
 
 1. Os *imports* necessários e a constante do CSS *handles*:
     ```tsx
+    //Title.tsx
     import React from 'react'
     import { FormattedMessage } from 'react-intl'
     import { useCssHandles } from 'vtex.css-handles'
@@ -109,6 +111,7 @@ Agora, vamos colocar a mão na massa e criar nosso novo componente! Em um primei
     ```
 2. O componente em si:
     ```tsx
+    //Title.tsx
     const Title: StorefrontFunctionComponent<TitleProps> = ({title}) => {
       const handles = useCssHandles(CSS_HANDLES)
       const titleText = title || <FormattedMessage id="countdown.title" /> 
@@ -122,6 +125,7 @@ Agora, vamos colocar a mão na massa e criar nosso novo componente! Em um primei
     ```
 3. A interface, o *schema* e o *export*:
     ```tsx
+    //Title.tsx
     interface TitleProps {
       title: string
     }
@@ -167,8 +171,9 @@ Precisamos também adicionar ao *Messages* as traduções cujas chaves são as *
 ```
 
 ### Adicionando o novo bloco na home da loja
-Por fim, para finalmente vermos nossas mudanças, basta adicionar a *home* nosso título! Assim como feito para o contador, precisamos adicionar o `countdown.title` como um bloco no arquivo `home.jsonc` do store-theme.
+Por fim, para finalmente vermos nossas mudanças, precisamos voltar ao nosso tema para alterá-lo a fim de incluir o novo bloco. Para isso, basta adicionar à *home* nosso título! Assim como feito para o contador, precisamos adicionar o `countdown.title` como um bloco no arquivo `home.jsonc` do store-theme.
 ```diff
+//home.jsonc
 {
   "store.home": {
     "blocks": [
