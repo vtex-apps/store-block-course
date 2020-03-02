@@ -6,41 +6,93 @@
   "steps": [
     {
       "folder": "manifest",
-      "title": { "pt": "Olá" },
+      "title": { "pt": "Conhecendo uma app VTEX IO" },
       "description": {
-        "pt": "Descrição para o step de manifest"
+        "pt": "Neste passo, você irá aprender como se organizam os arquivos em uma app VTEX IO e o que cada campo no manifest.json significa"
       },
       "challenge": "none"
     },
     {
       "folder": "component",
-      "title": { "pt": "Olá" },
+      "title": { "pt": "Linkando uma app e utilizando-a no tema da loja" },
       "description": {
-        "pt": "Descrição para o step de component"
+        "pt": "Após modificar algo no código da app, iremos linká-la e verificar o resultado na loja, após haver adicionado a app no tema"
       },
       "challenge": "none"
     },
     {
-      "folder": "interface",
-      "title": { "pt": "Olá" },
+      "folder": "props-implementation",
+      "title": { "pt": "Tornando o bloco countdown customizável" },
       "description": {
-        "pt": "Descrição para o step de interface"
+        "pt": "Através da API de props do React, você aprendenrá como tornar seus blocos configuráveis com o Store Framework"
       },
       "challenge": "none"
     },
     {
-      "folder": "controlling-component",
-      "title": { "pt": "Olá" },
+      "folder": "countdown-implementation",
+      "title": { "pt": "Criando a funcionalidade do bloco countdown" },
       "description": {
-        "pt": "Descrição para o step de controlling component"
+        "pt": "Utilizando os hooks do React.js, iremos finalizar a implementação do bloco countdown"
+      },
+      "challenge": "none"
+    },
+    {
+      "folder": "css-handles",
+      "title": {
+        "pt": "Modificando o bloco countdown para ter um estilo configurável"
+      },
+      "description": {
+        "pt": "O VTEX IO oferece uma maneira para seus blocos poderem ter um estilo CSS customizável: CSS Handles. Também veremos sobre a biblioteca de CSS funcional Tachyons"
       },
       "challenge": "none"
     },
     {
       "folder": "messages",
-      "title": { "pt": "Olá" },
+      "title": {
+        "pt": "Práticas de internacionalização no VTEX IO"
+      },
       "description": {
-        "pt": "Descrição para o step de messages"
+        "pt": "Para que os nossos blocos sejam usados por todo mundo, deveremos nos atentar às boas práticas de internacionalização suportadas pelo VTEX IO"
+      },
+      "challenge": "none"
+    },
+    {
+      "folder": "separating-title",
+      "title": {
+        "pt": "Componentizando o bloco countdown"
+      },
+      "description": {
+        "pt": "Para que os blocos que criamos sejam flexíveis, devemos atentar a granularidade dos componentes visuais de cada bloco."
+      },
+      "challenge": "none"
+    },
+    {
+      "folder": "what-is-graphql",
+      "title": {
+        "pt": "O que é GraphQL?"
+      },
+      "description": {
+        "pt": "Utilizado por todo VTEX IO, GraphQL é uma tecnologia essencial para criação de funcionalidades complexas nas lojas do VTEX IO"
+      },
+      "challenge": "none"
+    },
+    {
+      "folder": "defining-resolver",
+      "title": {
+        "pt": "Definindo um resolver GraphQL"
+      },
+      "description": {
+        "pt": "Neste passo você aprender o que é um resolver GraphQL e como definí-lo em sua app"
+      },
+      "challenge": "none"
+    },
+        {
+      "folder": "defining-client",
+      "title": {
+        "pt": "Definindo um client no VTEX IO"
+      },
+      "description": {
+        "pt": "Para se comunicar com outras apps VTEX ou serviços externos, neste passo você aprenderá como criar um client"
       },
       "challenge": "none"
     }
