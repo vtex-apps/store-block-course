@@ -40,33 +40,38 @@ Falando de forma simplificada, um *schema* GraphQL é composto de dois tipos bá
 
 Para o escopo desse curso, só iremos construir queries, mas o conceito é exatamente o mesmo. O que muda é a semântica da função que resolve o campo.
 
-## Definição de *Resolver*
-  *Resolvers* são funções responsáveis por "resolver" um pedido e devolver o dado solicitado. Vale ressaltar que o retorno de um *resolver* é uma *promise*, ou seja, o GraphQL espera a resolução dessa promessa para devolver os resultados obtidos.
-
-## Atividade
-
-Para começar vamos adicionar um campo no tipo `Query` chamado `helloWorld` que será do tipo `String`.
+Vamos adicionar um campo no tipo `Query` chamado `helloWorld` que será do tipo `String`.
 
 ```diff
 type Query {
-   giphy(term: String): String
 +  helloWorld: String
 }
 ```
+
 Ao linkar sua app, você terá acesso a uma URL contendo um link para uma IDE de GraphQL chamada [GraphiQL](https://graphql.org/swapi-graphql), esse ambiente permite que você teste seu schema de forma rápida, sem precisar desenvolver um cliente em código (pense nele como um Postman GraphQL)
 
 Esse campo precisa ter uma função que irá resolvê-lo na pasta `node`. É o que iremos fazer agora.
 
-Na pasta `node`, vá na pasta `resolvers` e crie um novo arquivo `helloWorld.ts`. Nesse arquivo iremos criar a função que resolverá o campo `helloWorld` que adicionemos anteriormente no tipo `Query`.
+## Definição de *Resolver*
+*Resolvers* são funções responsáveis por "resolver" uma query e devolver o dado solicitado. Vale ressaltar que o retorno de um *resolver* é uma *promise*, ou seja, o GraphQL espera a resolução dessa promessa para devolver os resultados obtidos.
+
+Na pasta `node`, vá na pasta `resolvers` e crie um novo arquivo `helloWorld.ts`. Nesse arquivo iremos criar a função que resolverá o campo `helloWorld` que adicionamos anteriormente no tipo `Query`.
 
 ```ts
 export const helloWorld = () => 'Hello World'
 ```
 
-Agora, se você acessar novamente o GraphiQL e realizar a query abaixo, verá que o GraphiQL retorna o Hello World.
+Agora, se você acessar novamente o GraphiQL e realizar a query abaixo, verá que o GraphiQL retorna o Hello World, conforme o esperado.
 
-```json
+```
 {
   helloWorld
 }
 ```
+
+## Atividade
+
+Agora, nos voltaremos à nossa aplicação de countdown com gif. Sua tarefa será criar o campo `giphy` no schema GraphQL. Esse campo receberá como argumento um `term` do tipo `String` que irá em uma atividade futura ser utilizado para realizar uma busca na API do `giphy` pelo termo passado como argumento.
+
+Feito isso, seu objetivo é observar no GraphiQL o novo campo adicionado.
+
