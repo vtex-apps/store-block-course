@@ -20,7 +20,7 @@ Agora que temos um *header*, podemos utilizá-lo para mostrar informações que 
     interface CountdownProps {}
     ```
 
-* Definição das configurações de um componente
+* Definição das configurações de um bloco
     
     Para que o seu bloco possa aceitar configurações do usuário, utilizamos um JSON *schema* que irá gerar um formulário para o *Site Editor*. Abaixo é possível ver um exemplo de *schema*:
     ```js

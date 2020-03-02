@@ -24,7 +24,7 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
   })
 ```
 ## Atividades
-Em primeiro lugar, precisamos importar algumas coisas necessária e a primeira delas é o *hook* em si. Para isso, no componente, adicione na linha de *import* a função `useState` do React:
+Em primeiro lugar, precisamos importar algumas coisas necessárias e a primeira delas é o *hook* em si. Para isso, no componente, adicione na linha de *import* a função `useState` do React:
 ```tsx
 import React, { Fragment, useState } from 'react'
 ```

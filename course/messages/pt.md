@@ -1,7 +1,7 @@
 # Práticas de internacionalização no VTEX IO
 
 ## Introdução
-Agora que já renderizamos nossos componentes customizados na loja, devemos aprender a **internacionalizar** o conteúdo que apresentamos. 
+Agora que já renderizamos nossos blocos customizados na loja, devemos aprender a **internacionalizar** o conteúdo que apresentamos. 
 
 É importante lembrar que os blocos devem sempre seguir boas práticas de localização, e **não devem mostrar strings _hardcoded_**, mas sim sensíveis a linguagem que a loja opera.
 
@@ -93,7 +93,7 @@ Após isso, para **renderizar nosso título** devemos usar o componente `Formatt
       )
     }
     ```
-    Note que utilizamos três handles: *container*, *countdown* e *title*. Dessa forma, lembre-se de declará-los na constante `CSS_HANDLES`, vista na etapa anterior:
+    Note que utilizamos três *handles*: *container*, *countdown* e *title*. Dessa forma, lembre-se de declará-los na constante `CSS_HANDLES`, vista na etapa anterior:
     ```tsx
     const CSS_HANDLES = ['container', 'countdown', 'title']
     ```
