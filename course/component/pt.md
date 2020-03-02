@@ -1,4 +1,4 @@
-# O Componente Countdown
+# Linkando uma app e utilizando-a no tema da loja
 
 ## Introdução
 Para desenvolver um bloco de frente de loja, similar aos que oferecemos nativamente no Store Framework, utilizamos a biblioteca de desenvolvimento de UIs `react`. Recomendamos o uso de *function components* e *hooks*.

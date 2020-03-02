@@ -1,4 +1,4 @@
-# Título com react-intl
+# Práticas de internacionalização no VTEX IO
 
 ## Introdução
 Agora que já renderizamos nossos componentes customizados na loja, devemos aprender a **internacionalizar** o conteúdo que apresentamos. 

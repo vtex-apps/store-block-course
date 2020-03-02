@@ -1,4 +1,4 @@
-# Definindo um *resolver*
+# Definindo um resolver GraphQL
 
 ## Introdução
 Agora que já certificamos que o tipo foi configurado corretamente, vamos definir a **função que resolve nossa query**. Em GraphQL, podemos definir _resolvers_ para qualquer campo do _schema_ e também para tipos. Para saber mais, leia [aqui](https://graphql.org/learn/execution/).

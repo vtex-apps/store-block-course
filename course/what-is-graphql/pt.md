@@ -1,4 +1,4 @@
-# O que é GraphQL
+# O que é GraphQL?
 
 ## Introdução
 GraphQL é uma linguagem de query para APIs e uma aplicação server-side que executa queries a partir de um sistema de tipagens que você define para os seus dados. Não é uma tecnologia amarrada a nenhum banco de dados ou Storage.

@@ -1,4 +1,4 @@
-# Implementando o contador
+# Criando a funcionalidade do bloco countdown
 
 ## Introdução
 Agora que já sabemos o básico do nosso componente e já o vimos funcionando, é hora de implementar efetivamente o contador. Para isso, precisamos utilizar um *hook* do React, chamado `useState`;

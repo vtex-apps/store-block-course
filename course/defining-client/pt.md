@@ -1,4 +1,4 @@
-# Definindo um _client_
+# Definindo um *client* no VTEX IO
 
 ## Introdução
 Já vimos como criamos um _resolver_ GraphQL, e agora iremos continuar com o desenvolvimento da nossa funcionalidade. Comumente, a implementação de uma funcionalidade em nossa *app* requere a **comunicação com outros serviços**, sejam externos ou internos (outras *apps* VTEX), e, para realizar essa comunicação, deveremos **criar um *client***. Um *client* é uma entidade em nosso serviço encarregado de **realizar requisições**, e ele é criado reutilizando *clients* exportados pelo [`node-vtex-api`](https://github.com/vtex/node-vtex-api).

@@ -1,4 +1,4 @@
-# Customizando sua *app*
+# Modificando o bloco countdown para ter um estilo configurável
 
 ## Introdução
 Agora que temos uma *app* funcional, que tal adicionarmos um pouco de customização? Nessa etapa, você irá aprender conceitos básicos a respeito de CSS *handles* e Tachyons para, em seguida, customizar sua *app*. Vamos lá?
