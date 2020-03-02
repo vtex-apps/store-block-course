@@ -60,7 +60,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
 Precisamos adicionar `targetDate` como parâmetro e utilizá-lo dentro da *tag* `h1`, como mostrado abaixo:
 
 ```tsx
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({targetDate}) => {
+const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) => {
   return (
     <Fragment>
         <h1>{ targetDate }</h1>

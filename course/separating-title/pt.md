@@ -45,8 +45,8 @@ No arquivo `Countdown.tsx`, é preciso remover as linhas de código relacionadas
     ```
 2. Agora, no componente React em si, precisamos retirar o `title` como *prop* recebida e a constante do texto do título, além de alterar o que é renderizá-lo em sim:
     ```diff
-    -const Countdown: StorefrontFunctionComponent<CountdownProps> = ({title, targetDate = DEFAULT_TARGET_DATE}) => {
-    +const Countdown: StorefrontFunctionComponent<CountdownProps> = ({targetDate = DEFAULT_TARGET_DATE}) => {
+    -const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ title, targetDate = DEFAULT_TARGET_DATE }) => {
+    +const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
       const [
         timeRemaining, 
         setTime
@@ -65,7 +65,7 @@ No arquivo `Countdown.tsx`, é preciso remover as linhas de código relacionadas
         <Fragment>
     -      <div className={`${handles.container} t-heading-2 fw3 w-100 pt7 pb6 c-muted-1`}>
     -        <div className={`${handles.title} db tc`}>
-    -          {titleText}
+    -          { titleText }
     -        </div>
             <div className={`db tc`}>
               {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
@@ -115,7 +115,7 @@ Agora, vamos colocar a mão na massa e criar nosso novo componente! Em um primei
 
       return (
         <div className={`${handles.title} t-heading-2 fw3 w-100 c-muted-1 db tc`}>
-          {titleText}
+          { titleText }
         </div> 
       )
     }

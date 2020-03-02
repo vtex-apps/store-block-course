@@ -64,7 +64,7 @@ Após isso, para **renderizar nosso título** devemos usar o componente `Formatt
     ```
 4. Agora, vamos juntar o título e o contador para renderizá-los. Para isso, vamos definir um container por fora. Além disso, o texto do título será passado através da *prop* `title`:
     ```tsx
-    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({title, targetDate}) => {
+    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ title, targetDate }) => {
       const [
         timeRemaining, 
         setTime
@@ -83,7 +83,7 @@ Após isso, para **renderizar nosso título** devemos usar o componente `Formatt
         <Fragment>
           <div className={`${handles.container} t-heading-2 fw3 w-100 c-muted-1`}>
             <div className={`${handles.title} db tc`}>
-              {titleText}
+              { titleText }
             </div>
             <div className={`${handles.countdown} db tc`}>
               {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}

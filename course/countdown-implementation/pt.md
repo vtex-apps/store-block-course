@@ -26,7 +26,7 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
 ## Atividades
 Em primeiro lugar, precisamos importar algumas coisas necessária e a primeira delas é o *hook* em si. Para isso, no componente, adicione na linha de *import* a função `useState` do React:
 ```tsx
-import React, {Fragment, useState} from 'react'
+import React, { Fragment, useState } from 'react'
 ```
 Além disso, precisamos importar o tipo `TimeSplit`:
 ```tsx
@@ -38,7 +38,7 @@ import { tick } from './utils/time'
 ```
 Agora, precisamos alterar o componente em si, para adicionar o *hook* e a função que irá atualizar o estado. Voltando ao nosso componente Countdown, vamos adicionar o *hook*:
 ```diff
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({targetDate}) => {
+const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) => {
 +    const [timeRemaining, setTime] = useState<TimeSplit>({
 +        hours: '00',
 +        minutes: '00',
@@ -73,7 +73,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = D
 
     return (
         <Fragment>
-            {targetDate}
+            { targetDate }
         </Fragment>
     ) 
 }
