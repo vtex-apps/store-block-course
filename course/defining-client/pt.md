@@ -21,7 +21,23 @@ Após a criação de um *client*, é necessário **adicioná-lo na exportação 
     }
     ```
 5. Agora, voltando ao *resolver*, podemos utilizar `ctx.giphy.translate` para finalizar a implementação da funcionalidade. Retorne a chamada deste método, informando o termo passado como parâmetro para o _resolver_.
-6. Teste no _GraphiQL_ sua modificação!
+6. Adicione no arquivo `manifest.json` uma *policy* para acessar URL externa:
+    ```json
+    {
+        ...
+        "policies": [
+            {
+            "name": "outbound-access",
+            "attrs": {
+                "host": "api.giphy.com",
+                "path": "*"
+            }
+            }
+        ],
+        ...
+    }
+    ```
+7. Teste no _GraphiQL_ sua modificação!
 
 **P.S:** Use a `api_key` `dp2scGnUcDee5yLRI1qJMTRTAAJey9Tl` para testar seu _client_.
 
