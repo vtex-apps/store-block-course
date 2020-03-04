@@ -1,0 +1,4 @@
+type Query {
+  gif(term: String): String
+  helloWorld: String
+}
