@@ -1,5 +1,11 @@
 {
   "countdown.title": "Countdown",
   "editor.countdown.title": "Countdown",
-  "editor.countdown.description": "Countdown component"
+  "editor.countdown.description": "Countdown component",
+  "editor.title.title": "Title",
+  "editor.title.description": "Countdown title",
+  "admin/gif.title": "GIF",
+  "admin/gif.description": "GIF component",
+  "admin/gif.term.title": "GIF subject",
+  "admin/gif.term.description": "Term that will be used to search for GIFs"
 }

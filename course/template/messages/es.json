@@ -1,5 +1,12 @@
 {
-  "countdown.title": "Cuenta regresiva",
+  
   "editor.countdown.title": "Cuenta regresiva",
-  "editor.countdown.description": "Cuenta regresiva component"
+  "editor.countdown.description": "Cuenta regresiva component",
+  "countdown.title": "Cuenta regresiva",
+  "editor.title.title": "Título",
+  "editor.title.description": "Título de la cuenta regresiva",
+  "admin/gif.title": "GIF",
+  "admin/gif.description": "GIF component",
+  "admin/gif.term.title": "Asunto del GIF",
+  "admin/gif.term.description": "Palabra utilizada para buscar GIFs"
 }

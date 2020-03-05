@@ -25,15 +25,17 @@ interface GifProps {
 }
 
 Gif.schema = {
-    title: 'editor.countdown-gif.title',
-    description: 'editor.countdown-gif.description',
+    title: 'admin/gif.title',
+    description: 'admin/gif.description',
     type: 'object',
     properties: {
         term: {
-            title: "Sou um título",
-            description: "Sou uma descrição"
-        }
-    }
+            title: 'admin/gif.term.title',
+            description: 'admin/gif.term.description',
+            type: 'string',
+            default: null,
+        },
+    },
 }
 
 export default Gif
