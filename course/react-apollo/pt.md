@@ -8,6 +8,16 @@ O time do *apollo-graphql* disponibiliza uma integração nativa com React, por 
 ## Query de Gifs
 1. Crie o arquivo `Gif.tsx` na pasta `/react`; seu formato é muito semelhante ao presente em `Title.tsx`, mas com as modificações necessárias. Vale ressaltar que o texto a ser exibido é um *placeholder*, logo, pode ser qualquer coisa dentro de uma `div` que utilize os estilos já mostrados anteriormente.
 
+2. Crie uma pasta `react/queries` e nela adicione um arquivo `gifs.graphql` que irá conter a *query* a ser feita. Em particular, essa *query* irá receber um termo, que será a palavra-chave a ser utilizada para procurar GIFs no Giphy. Ela chamará o *resolver* `gif`, implementado e testado no GraphiQL no passo anterior.
+    ```
+    query getGifTranslation($query: String) {
+        gif(term: $query)
+    }
+    ```
+
+
+
+
 <!-- TODOS Explicar + definir-->
 - Adicionar arquivo com query na pasta queries
 - Definir o term na interface GitProps e usar como prop na componente Gif (não esquecer de valor default)
@@ -16,8 +26,6 @@ O time do *apollo-graphql* disponibiliza uma integração nativa com React, por 
 - Definir img com src={url}
 - Adicionar no site editor a query
 - Ver funcionando
-
-
 
     > Encorajamos que você tente fazer esse item sozinho, mas se precisar de ajuda, o esqueleto do código está logo abaixo.
 
