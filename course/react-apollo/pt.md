@@ -42,12 +42,21 @@ O time do *apollo-graphql* disponibiliza uma integração nativa com React, por 
             </div>
         )
     }
+    ```
 
+7. Por fim, vamos alterar nosso *schema* para adicionarmos o campo de `term` no *Site Editor* e, como feito anteriormente na etapa de internacionalização, defina as *strings* necessárias nos arquivos dentro da pasta `messages/`
+    ```js
     Gif.schema = {
-        title: 'editor.countdown-gif.title',
-        description: 'editor.countdown-gif.description',
+        title: 'admin/gif.title',
+        description: 'admin/gif.description',
         type: 'object',
         properties: {
-        }
+            term: {
+                title: 'admin/gif.term.title',
+                description: 'admin/gif.term.description',
+                type: 'string',
+                default: null,
+            },
+        },
     }
     ```
