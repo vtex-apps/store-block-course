@@ -1,7 +1,5 @@
-
 export const gif = async (
   _: any,
-  { query }: { query: string },
-  { clients: { giphy }}: Context
-) => giphy.translateGif(query)
-
+  { term }: { term: string },
+  { clients: { giphy } }: Context
+) => giphy.translateGif(term)

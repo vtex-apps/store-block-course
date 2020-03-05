@@ -3,17 +3,19 @@ import {
   InstanceOptions,
   IOContext
 } from '@vtex/api'
+
 export default class Giphy extends ExternalClient {
   private routes = {
     translate: (): string => 'translate',
   }
   constructor(
     context: IOContext,
-    options ? : InstanceOptions) {
+    options?: InstanceOptions) {
     super('https://api.giphy.com/v1/gifs/', context, options)
   }
-  public async translateGif(query: string): Promise<any> {
-    const data = await this.http.get(
+  public async translateGif(term: string): Promise<any> {
+    console.log("term --------------------- ", term)
+    const response = await this.http.get(
       this.routes.translate(),
       {
         headers: {
@@ -21,15 +23,12 @@ export default class Giphy extends ExternalClient {
         },
         params: {
           api_key: 'dp2scGnUcDee5yLRI1qJMTRTAAJey9Tl',
-          s: query,
+          s: term,
         },
       }
     )
-    console.log(data)
-    const url = data && data.images
-      ? data.images.original.url
-      : ''
-    console.log(url)
-    return { url }
+    const url = response.data?.images?.original?.url
+    console.log("url ---------------- ", url)
+    return url
   }
 }

@@ -1,3 +1,9 @@
 import { IOClients } from "@vtex/api";
 
-export class Clients extends IOClients {}
+import Giphy from './giphy'
+
+export class Clients extends IOClients {
+    public get giphy() {
+        return this.getOrSet('giphy', Giphy)
+    }
+}

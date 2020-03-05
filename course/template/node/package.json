@@ -5,6 +5,9 @@
   "devDependencies": {
     "@types/node": "8.x",
     "@vtex/api": "^3.0.0",
-    "typescript": "3.7.3"
+    "typescript": "3.7.3",
+    "vtex.countdown": "https://fabiana--appliancetheme.myvtex.com/_v/private/typings/linked/v1/vtex.countdown@0.0.1+build1583431769/public/@types/vtex.countdown",
+    "vtex.css-handles": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.2/public/@types/vtex.css-handles",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.112.8/public/@types/vtex.styleguide"
   }
 }
