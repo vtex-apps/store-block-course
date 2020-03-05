@@ -1,4 +1,4 @@
 type Query {
-  gif(term: String): String
-  helloWorld: String
+    helloWorld: String
+    gif(term: String): String
 }
