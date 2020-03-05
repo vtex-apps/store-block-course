@@ -3,7 +3,7 @@ import { useQuery } from 'react-apollo'
 
 import { useCssHandles } from 'vtex.css-handles'
 
-import getGif from './queries/gifs.graphql'
+import getGif from './queries/gifs.gql'
 
 const CSS_HANDLES = ['gif'] as const
 
