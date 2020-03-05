@@ -11,16 +11,30 @@ Após a criação de um *client*, é necessário **adicioná-lo na exportação 
 
 ## Atividade
 
+### Criando o *client*
 1. Crie um arquivo em `node/clients` chamado `giphy.ts`.
 2. A partir do [*client* de exemplo](https://github.com/vtex-apps/service-example/blob/ffd7a86f928f9931a9353215eebb764cb3150695/node/clients/status.ts), crie um `GiphyClient` que se comunica com a API do Giphy na URL https://api.giphy.com/v1/gifs/
-3. O *client* precisa ter apenas um método chamado `translate` que aceita um `term: string` e retornará uma URL de GIF. Este método deverá chamar o _endpoint_ [translate](https://developers.giphy.com/docs/api/endpoint#translate) da API.
-4. Após criar (e exportar) o *client* em `giphy.ts`, em `node/clients/index.ts` importe `GiphyClient from './giphy'` e adicione na classe `Clients`:
+3. O *client* precisa ter apenas um método chamado `translate` que aceita um `term: string` e retornará uma URL de GIF. Este método deverá chamar o _endpoint_ [translate](https://developers.giphy.com/docs/api/endpoint#translate) da API. **OBS.:** Use a `api_key` `dp2scGnUcDee5yLRI1qJMTRTAAJey9Tl` para testar seu _client_.
+4. Após criar (e exportar) o *client* em `giphy.ts`, em `node/clients/index.ts` importe `Giphy from './giphy'` e adicione na classe `Clients`:
     ```
     public get giphy() {
         return this.getOrSet('giphy', Giphy)
     }
     ```
-5. Agora, voltando ao *resolver*, podemos utilizar `ctx.giphy.translate` para finalizar a implementação da funcionalidade. Retorne a chamada deste método, informando o termo passado como parâmetro para o _resolver_.
+
+### Alterando nosso *resolver*
+
+1. Agora, voltando ao *resolver*, podemos utilizar `ctx.giphy.translate` para finalizar a implementação da funcionalidade. Retorne a chamada deste método, informando o termo passado como parâmetro para o _resolver_. Para isso, precisamos voltar ao arquivo `giphy.ts` e modificar nossa função, que  irá utilizar o método `translateGif`. Dessa forma, definimos nosso *resolver*:
+    ```ts
+    // node/resolvers/giphy.ts
+    export const gif = async (
+    _: any,
+    { term }: { term: string },
+    { clients: { giphy }}: Context
+    ) => giphy.translateGif(term)
+    ```
+    É possível ver que a estrutura é bem semelhante ao esqueleto de *resolver* mostrado anteriormente, temos `parent`, `args` e, por fim, `context`. Como já adicionamos nosso *resolver* ao arquivo `node/resolver/index.ts`, não precisamos alterá-lo novamente.
+
 6. Adicione no arquivo `manifest.json` uma *policy* para acessar URL externa:
     ```json
     {
@@ -37,7 +51,31 @@ Após a criação de um *client*, é necessário **adicioná-lo na exportação 
         ...
     }
     ```
-7. Teste no _GraphiQL_ sua modificação!
 
-**P.S:** Use a `api_key` `dp2scGnUcDee5yLRI1qJMTRTAAJey9Tl` para testar seu _client_.
+7. Teste no _GraphiQL_ sua modificação! 
+
+    Para testar o resultado, basta fazer uma query no GraphiQL e colocar no campo de *query variables* a string que você deseja utilizar para pesquisar um GIF. O resultado esperado é que você receberá uma resposta com o URL de um GIF.
+
+    No nosso exemplo, definimos uma *query* da seguinte forma:
+    ```
+    query buscaGif ($tema: String) {
+    gif(term:$tema)
+    }
+    ```
+    Além disso, no campo de *query variables*, definimos `tema` como *cats*:
+    ```
+    {
+    "tema": "cats"
+    }
+    ```
+    E o nosso resultado foi:
+    ```
+    {
+    "data": {
+        "gif": "https://media2.giphy.com/media/3o72EX5QZ9N9d51dqo/giphy.gif?cid=96678fa42d14d68f9c3ebdfaff64b84de51f012598e0a2e9&rid=giphy.gif"
+    }
+    }
+    ```
+    <img src="https://media2.giphy.com/media/3o72EX5QZ9N9d51dqo/giphy.gif?cid=96678fa42d14d68f9c3ebdfaff64b84de51f012598e0a2e9&rid=giphy.gif" width="600" height="320"/>
+
 
