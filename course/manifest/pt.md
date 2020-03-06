@@ -1,7 +1,7 @@
 # Conhecendo uma *app* VTEX IO
 
 ## Introdução
-Antes de começar, é necessário relembrar alguns conceitos importantes para uma maior compreensão do fluxo lógico ao desenvolver uma *app*.
+Antes de começar, é necessário relembrar alguns conceitos importantes para compreender melhor o fluxo lógico de desenvolvimento de *apps*.
 
 ## Manifesto
 
