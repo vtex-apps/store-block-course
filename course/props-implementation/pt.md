@@ -24,6 +24,7 @@ Agora que temos um *header*, podemos utilizá-lo para mostrar informações que 
     
     Para que o seu bloco possa aceitar configurações do usuário, utilizamos um JSON *schema* que irá gerar um formulário para o *Site Editor*. Abaixo é possível ver um exemplo de *schema*:
     ```js
+    // react/Countdown.tsx
     Countdown.schema = {
         title: 'editor.countdown.title',
         description: 'editor.countdown.description',
@@ -39,6 +40,7 @@ Na interface definida no `Countdown.tsx`, adicione uma *prop* chamada `targetDat
 
 A definição da *prop* em si é feita através da declaração dela na interface `CountdownProps` no arquivo `Countdown.tsx`, mostrada anteriormente. Assim, adicione uma linha que defina uma *prop* chamada `targetDate`, do tipo *string*. O seu código deve, agora, conter uma nova linha, como essa abaixo:
 ```diff
+// react/Countdown.tsx
 interface CountdownProps {
 +   targetDate: string    
 }
@@ -49,6 +51,7 @@ Vamos, primeiramente, alterar o componente para utilizar a *prop* `targetDate` d
 
 O componente era definido da seguinte forma: 
 ```tsx
+// react/Countdown.tsx
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
     return (
         <Fragment>
@@ -60,6 +63,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
 Precisamos adicionar `targetDate` como parâmetro e utilizá-lo dentro da *tag* `h1`, como mostrado abaixo:
 
 ```tsx
+// react/Countdown.tsx
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) => {
   return (
     <Fragment>
@@ -71,6 +75,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) 
 
 Além disso, para alterar essa propriedade através do *Site Editor*, é necessário adicionar essa mesma *prop* ao *schema*. Isso é feito através da adição de um objeto com chave `targetDate` dentro do objeto `properties` no *schema*. Ou seja:
 ```diff
+// react/Countdown.tsx
 Countdown.schema = {
     title: 'countdown.title',
     description: 'countdown.description',

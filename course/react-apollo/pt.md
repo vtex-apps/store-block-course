@@ -18,6 +18,7 @@ O time do *apollo-graphql* disponibiliza uma integração nativa com React, por 
 
 4. Agora, precisamos importar o método `useQuery` e utilizá-lo para fazer a *query* que irá nos retornar o URL de um GIF. Além disso, também precisamos importar nossa *query* em si, definida anteriormente, que se encontra no arquivo `gifs.gql`.
     ```diff
+    // react/Gif.tsx
     import React from 'react'
     +import { useQuery } from 'react-apollo'
 
@@ -31,6 +32,7 @@ O time do *apollo-graphql* disponibiliza uma integração nativa com React, por 
 
 6. Para vermos nosso GIF na *home* da loja, precisamos adicionar uma imagem que possua como *source* `src` o valor desse objeto, ou seja, `data.gif`.
     ```tsx
+    // react/Gif.tsx
     const Gif: StorefrontFunctionComponent<GifProps> = ({ term = 'VTEX' }) => {
         const handles = useCssHandles(CSS_HANDLES)
         const { data, loading, error } = useQuery(query, {
@@ -46,6 +48,7 @@ O time do *apollo-graphql* disponibiliza uma integração nativa com React, por 
 
 7. Por fim, vamos alterar nosso *schema* para adicionarmos o campo de `term` no *Site Editor* e, como feito anteriormente na etapa de internacionalização, defina as *strings* necessárias nos arquivos dentro da pasta `messages/`
     ```js
+    // react/Gif.tsx
     Gif.schema = {
         title: 'admin/gif.title',
         description: 'admin/gif.description',

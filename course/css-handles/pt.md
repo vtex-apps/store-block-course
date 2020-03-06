@@ -21,18 +21,21 @@ Resumindo, a ideia do CSS funcional é que, ao invés de escrever grandes classe
 Em primeiro lugar, precisamos importar o `useCssHandles`. Para isso, volte ao `Countdown.tsx` e faça o *import*:
 
 ```tsx
+// react/Countdown.tsx
 import { useCssHandles } from 'vtex.css-handles'
 ```
 
 Além disso, precisamos definir a macro do estilo que iremos puxar do handles. No nosso caso, o `countdown`:
 
 ```tsx
+// react/Countdown.tsx
 const CSS_HANDLES = [ 'countdown' ]
 ```
 
 Por fim, utilizamos o `useCssHandles` no nosso componente `Countdown` para pegarmos o estilo que precisamos do `countdown` e, além disso, trocando o `Fragment` por uma *tag* de `div`:
 
 ```diff
+// react/Countdown.tsx
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
     const [timeRemaining, setTime] = useState<TimeSplit>({
         hours: '00',
@@ -57,6 +60,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = D
 Por fim, precisamos utilizar tais estilos no nosso componente a fim de vermos a customização. Para isso, é necessário utilizar a prop `className` com as classes a serem utilizadas e o VTEX Tachyons, para os estilos globais. Além disso, também é necessário remover o `Fragment` importado do React para evitar erros no build.
 
 ```diff
+// react/Countdown.tsx
 const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
     const [timeRemaining, setTime] = useState<TimeSplit>({
         hours: '00',
