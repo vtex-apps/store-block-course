@@ -2,11 +2,15 @@
   "title": "VTEX Store Block course",
   "tagline": "Learn how to create custom blocks on VTEX Store Framework",
   "description": "Using React and Graphql, you can export your components as VTEX blocks",
-  "languages": ["pt"],
+  "languages": [
+    "pt"
+  ],
   "steps": [
     {
       "folder": "manifest",
-      "title": { "pt": "Conhecendo uma app VTEX IO" },
+      "title": {
+        "pt": "Conhecendo uma app VTEX IO"
+      },
       "description": {
         "pt": "Neste passo, você irá aprender como se organizam os arquivos em uma app VTEX IO e o que cada campo no manifest.json significa"
       },
@@ -14,7 +18,9 @@
     },
     {
       "folder": "component",
-      "title": { "pt": "Linkando uma app e utilizando-a no tema da loja" },
+      "title": {
+        "pt": "Linkando uma app e utilizando-a no tema da loja"
+      },
       "description": {
         "pt": "Após modificar algo no código da app, iremos linká-la e verificar o resultado na loja, após haver adicionado a app no tema"
       },
@@ -22,7 +28,9 @@
     },
     {
       "folder": "props-implementation",
-      "title": { "pt": "Tornando o bloco countdown customizável" },
+      "title": {
+        "pt": "Tornando o bloco countdown customizável"
+      },
       "description": {
         "pt": "Através da API de props do React, você aprendenrá como tornar seus blocos configuráveis com o Store Framework"
       },
@@ -30,7 +38,9 @@
     },
     {
       "folder": "countdown-implementation",
-      "title": { "pt": "Criando a funcionalidade do bloco countdown" },
+      "title": {
+        "pt": "Criando a funcionalidade do bloco countdown"
+      },
       "description": {
         "pt": "Utilizando os hooks do React.js, iremos finalizar a implementação do bloco countdown"
       },
@@ -86,7 +96,7 @@
       },
       "challenge": "none"
     },
-        {
+    {
       "folder": "defining-client",
       "title": {
         "pt": "Definindo um client no VTEX IO"
@@ -95,7 +105,26 @@
         "pt": "Para se comunicar com outras apps VTEX ou serviços externos, neste passo você aprenderá como criar um client"
       },
       "challenge": "none"
+    },
+    {
+      "folder": "creating-gif-component",
+      "title": {
+        "pt": "Criando um bloco GIF"
+      },
+      "description": {
+        "pt": "Mapeando interface para um novo componente"
+      },
+      "challenge": "none"
+    },
+    {
+      "folder": "react-apollo",
+      "title": {
+        "pt": "Conectando back-end e front-end"
+      },
+      "description": {
+        "pt": "Extraindo o GIF da API do Giphy"
+      },
+      "challenge": "none"
     }
-
   ]
 }
