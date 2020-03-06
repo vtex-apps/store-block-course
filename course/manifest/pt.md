@@ -5,14 +5,16 @@ Antes de começar, é necessário relembrar alguns conceitos importantes para um
 
 ## Manifesto
 
-### O campo de *vendor*
-  Define o nome da companhia. O vendor pode ser `vtex`, geralmente utilizado em casos de utilização de serviços nativos. Além disso, pode ser de parceiro ou de cliente. No caso de parceiro, geralmente são *apps* de distribuição, onde há alguns clientes, não necessariamente todos, interessados em consumir um produto. Por fim, no caso de clientes, o foco está em construir algo específico para o seu negócio.
+### *vendor*
+  Define o nome da conta VTEX que está desenvolvendo a *app*. Além disso, pode ser de parceiro ou de cliente. No caso de parceiro, geralmente são *apps* de distribuição, onde há alguns clientes, não necessariamente todos, interessados em consumir um produto. Por fim, no caso de clientes, o foco está em construir algo específico para o seu negócio.
 
-### O campo de *name*
+  >Vendor pode ser `vtex`, geralmente utilizado em casos de serviços nativos.
+
+### *name*
 
 Identifica o nome da aplicação.
 
-### O campo de *version*
+### *version*
 
 Identifica a versão atual da *app* e, no momento que o deploy é feito, há um *worker* chamado *housekeeper* responsável por atualizar a versão automaticamente para todas as contas. Para versionamento, utilizamos a especificação [Semantic Versioning 2.0.0](https://semver.org/). O formato do versionamento é bem definido, com o uso de *patches*, *minors* e *majors*. Segue um resumo da especificação:
 
@@ -24,13 +26,13 @@ No caso de *minors* e *patches*, o *housekeeper* atualiza a app automaticamente 
 
 Exemplo: Se uma API que está na versão `2.3.2` e uma nova funcionalidade não tiver *breaking changes*, você pode atualizar a versão para `2.4.0`.
 
-### O campo de *builders*
+### *builders*
 
 Define o comportamento de uma *app*. Para facilitar o desenvolvimento, abstraimos a configuração de software em diversas tecnologias utilizando o conceito de builders. Exemplo: em vez de criar uma app `react` do zero configurando `webpack` e `babel`, o desenvolvedor utiliza um builder de `react` que realiza todas as configurações de forma transparente para o desenvolvedor.
 
 Para cada *builder*, ao linkar a sua app, uma pasta correspondente é enviada à infraestrutura do VTEX IO e o *builder* transforma os arquivos de forma que o desenvolvedor só precise se preocupar com programar e não de configurar o servidor, webpack etc.
 
-### O campo de *dependencies*
+### *dependencies*
 
 Uma *app* pode depender de outras aplicações. Esse campo lista todas as dependências necessárias para o correto funcionamento da *app* em desenvolvimento.
 
