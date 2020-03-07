@@ -1,7 +1,7 @@
 # Criando a funcionalidade do bloco countdown
 
 ## Introdução
-Agora que já sabemos o básico do nosso componente e já o vimos funcionando, é hora de implementar efetivamente o contador. Para isso, precisamos utilizar um *hook* do React, chamado `useState`;
+Com o básico do nosso componente e funcional, é hora de implementar efetivamente o contador. Para isso, é preciso utilizar um *hook* do React, chamado `useState`;
 
 
 ## O *hook* `useState` 
@@ -24,81 +24,85 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
   })
 ```
 ## Atividades
-Em primeiro lugar, precisamos importar algumas coisas necessárias e a primeira delas é o *hook* em si. Para isso, no componente, adicione na linha de *import* a função `useState` do React:
-```tsx
-import React, { Fragment, useState } from 'react'
-```
-Além disso, precisamos importar o tipo `TimeSplit`:
-```tsx
-import { TimeSplit } from './typings/global'
-```
-Por fim, é necessário fazer o *import* da função que utilizar a função retornada do *hook* para a atualização do *state*, que chamamos de `tick` e se encontra na pasta `utils/`. Isso pode ser feito da seguinte forma:
-```tsx
-import { tick } from './utils/time'
-```
-Agora, precisamos alterar o componente em si, para adicionar o *hook* e a função que irá atualizar o estado. Voltando ao nosso componente Countdown, vamos adicionar o *hook*:
-```diff
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) => {
-+    const [timeRemaining, setTime] = useState<TimeSplit>({
-+        hours: '00',
-+        minutes: '00',
-+        seconds: '00'
-+    })
+1. Em primeiro lugar, é preciso importar algumas coisas necessárias e a primeira delas é o *hook* em si. Para isso, no componente, adicione na linha de *import* a função `useState` do React:
+    ```tsx
+    import React, { Fragment, useState } from 'react'
+    ```    ```tsx
+    import { tick } from './utils/time'
+    ```
+    Além disso, é necessário importar o tipo `TimeSplit`:
+    ```tsx
+    import { TimeSplit } from './typings/global'
+    ```
 
-    return (
-        <Fragment>
-            { targetDate }
-        </Fragment>
-    ) 
-}
-```
-Podemos observar algumas coisas com essa adição: `timeRemaining` é o estado atual, `setTime` é a função de atualização do estado, `TimeSplit` é o tipo e, por fim, o objeto que define as horas, os minutos e os segundos é o estado inicial do componente.
+    Por fim, é necessário fazer o *import* da função que utilizar a função retornada do *hook* para a atualização do *state*, que chamamos de `tick` e se encontra na pasta `utils/`. Isso pode ser feito da seguinte forma:
+    ```tsx
+    import { tick } from './utils/time'
+    ```
+2. Adicione o *hook* e a função que irá atualizar o estado. 
 
-Agora, precisamos adicionar uma `targetDate` padrão para o caso de não haver um valor inicial definido. Para tanto, vamos declarar uma macro que será utilizada como padrão:
+    Voltando ao nosso componente Countdown, vamos adicionar o *hook*:
+    ```diff
+    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) => {
+    +    const [timeRemaining, setTime] = useState<TimeSplit>({
+    +        hours: '00',
+    +        minutes: '00',
+    +        seconds: '00'
+    +    })
 
-```
-const DEFAULT_TARGET_DATE = (new Date('2020-03-10')).toISOString()
-```
+        return (
+            <Fragment>
+                { targetDate }
+            </Fragment>
+        ) 
+    }
+    ```
+    >É possível observar alguns detalhes com essa adição: `timeRemaining` é o estado atual, `setTime` é a função de atualização do estado, `TimeSplit` é o tipo e, por fim, o objeto que define as horas, os minutos e os segundos é o estado inicial do componente.
 
-Agora vamos utilizar a função `tick` e a macro `DEFAULT_TARGET_DATE` importada para fazermos o contador:
-```diff
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
-    const [timeRemaining, setTime] = useState<TimeSplit>({
-        hours: '00',
-        minutes: '00',
-        seconds: '00'
-    })
+3. Adicione uma `targetDate` padrão para o caso de não haver um valor inicial definido. Para isso, declare uma macro que será utilizada como padrão:
+    ```
+    const DEFAULT_TARGET_DATE = (new Date('2020-03-10')).toISOString()
+    ```
 
-+   tick(targetDate, setTime)
+4. Utilize a função `tick` e a macro `DEFAULT_TARGET_DATE` importada para fazer o contador:
+    ```diff
+    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
+        const [timeRemaining, setTime] = useState<TimeSplit>({
+            hours: '00',
+            minutes: '00',
+            seconds: '00'
+        })
 
-    return (
-        <Fragment>
-            { targetDate }
-        </Fragment>
-    ) 
-}
-```
+    +   tick(targetDate, setTime)
 
-Por fim, vamos alterar o *header* para que ele exiba o contador que criamos. Para isso, precisamos utilizar o estado atual `timeRemaining`:
-```diff
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
-    const [timeRemaining, setTime] = useState<TimeSplit>({
-        hours: '00',
-        minutes: '00',
-        seconds: '00'
-    })
+        return (
+            <Fragment>
+                { targetDate }
+            </Fragment>
+        ) 
+    }
+    ```
 
-   tick(targetDate, setTime)
+5. Altere o `h1` para que ele exiba o contador que criamos. Para isso, precisamos utilizar o estado atual `timeRemaining`:
+    ```diff
+    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
+        const [timeRemaining, setTime] = useState<TimeSplit>({
+            hours: '00',
+            minutes: '00',
+            seconds: '00'
+        })
 
-    return (
-        <Fragment>   
--            <h1>{ targetDate }</h1>
-+            <h1>{ `${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}` }</h1>
-        </Fragment>
-    ) 
-}
-```
-> A formatação da *string* do contador está no formato `HH:MM:SS`, feita através do *split* em `hours`, `minutes` e `seconds`.
+    tick(targetDate, setTime)
+
+        return (
+            <Fragment>   
+    -            <h1>{ targetDate }</h1>
+    +            <h1>{ `${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}` }</h1>
+            </Fragment>
+        ) 
+    }
+    ```
+    > A formatação da *string* do contador está no formato `HH:MM:SS`, feita através do *split* em `hours`, `minutes` e `seconds`.
 
 Assim, com essas alterações, veremos a atualização em tempo real do contador! O resultado na *home* é esse aqui:
 
