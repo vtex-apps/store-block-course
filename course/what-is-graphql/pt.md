@@ -1,9 +1,9 @@
 # O que é GraphQL?
 
 ## Introdução
-GraphQL é uma linguagem de query para APIs e uma aplicação server-side que executa queries a partir de um sistema de tipagens que você define para os seus dados. Não é uma tecnologia amarrada a nenhum banco de dados ou Storage.
+GraphQL é uma linguagem de query tipada para APIs. Com ele é possível ter uma completa descrição dos dados de uma API além de oferecer ao cliente total controle sobre o que deseja consumir. GraphQL não está relacionado a nenhuma tecnologia de storage ou banco de dados.
 
-Um serviço GraphQL funciona a partir de um *schema* que  contém tipos que o desenvolvedor define e campos contidos nesses tipos. O desenvolvedor define que funções vão responder cada um dos tipos. Exemplo: um serviço GraphQL hipotético que diz qual o usuário está logado, assim como os pedidos daquele usuário poderia ser feito dessa forma:
+Um serviço GraphQL funciona a partir de um *schema*, que representa uma árvore de tipos em que as raízes são sempre uma `Query` ou `Mutation`. O desenvolvedor define que funções vão responder cada um dos tipos. Exemplo: um serviço GraphQL hipotético que diz qual o usuário está logado, assim como os pedidos daquele usuário poderia ser feito dessa forma:
 
 ```graphql
 type Query {
@@ -28,17 +28,16 @@ const userOrders = (user) => user.getOrders()
 ```
 
 ### GraphQL no VTEX IO
-Conforme vimos anteriormente, no VTEX IO, builders são usados para abstrair configurações e complexidades no uso de tecnologias chave. No caso de aplicações back-end, assim como no caso de React, utilizamos [TypeScript](https://www.typescriptlang.org/) e oferecemos builders de `node` e `graphql` que são utilizados em conjunto.
+Conforme visto anteriormente, no VTEX IO, builders são usados para abstrair configurações e complexidades no uso de tecnologias chave. No caso de aplicações back-end, assim como no caso de React, utiliza-se [TypeScript](https://www.typescriptlang.org/) e são oferecidos *builders* de `node` e `graphql`, utilizados em conjunto.
 
-O builder de `graphql` é utilizado para criar o *schema* com seus respectivos tipos e campos. E o de `node` para criar as funções que resolvem os tipos e campos definidos no schema.
-Nessa etapa do curso veremos um exemplo de como esses dois builders se conectam.
-
+O *builder* de `graphql` é utilizado para criar o *schema* com seus respectivos tipos e campos. Já o de `node` para criar as funções que resolvem os tipos e campos definidos no schema.
+Nesta etapa do curso será visto um exemplo de como esses dois *builders* se conectam.
 
 ## Definição de *Schema*
 
-Falando de forma simplificada, um *schema* GraphQL é composto de dois tipos básicos `Query` e `Mutation`. Convencionou-se que **queries** são utilizadas para realização de *fetching* de dados. Enquanto as **mutations** são utilizadas em casos que ocorrem efeitos colaterais ao realizar uma operação, por exemplo alterar algum campo em um banco de dados ou escrever em alguma API.
+Como dito anteriormente, em um *schema* GraphQL existem dois tipos básicos: `Query` e `Mutation`. Convencionou-se que **queries** são utilizadas para busca de dados (seria equivalente ao verbo HTTP GET). Enquanto as **mutations** são utilizadas em casos que ocorrem efeitos colaterais ao realizar uma operação, por exemplo alterar algum campo em um banco de dados ou escrever em alguma API (seria equivalente aos verbos HTTP: POST, PUT, PATCH, DELETE).
 
-Para o escopo desse curso, só iremos construir queries, mas o conceito é exatamente o mesmo. O que muda é a semântica da função que resolve o campo.
+Para o escopo desse curso, só serão construídas queries, mas o conceito é exatamente o mesmo. O que muda é a semântica da função que resolve o campo.
 
 Vamos adicionar um campo no tipo `Query` chamado `helloWorld` que será do tipo `String`.
 
@@ -71,7 +70,16 @@ Agora, se você acessar novamente o GraphiQL e realizar a query abaixo, verá qu
 
 ## Atividade
 
-Agora, nos voltaremos à nossa aplicação de countdown com gif. Sua tarefa será criar o campo `giphy` no schema GraphQL. Esse campo receberá como argumento um `term` do tipo `String` que irá em uma atividade futura ser utilizado para realizar uma busca na API do `giphy` pelo termo passado como argumento.
+Agora, nos voltaremos à nossa aplicação de countdown com gif. 
 
-Feito isso, seu objetivo é observar no GraphiQL o novo campo adicionado.
+1. Crie o campo `giphy` no schema GraphQL. Esse campo receberá como argumento um `term` do tipo `String` que irá em uma atividade futura ser utilizado para realizar uma busca na API do `giphy` pelo termo passado como argumento.
 
+```diff
+//
+type Query {
+   helloWorld: String
++  gif(term: String): String
+}
+```
+
+2. Feito isso, veja no GraphiQL o novo campo adicionado.
