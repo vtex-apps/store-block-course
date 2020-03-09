@@ -47,3 +47,6 @@ export default new Service<Clients, {}>({
 Após isso, **salve o arquivo** e veja o output do `vtex link`. Caso seu GraphiQL já esteja aberto, você poderá refazer a query e verificar se o resultado esperado foi obtido. 
 
 É importante notar que **o tipo de dado** retornado pelo seu _resolver_ deve casar com o **tipo definido no schema.graphql**, senão o GraphQL não vai retornar o valor corretamente. Como nosso campo `gif` está tipado para retornar uma `String` e retornamos `'it works!'`, está tudo bem!
+
+![image](https://user-images.githubusercontent.com/19495917/76252534-ab92e980-6227-11ea-9017-788720c422e1.png)
+
