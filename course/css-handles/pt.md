@@ -1,7 +1,7 @@
 # Modificando o bloco countdown para ter um estilo configurável
 
 ## Introdução
-Agora que temos uma *app* funcional, que tal adicionarmos um pouco de customização? Nessa etapa, você irá aprender conceitos básicos a respeito de CSS *handles* e Tachyons para, em seguida, customizar sua *app*. Vamos lá?
+Com uma *app* funcional, que tal adicionar um pouco de customização? Nessa etapa, você irá aprender conceitos básicos a respeito de CSS *handles* e Tachyons para, em seguida, customizar sua *app*.
 
 
 ## CSS Handles
@@ -18,69 +18,70 @@ O Tachyons é um *framework* para CSS funcional. Diferentemente de outros *frame
 Resumindo, a ideia do CSS funcional é que, ao invés de escrever grandes classes, você escreve pequenas. Essas pequenas classes possuem propriedades únicas e imutáveis, podendo ser combinadas para formar componentes maiores no HTML.
 
 ## Atividade
-Em primeiro lugar, precisamos importar o `useCssHandles`. Para isso, volte ao `Countdown.tsx` e faça o *import*:
+1. Importe o `useCssHandles`. Para isso, volte ao `Countdown.tsx` e faça o *import*:
 
-```tsx
-// react/Countdown.tsx
-import { useCssHandles } from 'vtex.css-handles'
-```
+    ```tsx
+    // react/Countdown.tsx
+    import { useCssHandles } from 'vtex.css-handles'
+    ```
 
-Além disso, precisamos definir a macro do estilo que iremos puxar do handles. No nosso caso, o `countdown`:
+2. Além disso, defina a constante do estilo que iremos puxar do handles. Neste caso, o `countdown`:
 
-```tsx
-// react/Countdown.tsx
-const CSS_HANDLES = [ 'countdown' ]
-```
+    ```tsx
+    // react/Countdown.tsx
+    const CSS_HANDLES = [ 'countdown' ]
+    ```
 
-Por fim, utilizamos o `useCssHandles` no nosso componente `Countdown` para pegarmos o estilo que precisamos do `countdown` e, além disso, trocando o `Fragment` por uma *tag* de `div`:
+3. Utilize o `useCssHandles` no componente `Countdown` para "pegar" o estilo que necessário do `countdown` e, além disso, troque o `Fragment` por uma *tag* de `div`:
 
-```diff
-// react/Countdown.tsx
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
-    const [timeRemaining, setTime] = useState<TimeSplit>({
-        hours: '00',
-        minutes: '00',
-        seconds: '00'
-    })
+    ```diff
+    // react/Countdown.tsx
+    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
+        const [timeRemaining, setTime] = useState<TimeSplit>({
+            hours: '00',
+            minutes: '00',
+            seconds: '00'
+        })
 
-+    const handles = useCssHandles(CSS_HANDLES)
+    +    const handles = useCssHandles(CSS_HANDLES)
 
-    tick(targetDate, setTime)
+        tick(targetDate, setTime)
 
-    return (
-        <Fragment>
-            <h1>
-                { `${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}` }
-            </h1>
-        </Fragment>
-    )
-}
-```
+        return (
+            <Fragment>
+                <h1>
+                    { `${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}` }
+                </h1>
+            </Fragment>
+        )
+    }
+    ```
 
-Por fim, precisamos utilizar tais estilos no nosso componente a fim de vermos a customização. Para isso, é necessário utilizar a prop `className` com as classes a serem utilizadas e o VTEX Tachyons, para os estilos globais. Além disso, também é necessário remover o `Fragment` importado do React para evitar erros no build.
+4. Por fim, é preciso utilizar tais estilos no componente a fim de vermos a customização. Para isso, é necessário utilizar a prop `className` com as classes a serem utilizadas e o VTEX Tachyons, para os estilos globais. Além disso, remova o `Fragment` importado do React para evitar erros no build.
 
-```diff
-// react/Countdown.tsx
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
-    const [timeRemaining, setTime] = useState<TimeSplit>({
-        hours: '00',
-        minutes: '00',
-        seconds: '00'
-    })
+    ```diff
+    // react/Countdown.tsx
+    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
+        const [timeRemaining, setTime] = useState<TimeSplit>({
+            hours: '00',
+            minutes: '00',
+            seconds: '00'
+        })
 
-    const handles = useCssHandles(CSS_HANDLES)
+        const handles = useCssHandles(CSS_HANDLES)
 
-    tick(targetDate, setTime)
+        tick(targetDate, setTime)
 
-    return (
-        <Fragment>
-+           <div className={`${handles.countdown} t-heading-2 fw3 w-100 c-muted-1 db tc`}>
-+                {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
-+           </div>
-        </Fragment>
-    )
-}
-```
+        return (
+            <Fragment>
+    +           <div className={`${handles.countdown} t-heading-2 fw3 w-100 c-muted-1 db tc`}>
+    +                {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
+    +           </div>
+            </Fragment>
+        )
+    }
+    ```
+
 Vamos ver o resultado?
 
 ![image](https://user-images.githubusercontent.com/19495917/75475280-457cab80-5977-11ea-938e-d3c2b532e891.png)
