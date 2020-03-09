@@ -6,7 +6,7 @@ Agora que temos um `h1`, é possível utilizá-lo para mostrar informações que
 ## Conceitos
 * O Hook
 
-    *Hooks* são funções que permitem conexão aos recursos de ciclo de vida do React. Eles não funcionam dentro de classes e permitem o uso do React com componentes funcionais.
+    *Hooks* são APIs que permitem utilizar funcionalidades de React. Sem *hooks*, uma componente funcional em React, é simplesmente uma função que retorna uma tag escrita em `tsx`. *Hooks* permitem entre outras coisas, armazenar estado entre diferentes renderizações e executar efeitos colaterais. Obs.: eles não funcionam dentro de classes.
     
     Exemplo:
     ```tsx
@@ -21,7 +21,9 @@ Agora que temos um `h1`, é possível utilizá-lo para mostrar informações que
     ```
 
 * Definição das configurações de um bloco
-    
+
+    No VTEX IO, oferecemos uma ferramenta de gestão de conteúdo da loja, chamada Site Editor. Com essa ferramenta, encontrada no admin da VTEX, podemos alterar imagens e texto de componentes sem precisar modificar o código da loja.
+
     Para que o seu bloco possa aceitar configurações do usuário, é utilizado um [JSON *schema*](https://json-schema.org/), que irá gerar um formulário para o Site Editor. Abaixo é possível ver um exemplo de *schema*:
     ```js
     // react/Countdown.tsx
@@ -32,7 +34,7 @@ Agora que temos um `h1`, é possível utilizá-lo para mostrar informações que
         properties: {},
     }
     ```
-    Tal *schema* é responsável, inclusive por definir os textos presentes no formulário em si.
+    O *schema* também é responsável por definir os textos que serão vistos pelo usuário do admin no formulário.
 
 ## Atividade
 
@@ -54,11 +56,11 @@ Agora que temos um `h1`, é possível utilizá-lo para mostrar informações que
     ```tsx
     // react/Countdown.tsx
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) => {
-        return (
-            <Fragment>
-                <h1>{ targetDate }</h1>
-            </Fragment>
-        ) 
+      return (
+        <Fragment>
+          <h1>{ targetDate }</h1>
+        </Fragment>
+      ) 
     }
     ```
 
@@ -66,17 +68,17 @@ Agora que temos um `h1`, é possível utilizá-lo para mostrar informações que
     ```diff
     // react/Countdown.tsx
     Countdown.schema = {
-        title: 'countdown.title',
-        description: 'countdown.description',
-        type: 'object',
-        properties: {
-    +        targetDate: {
-    +            title: 'Sou um título',
-    +            description: 'Sou uma descrição',
-    +            type: 'string',
-    +            default: null,
-    +        },
-        },
+      title: 'countdown.title',
+      description: 'countdown.description',
+      type: 'object',
+      properties: {
+    +   targetDate: {
+    +      title: 'Sou um título',
+    +      description: 'Sou uma descrição',
+    +      type: 'string',
+    +      default: null,
+    +   },
+      },
     }
     ```
 Pronto! Agora você pode alterar o conteúdo do texto através do *Site Editor*. Vamos ver como ficou? Vá até o *Site Editor* e clique em `Countdown` no menu lateral, isso abrirá o menu de edição da *app*, que será como a imagem abaixo.

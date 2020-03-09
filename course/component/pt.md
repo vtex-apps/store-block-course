@@ -14,51 +14,50 @@ Neste curso, utilizaremos somente `typescript`. Caso você não tenha familiarid
 Como você já tem familiaridade com o Store Framework, já sabe que montamos páginas na nossa loja ao compor blocos em JSON, como `shelf` e  `sku-selector`. Nesta etapa você irá criar um bloco que será utilizado no tema da *home page* de sua loja.
 
 ## *Boilerplate*
-Quando você estiver desenvolvendo seu próprio bloco, você pode começar por nosso template de [react](https://github.com/vtex-apps/react-app-template).
+Quando você estiver desenvolvendo seu próprio bloco, você pode começar por nosso template de [store component](https://github.com/vtex-apps/store-component-template).
 
 ## Atividade
 1. No *template* clonado, vá para o arquivo `Countdown.tsx`:
 
     ```tsx
     //react/Countdown.tsx
-    import React, { Fragment } from 'react'
+    import React from 'react'
 
     interface CountdownProps {}
 
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
-    return <Fragment></Fragment>
+      return <div></div>
     }
 
     Countdown.schema = {
-    title: 'editor.countdown.title',
-    description: 'editor.countdown.description',
-    type: 'object',
-    properties: {},
+      title: 'editor.countdown.title',
+      description: 'editor.countdown.description',
+      type: 'object',
+      properties: {},
     }
 
     export default Countdown
-
     ```
 
-2. Adicione uma *tag* `h1` dentro do nosso componente e declarar o bloco linkar a *app* no nosso tema.
+2. Para ver o seu componente na *home page*, linke o tema em um terminal e a app em outro terminal. Adicione uma *tag* `h1` dentro do nosso componente e declarar o bloco no tema.
     ```diff
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
-    -    return <Fragment></Fragment>
+    -    return <div></div>
     +    return (
-    +      <Fragment>
+    +      <div>
     +        <h1>Teste Countdown</h1>
-    +      </Fragment>
+    +      </div>
     +    )
     }
     ```
 
-    >Para que o componente seja visto funcionando na loja, é preciso linkar a *app* no tema. Em primeiro lugar, será necessário ter um tema para adicionar a *app*, para isso, será necessário cloná-lo do *Github*. Nesse curso, o `store-theme` será utilizado. Para clonar o repositório, basta executar o seguinte comando:
+    >Para que o componente seja visto funcionando na loja, é preciso declarar o bloco que a *app* define no tema. Em primeiro lugar, será necessário ter um tema para adicionar a *app*, para isso, será necessário cloná-lo do *Github*. Nesse curso, o `store-theme` será utilizado. Para clonar o repositório, basta executar o seguinte comando:
 
     ```
     git clone https://github.com/vtex-apps/store-theme.git
     ```
 
-3. Com o repositório já clonado, vá até a pasta com `cd store-theme`; linke a *app* no seu *workspace*. Em primeiro lugar, para a *app* ser utilizada no tema, é preciso adicioná-la às suas dependências, que como visto anteriormente, ficam no `manifest.json`.
+3. Com o repositório já clonado, vá até a pasta com `cd store-theme`; linke o tema e a *app* no seu *workspace*. Para que a *app* seja utilizada no tema, é preciso adicioná-la às suas dependências, que como visto anteriormente, ficam no `manifest.json`.
     ```
     vtex link
     ```
@@ -87,7 +86,7 @@ Quando você estiver desenvolvendo seu próprio bloco, você pode começar por n
         ...
     }
     ```
-Após o login, o resultado esperado é encontrar um *header* na home da sua loja, como a imagem abaixo:
+O resultado esperado é encontrar um *header* na home da sua loja, como a imagem abaixo:
 
 ![image](https://user-images.githubusercontent.com/19495917/74960422-11d7d980-53eb-11ea-9d32-f0aa1340f0af.png)
 
