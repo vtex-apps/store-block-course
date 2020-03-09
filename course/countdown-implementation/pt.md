@@ -6,15 +6,21 @@ Com o básico do nosso componente e funcional, é hora de implementar efetivamen
 
 ## O *hook* `useState` 
 
-É chamado dentro de um componente funcional para adicionar alguns *states* locais. Além disso, vale ressaltar que o React irá preservar esse *state* entre renderizações. O `useState` retorna um par: o valor do estado atual e uma função para atualizá-lo.
+É chamado dentro de um componente funcional para atualizar e consumir o *state* de um componente. O *state* simboliza o estado atual de um componente. 
+
+>O `useState` retorna um par: o valor do estado atual e uma função para atualizá-lo.
 
 Voltando ao exemplo apresentado na etapa anterior, podemos mostrar na prática os conceitos abordados anteriormente. Para lembrar do exemplo, veja o código abaixo:
 ```tsx
 const [count, setCount] = useState(0);
 ```
-Como mencionado anteriormente, o `useState` retorna um par: `count` é o estado atual e `setCount` é uma função para atualizá-lo. Além disso, `useState(0)` está apenas iniciando o estado com 0.
 
-Agora, apresentados os conceitos, vamos finalmente implementar o contador do nosso componente!
+No trecho acima é importante observar três coisas: 
+* Na variável `count`, é possível consumir o estado atual;
+* `setCount` é uma função para atualizá-lo;
+* `0` é o valor do estado inicial
+
+
 
 ```tsx
 const [timeRemaining, setTime] = useState<TimeSplit>({
@@ -27,21 +33,19 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
 1. Em primeiro lugar, é preciso importar algumas coisas necessárias e a primeira delas é o *hook* em si. Para isso, no componente, adicione na linha de *import* a função `useState` do React:
     ```tsx
     import React, { Fragment, useState } from 'react'
-    ```    ```tsx
-    import { tick } from './utils/time'
-    ```
+    ```    
     Além disso, é necessário importar o tipo `TimeSplit`:
     ```tsx
     import { TimeSplit } from './typings/global'
     ```
 
-    Por fim, é necessário fazer o *import* da função que utilizar a função retornada do *hook* para a atualização do *state*, que chamamos de `tick` e se encontra na pasta `utils/`. Isso pode ser feito da seguinte forma:
+    Por fim, é oferecida uma função `util` que atualizará a contagem regressiva:
     ```tsx
     import { tick } from './utils/time'
     ```
-2. Adicione o *hook* e a função que irá atualizar o estado. 
+2. Adicione o *hook* de atualização de estado (`useState`)
 
-    Voltando ao nosso componente Countdown, vamos adicionar o *hook*:
+    Voltando ao nosso componente `Countdown`, vamos adicionar o *hook*:
     ```diff
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) => {
     +    const [timeRemaining, setTime] = useState<TimeSplit>({
@@ -57,14 +61,14 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
         ) 
     }
     ```
-    >É possível observar alguns detalhes com essa adição: `timeRemaining` é o estado atual, `setTime` é a função de atualização do estado, `TimeSplit` é o tipo e, por fim, o objeto que define as horas, os minutos e os segundos é o estado inicial do componente.
+    >É possível observar alguns detalhes com essa adição: `timeRemaining` é o estado atual, `setTime` é a função de atualização do estado, `TimeSplit` é o tipo e, por fim, o objeto `{hours: '00', minutes: '00', seconds: '00'}` é o estado inicial do componente.
 
-3. Adicione uma `targetDate` padrão para o caso de não haver um valor inicial definido. Para isso, declare uma macro que será utilizada como padrão:
+3. Adicione uma `targetDate` padrão para o caso de não haver um valor inicial definido. Para isso, declare uma constante que será utilizada como padrão:
     ```
-    const DEFAULT_TARGET_DATE = (new Date('2020-03-10')).toISOString()
+    const DEFAULT_TARGET_DATE = (new Date('2020-03-11')).toISOString()
     ```
 
-4. Utilize a função `tick` e a macro `DEFAULT_TARGET_DATE` importada para fazer o contador:
+4. Utilize a função `tick` e a constante `DEFAULT_TARGET_DATE`  para fazer o contador:
     ```diff
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
         const [timeRemaining, setTime] = useState<TimeSplit>({
@@ -109,7 +113,7 @@ Assim, com essas alterações, veremos a atualização em tempo real do contador
 ![image](https://user-images.githubusercontent.com/19495917/75474406-b3c06e80-5975-11ea-82ec-89ab27504873.png)
 
 
-E veja nosso contador funcionando:
+E veja o contador funcionando:
 
 <img src="https://user-images.githubusercontent.com/19495917/75474511-e0748600-5975-11ea-825d-7e9a20f95362.gif" width="500" height="320"/>
 
