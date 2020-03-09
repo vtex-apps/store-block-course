@@ -1,7 +1,7 @@
 # Práticas de internacionalização no VTEX IO
 
 ## Introdução
-Agora que já renderizamos nossos blocos customizados na loja, devemos aprender a **internacionalizar** o conteúdo que apresentamos. 
+Com o bloco customizado na loja, devemos aprender a **internacionalizar** o conteúdo apresentado. 
 
 É importante lembrar que os blocos devem sempre seguir boas práticas de localização, e **não devem mostrar strings _hardcoded_**, mas sim sensíveis a linguagem que a loja opera.
 
@@ -93,35 +93,35 @@ Após isso, para **renderizar nosso título** devemos usar o componente `Formatt
       )
     }
     ```
-    Note que utilizamos três *handles*: *container*, *countdown* e *title*. Dessa forma, lembre-se de declará-los na constante `CSS_HANDLES`, vista na etapa anterior:
+    Note que são utilizados três *handles*: *container*, *countdown* e *title*. Dessa forma, lembre-se de declará-los na constante `CSS_HANDLES`, vista na etapa anterior:
     ```tsx
     const CSS_HANDLES = ['container', 'countdown', 'title']
     ```
 
-    Por fim, precisamos adicionar a *prop* de `title` no *schema*:
-    ```diff
-    Countdown.schema = {
-      title: 'editor.countdown.title',
-      description: 'editor.countdown.description',
-      type: 'object',
-      properties: {
-    +    title: {
-    +      title: 'Sou um título',
-    +      type: 'string',
-    +      default: null,
-    +    },
-        targetDate: {
-          title: 'Sou um título',
-          description: 'Sou uma descrição',
-          type: 'string',
-          default: null,
+  5. Por fim, é preciso adicionar a *prop* de `title` no *schema*:
+      ```diff
+      Countdown.schema = {
+        title: 'editor.countdown.title',
+        description: 'editor.countdown.description',
+        type: 'object',
+        properties: {
+      +    title: {
+      +      title: 'Sou um título',
+      +      type: 'string',
+      +      default: null,
+      +    },
+          targetDate: {
+            title: 'Sou um título',
+            description: 'Sou uma descrição',
+            type: 'string',
+            default: null,
+          },
         },
-      },
-    }
-    ```
+      }
+      ```
 
-    Pronto! Agora, para testar sua loja em outros idiomas basta adicionar a *query string* `/?cultureInfo=pt-br` na URL, por exemplo. Ao utilizar tal URL, o resultado esperado é esse aqui:
+Pronto! Agora, para testar sua loja em outros idiomas basta adicionar a *query string* `/?cultureInfo=pt-br` na URL, por exemplo. Ao utilizar tal URL, o resultado esperado é esse aqui:
 
-    ![image](https://user-images.githubusercontent.com/19495917/75484759-23d7f000-5988-11ea-8b0a-63a5fce4ea7e.png)
+![image](https://user-images.githubusercontent.com/19495917/75484759-23d7f000-5988-11ea-8b0a-63a5fce4ea7e.png)
 
 
