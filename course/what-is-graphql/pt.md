@@ -47,7 +47,9 @@ type Query {
 }
 ```
 
-Ao linkar sua app, você terá acesso a uma URL contendo um link para uma IDE de GraphQL chamada [GraphiQL](https://graphql.org/swapi-graphql), esse ambiente permite que você teste seu schema de forma rápida, sem precisar desenvolver um cliente em código (pense nele como um Postman GraphQL)
+Ao linkar sua app, você terá acesso a uma URL contendo um link para uma IDE de GraphQL (pode ser visto na imagem abaixo) chamada [GraphiQL](https://graphql.org/swapi-graphql), esse ambiente permite que você teste seu schema de forma rápida, sem precisar desenvolver um cliente em código (pense nele como um Postman GraphQL)
+
+![image](https://user-images.githubusercontent.com/19495917/76249814-daf32780-6222-11ea-8bd7-a2838ab5ecc2.png)
 
 Esse campo precisa ter uma função que irá resolvê-lo na pasta `node`. É o que iremos fazer agora.
 
@@ -72,7 +74,7 @@ Agora, se você acessar novamente o GraphiQL e realizar a query abaixo, verá qu
 
 Agora, nos voltaremos à nossa aplicação de countdown com gif. 
 
-1. Crie o campo `giphy` no schema GraphQL. Esse campo receberá como argumento um `term` do tipo `String` que irá em uma atividade futura ser utilizado para realizar uma busca na API do `giphy` pelo termo passado como argumento.
+1. Crie o campo `gif` no schema GraphQL. Esse campo receberá como argumento um `term` do tipo `String` que irá em uma atividade futura ser utilizado para realizar uma busca na API do `gif` pelo termo passado como argumento.
 
 ```diff
 //
@@ -82,4 +84,8 @@ type Query {
 }
 ```
 
-2. Feito isso, veja no GraphiQL o novo campo adicionado.
+![image](https://user-images.githubusercontent.com/19495917/76251927-a71a0100-6226-11ea-98bc-7780cf485826.png)
+
+
+
+

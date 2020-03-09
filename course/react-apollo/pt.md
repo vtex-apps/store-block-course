@@ -77,3 +77,11 @@ O time do **Apollo Client** disponibiliza uma integração nativa com React, por
         },
     }
     ```
+
+Resultado na *home*:
+
+![image](https://user-images.githubusercontent.com/19495917/76253010-99657b00-6228-11ea-8766-bdd5882c1a49.gif)
+
+Resultado no *Site Editor*:
+
+![image](https://user-images.githubusercontent.com/19495917/76253108-cdd93700-6228-11ea-964c-2c238edc1afe.png)
