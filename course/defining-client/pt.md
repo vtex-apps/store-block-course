@@ -1,7 +1,7 @@
 # Definindo um *client* no VTEX IO
 
 ## Introdução
-Já vimos como criamos um _resolver_ GraphQL, e agora iremos continuar com o desenvolvimento da nossa funcionalidade. Comumente, a implementação de uma funcionalidade em nossa *app* requere a **comunicação com outros serviços**, sejam externos ou internos (outras *apps* VTEX), e, para realizar essa comunicação, deveremos **criar um *client***. Um *client* é uma entidade em nosso serviço encarregado de **realizar requisições**, e ele é criado reutilizando *clients* exportados pelo [`node-vtex-api`](https://github.com/vtex/node-vtex-api).
+Já foi visto como criar um _resolver_ GraphQL; agora continuaremos com o desenvolvimento da nossa funcionalidade. Comumente, a implementação de uma funcionalidade em nossa *app* requere a **comunicação com outros serviços**, sejam externos ou internos (outras *apps* VTEX), e, para realizar essa comunicação, é necessário **criar um *client***. Um *client* é uma entidade em nosso serviço encarregado de **realizar requisições**, e ele é criado reutilizando *clients* exportados pelo [`node-vtex-api`](https://github.com/vtex/node-vtex-api).
 
 Você pode ver um exemplo de um *client* criado para se comunicar com um serviço externo na app [`service-example`](https://github.com/vtex-apps/service-example/blob/ffd7a86f928f9931a9353215eebb764cb3150695/node/clients/status.ts).
 
@@ -24,7 +24,7 @@ Após a criação de um *client*, é necessário **adicioná-lo na exportação 
 
 ### Alterando nosso *resolver*
 
-1. Agora, voltando ao *resolver*, podemos utilizar `ctx.giphy.translate` para finalizar a implementação da funcionalidade. Retorne a chamada deste método, informando o termo passado como parâmetro para o _resolver_. Para isso, precisamos voltar ao arquivo `giphy.ts` e modificar nossa função, que  irá utilizar o método `translateGif`. Dessa forma, definimos nosso *resolver*:
+1. Agora, voltando ao *resolver*, é possível utilizar `ctx.giphy.translate` para finalizar a implementação da funcionalidade. Retorne a chamada deste método, informando o termo passado como parâmetro para o _resolver_. Para isso, precisamos voltar ao arquivo `giphy.ts` e modificar nossa função, que  irá utilizar o método `translateGif`. Dessa forma, definimos nosso *resolver*:
     ```ts
     // node/resolvers/giphy.ts
     export const gif = async (

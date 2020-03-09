@@ -1,9 +1,9 @@
 # Criando um bloco GIF
 
 ## Introdução
-Agora, vamos criar um bloco que irá ser utilizado com um GIF. Porém, como ainda não fizemos a conexão para fazermos uma *query* e, portanto, uma conexão com o *back-end*, esse bloco terá um *placeholder* no lugar do GIF (não se preocupe, adicionaremos o GIF na próxima etapa!).
+Agora, vamos criar um bloco que irá ser utilizado com um GIF. Porém, como ainda não foi feita a conexão para fazer uma *query* e, portanto, uma conexão com o *back-end*, esse bloco terá um *placeholder* no lugar do GIF (não se preocupe, o GIF será adicionado na próxima etapa!).
 
-A maioria dos conceitos abordados nessa etapa já foram vistos anteriormente, como a criação de um novo componente React, a adição de uma interface e a mudança do tema. Vamos lá!
+A maioria dos conceitos abordados nessa etapa já foram vistos anteriormente, como a criação de um novo componente React, a adição de uma interface e a mudança do tema.
 
 ## Atividade
 
@@ -46,9 +46,9 @@ A maioria dos conceitos abordados nessa etapa já foram vistos anteriormente, co
     Lembrando que o que está definido no *schema* é referente às *strings* internacionalizadas presentes no *Site Editor*.
 
 
-2.  Agora que temos o esqueleto do nosso bloco gif, precisamos adicionar a interface equivalente a ele, como fizemos para o contador e para o título. Vá ao arquivo `interfaces.json`, na pasta `/store` e adicione a interface equivale ao bloco que você acabou de criar. Não se esqueça de que o campo `component` deve ter o mesmo nome do componente React em si.
+2.  Agora que temos o esqueleto do nosso bloco gif, é preciso adicionar a interface equivalente a ele, como foi feito para o contador e para o título. Vá ao arquivo `interfaces.json`, na pasta `/store` e adicione a interface equivale ao bloco que você acabou de criar. Não se esqueça de que o campo `component` deve ter o mesmo nome do componente React em si.
 
-3. Por fim, precisamos adicionar nosso bloco ao tema, através da *home* da loja. Para isso, vamos ao `store-theme`, na pasta `/store/blocks/home` e, no arquivo `home.jsonc`, adicionamos o bloco `gif`. 
+3. Por fim, é necessário adicionar nosso bloco ao tema, através da *home* da loja. Para isso, vamos ao `store-theme`, na pasta `/store/blocks/home` e, no arquivo `home.jsonc`, adicione o bloco `gif`. 
 
 O resultado esperado nesse passo é:
 
