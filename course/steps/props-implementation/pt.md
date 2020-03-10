@@ -57,9 +57,9 @@ Agora que temos um `h1`, é possível utilizá-lo para mostrar informações que
     // react/Countdown.tsx
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) => {
       return (
-        <Fragment>
+        <div>
           <h1>{ targetDate }</h1>
-        </Fragment>
+        </div>
       ) 
     }
     ```
