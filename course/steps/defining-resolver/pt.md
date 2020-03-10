@@ -19,12 +19,12 @@ const resolver = (parent, args, context) => {};
 
 ## Atividade
 
-1. Na pasta `node/resolvers`, crie um arquivo chamado `giphy.ts`, nele você implementará o *resolver* do campo gif. A princípio, apenas só é desejável ver que está tudo funcionando, então o *resolver* irá apenas retornar uma *string* "it works!": 
+1. Na pasta `node/resolvers`, crie um arquivo chamado `giphy.ts`, nele você implementará o *resolver* do campo gif. A princípio, apenas só é desejável ver que está tudo funcionando, então o *resolver* irá apenas retornar uma *string* "it works!":
     ```ts
     // node/resolvers/giphy.ts
     export const gif = (_: any,
       __: any,
-      ___: Context 
+      ___: Context
     ) => { return 'it works!' }
     ```
 
@@ -37,18 +37,17 @@ const resolver = (parent, args, context) => {};
         resolvers: {
           Query: {
             helloWorld,
-    +       gif 
+    +       gif
           },
         },
       },
     })
     ```
 
-3. Após isso, **salve o arquivo** e veja o output do `vtex link`. Caso seu GraphiQL já esteja aberto, você poderá refazer a query e verificar se o resultado esperado foi obtido. 
+3. Após isso, **salve o arquivo** e veja o output do `vtex link`. Caso seu GraphiQL já esteja aberto, você poderá refazer a query e verificar se o resultado esperado foi obtido.
 
-É importante notar que **o tipo de dado** retornado pelo seu _resolver_ deve casar com o **tipo definido no schema.graphql**, senão o GraphQL não vai retornar o valor corretamente. Como nosso campo `gif` está tipado para retornar uma `String` e retornamos `'it works!'`, está tudo bem!
+É importante notar que **o tipo de dado** retornado pelo seu _resolver_ deve casar com o **tipo definido no schema.graphql**, senão o GraphQL não vai retornar o valor corretamente. Como nosso campo `gif` está tipado para retornar uma `String` e retornamos `'it works!'`, tudo funciona como o esperado!
 
-É importante notar que **o tipo de dado** retornado pelo seu _resolver_ deve casar com o **tipo definido no schema.graphql**, senão o GraphQL não vai retornar o valor corretamente. Como nosso campo `gif` está tipado para retornar uma `String` e retornamos `'it works!'`, está tudo bem!
 
 ![image](https://user-images.githubusercontent.com/19495917/76252534-ab92e980-6227-11ea-9017-788720c422e1.png)
 
