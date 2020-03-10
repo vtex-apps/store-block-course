@@ -1,3 +1,3 @@
-# This is a sample course
+# Learn how to create custom blocks on VTEX Store Framework
 
-And this file shows the course details
+Using React, Typescript, Node.js and GraphQL, you'll learn what it takes to create magnificent custom experiences for VTEX IO Stores!
