@@ -19,7 +19,11 @@ const resolver = (parent, args, context) => {};
 
 ## Atividade
 
+<<<<<<< HEAD
 1. Na pasta `node/resolvers`, crie um arquivo chamado `giphy.ts`, nele você implementará o *resolver* do campo gif. A princípio, apenas só é desejável ver que está tudo funcionando, então o *resolver* irá apenas retornar uma *string* "it works!":
+=======
+1. Crie a pasta `node/resolvers` e nela um arquivo chamado `giphy.ts`, nele você implementará o *resolver* do campo gif. A princípio, apenas só é desejável ver que está tudo funcionando, então o *resolver* irá apenas retornar uma *string* "it works!": 
+>>>>>>> fixing some steps based on students' feedback
     ```ts
     // node/resolvers/giphy.ts
     export const gif = (_: any,
@@ -30,7 +34,7 @@ const resolver = (parent, args, context) => {};
 
 2. No arquivo `node/index.ts`, há um objeto exportado com as funções *resolvers*, adicione um campo chamado `gif`, **este nome deve ser igual ao nome do campo definido no `schema.graphql`**.
     ```diff
-    // node/resolvers/index.ts
+    // node/index.ts
     export default new Service<Clients, {}>({
       clients,
       graphql: {

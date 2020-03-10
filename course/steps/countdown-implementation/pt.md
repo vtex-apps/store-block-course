@@ -111,6 +111,8 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
     ```
     > A formatação da *string* do contador está no formato `HH:MM:SS`, feita através do *split* em `hours`, `minutes` e `seconds`.
 
+Agora, precisamos definir uma data no *Site Editor* para que o contador tenha um valor de data final para o contador. Caso você não faça isso, o valor exibido será `aN:aN:aN`.
+
 Assim, com essas alterações, veremos a atualização em tempo real do contador! O resultado na *home* é esse:
 
 ![image](https://user-images.githubusercontent.com/19495917/75474406-b3c06e80-5975-11ea-82ec-89ab27504873.png)

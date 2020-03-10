@@ -25,7 +25,7 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
 
 1. Remova os *imports*, o `title` da interface e altere a constante do CSS *handles*:
     ```diff
-    import React, { useState } from 'react'
+    import React, { Fragment, useState } from 'react'
     import { TimeSplit } from './typings/global'
     import { tick } from './utils/time'
     import { useCssHandles } from 'vtex.css-handles'
@@ -60,14 +60,16 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
       tick(targetDate, setTime)
 
       return (
-    -   <div className={`${handles.container} t-heading-2 fw3 w-100 pt7 pb6 c-muted-1`}>
-    -     <div className={`${handles.title} db tc`}>
-    -       { titleText }
-    -     </div>
-          <div className={`db tc`}>
-            {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
-          </div>
-    -   </div>
+        <Fragment>
+          <div className={`${handles.container} t-heading-2 fw3 w-100 pt7 pb6 c-muted-1 db tc`}>
+    -        <div className={`${handles.title} db tc`}>
+    -          { titleText }
+    -        </div>
+            <div className={`db tc`}>
+              {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
+            </div>
+    -      </div>
+        </Fragment>
       )
     }
     ```

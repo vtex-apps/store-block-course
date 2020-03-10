@@ -41,9 +41,29 @@ Para o escopo desse curso, só serão construídas queries, mas o conceito é ex
 
 Vamos adicionar um campo no tipo `Query` chamado `helloWorld` que será do tipo `String`.
 
+Crie uma pasta na raiz da *app*, chamada `graphql`, nela defina um arquivo chamado `schema.graphql`; adicione o campo abaixo:
+
 ```diff
-type Query {
++type Query {
 +  helloWorld: String
++}
+```
+
+Para que isso funcione, é preciso adicionar os *builders* de `graphql` e `node`. Vá ao `manifest.json` e adicione esses builders, como mostrado abaixo:
+
+```diff
+{
+  "vendor": "vtex",
+  "name": "countdown",
+  ...
+  "builders": {
+    "messages": "1.x",
+    "store": "0.x",
+    "react": "3.x"
++   "node": "4.x",
++   "graphql": "1.x"
+  },
+  ...
 }
 ```
 
