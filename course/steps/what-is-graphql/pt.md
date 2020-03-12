@@ -74,8 +74,7 @@ Esse campo precisa ter uma função que irá resolvê-lo na pasta `node`. É o q
 ## Definição de *Resolver*
 *Resolvers* são funções responsáveis por "resolver" uma query e devolver o dado solicitado. Vale ressaltar que o retorno de um *resolver* é uma *promise*, ou seja, o GraphQL espera a resolução dessa promessa para devolver os resultados obtidos.
 
-Na pasta `node`, vá para a pasta `resolvers` e, dentro dela, crie um arquivo `helloWorld.ts`. Nesse arquivo iremos criar a função que resolverá o campo `helloWorld` que adicionamos anteriormente no tipo `Query`.
-
+Na pasta `node/resolvers` há um esqueleto da função para o *resolver* de `helloWorld`, ou seja, a função que resolverá o campo `helloWorld`; ela se encontra no arquivo `helloWorld.ts`. Vá até esse arquivo e altere a função para retornar uma *string* "Hello World".
 ```ts
 export const helloWorld = () => 'Hello World'
 ```
