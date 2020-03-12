@@ -68,13 +68,13 @@ Agora que temos um `h1`, é possível utilizá-lo para mostrar informações que
     ```diff
     // react/Countdown.tsx
     Countdown.schema = {
-      title: 'countdown.title',
-      description: 'countdown.description',
+      title: 'editor.countdown.title',
+      description: 'editor.countdown.description',
       type: 'object',
       properties: {
     +   targetDate: {
-    +      title: 'Sou um título',
-    +      description: 'Sou uma descrição',
+    +      title: 'Data final',
+    +      description: 'Data final utilizada no contador',
     +      type: 'string',
     +      default: null,
     +   },
@@ -85,7 +85,7 @@ Pronto! Agora você pode alterar o conteúdo do texto através do *Site Editor*.
 
 <img src="https://user-images.githubusercontent.com/19495917/74963531-a09b2500-53f0-11ea-84a4-85a27bb752f4.png" width="350" height="750"/>
 
-Agora, no campo abaixo do título, digite alguma coisa e veja a alteração, que passará a exibir o texto que você digitou. 
+Agora, no campo abaixo do título, digite uma data no formato `AAAA-MM-DD` e veja a alteração, que passará a exibir o texto que você digitou. 
 
 ![image](https://user-images.githubusercontent.com/19495917/74963805-1acba980-53f1-11ea-8091-d05cea1341ea.png)
 

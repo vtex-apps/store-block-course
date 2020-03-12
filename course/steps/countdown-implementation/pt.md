@@ -68,7 +68,7 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
 3. Adicione uma `targetDate` padrão para o caso de não haver um valor inicial definido. Para isso, declare uma constante que será utilizada como padrão:
     
     ```typescript
-    const DEFAULT_TARGET_DATE = (new Date('2020-03-11')).toISOString()
+    const DEFAULT_TARGET_DATE = (new Date('2020-06-25')).toISOString()
     ```
 
 4. Utilize a função `tick` e a constante `DEFAULT_TARGET_DATE`  para fazer o contador:
@@ -110,8 +110,6 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
     }
     ```
     > A formatação da *string* do contador está no formato `HH:MM:SS`, feita através do *split* em `hours`, `minutes` e `seconds`.
-
-Agora, precisamos definir uma data no *Site Editor* para que o contador tenha um valor de data final para o contador. Caso você não faça isso, o valor exibido será `aN:aN:aN`.
 
 Assim, com essas alterações, veremos a atualização em tempo real do contador! O resultado na *home* é esse:
 
