@@ -19,11 +19,7 @@ const resolver = (parent, args, context) => {};
 
 ## Atividade
 
-<<<<<<< HEAD
-1. Na pasta `node/resolvers`, crie um arquivo chamado `giphy.ts`, nele você implementará o *resolver* do campo gif. A princípio, apenas só é desejável ver que está tudo funcionando, então o *resolver* irá apenas retornar uma *string* "it works!":
-=======
-1. Crie a pasta `node/resolvers` e nela um arquivo chamado `giphy.ts`, nele você implementará o *resolver* do campo gif. A princípio, apenas só é desejável ver que está tudo funcionando, então o *resolver* irá apenas retornar uma *string* "it works!": 
->>>>>>> fixing some steps based on students' feedback
+1. Vá até a pasta `node/resolvers` e nela crise um arquivo chamado `giphy.ts`, nele você implementará o *resolver* do campo gif. A princípio, apenas só é desejável ver que está tudo funcionando, então o *resolver* irá apenas retornar uma *string* "it works!":
     ```ts
     // node/resolvers/giphy.ts
     export const gif = (_: any,

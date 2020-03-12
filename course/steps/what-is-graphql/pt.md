@@ -39,9 +39,7 @@ Como dito anteriormente, em um *schema* GraphQL existem dois tipos básicos: `Qu
 
 Para o escopo desse curso, só serão construídas queries, mas o conceito é exatamente o mesmo. O que muda é a semântica da função que resolve o campo.
 
-Vamos adicionar um campo no tipo `Query` chamado `helloWorld` que será do tipo `String`.
-
-Crie uma pasta na raiz da *app*, chamada `graphql`, nela defina um arquivo chamado `schema.graphql`; adicione o campo abaixo:
+Vamos adicionar um campo no tipo `Query` chamado `helloWorld` que será do tipo `String` no *Schema*. Vá até a pasta `graphql` e, no arquivo `schema.graphql`, adicione a *query* abaixo:
 
 ```diff
 +type Query {
@@ -76,7 +74,7 @@ Esse campo precisa ter uma função que irá resolvê-lo na pasta `node`. É o q
 ## Definição de *Resolver*
 *Resolvers* são funções responsáveis por "resolver" uma query e devolver o dado solicitado. Vale ressaltar que o retorno de um *resolver* é uma *promise*, ou seja, o GraphQL espera a resolução dessa promessa para devolver os resultados obtidos.
 
-Na pasta `node`, vá na pasta `resolvers` e crie um novo arquivo `helloWorld.ts`. Nesse arquivo iremos criar a função que resolverá o campo `helloWorld` que adicionamos anteriormente no tipo `Query`.
+Na pasta `node`, vá para a pasta `resolvers` e, dentro dela, crie um arquivo `helloWorld.ts`. Nesse arquivo iremos criar a função que resolverá o campo `helloWorld` que adicionamos anteriormente no tipo `Query`.
 
 ```ts
 export const helloWorld = () => 'Hello World'
