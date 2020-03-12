@@ -83,9 +83,9 @@ Agora que temos um `h1`, é possível utilizá-lo para mostrar informações que
     ```
 Pronto! Agora você pode alterar o conteúdo do texto através do *Site Editor*. Vamos ver como ficou? Vá até o *Site Editor* e clique em `Countdown` no menu lateral, isso abrirá o menu de edição da *app*, que será como a imagem abaixo.
 
-<img src="https://user-images.githubusercontent.com/19495917/74963531-a09b2500-53f0-11ea-84a4-85a27bb752f4.png" width="350" height="750"/>
+<img src="https://user-images.githubusercontent.com/19495917/76554756-269d0f80-6475-11ea-8864-2dd7f193639f.png" width="300" height="300"/>
 
 Agora, no campo abaixo do título, digite uma data no formato `AAAA-MM-DD` e veja a alteração, que passará a exibir o texto que você digitou. 
 
-![image](https://user-images.githubusercontent.com/19495917/74963805-1acba980-53f1-11ea-8091-d05cea1341ea.png)
+![image](https://user-images.githubusercontent.com/19495917/76554519-c60dd280-6474-11ea-873b-4b7073172a4f.png)
 
