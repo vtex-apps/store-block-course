@@ -13,9 +13,6 @@ Neste curso, utilizaremos somente `typescript`. Caso você não tenha familiarid
 ### Objetivo dessa Etapa
 Como você já tem familiaridade com o Store Framework, já sabe que montamos páginas na nossa loja ao compor blocos em JSON, como `shelf` e  `sku-selector`. Nesta etapa você irá criar um bloco que será utilizado no tema da *home page* de sua loja.
 
-## *Boilerplate*
-Quando você estiver desenvolvendo seu próprio bloco, você pode começar por nosso template de [store component](https://github.com/vtex-apps/store-component-template).
-
 ## Atividade
 1. No *template* clonado, vá para o arquivo `Countdown.tsx`:
 
