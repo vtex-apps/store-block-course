@@ -54,11 +54,20 @@ Como você já tem familiaridade com o Store Framework, já sabe que montamos p�
     git clone https://github.com/vtex-apps/store-theme.git
     ```
 
-3. Com o repositório já clonado, vá até a pasta com `cd store-theme`; linke o tema e a *app* no seu *workspace*. Para que a *app* seja utilizada no tema, é preciso adicioná-la às suas dependências, que como visto anteriormente, ficam no `manifest.json`.
+3. Com o repositório clonado, vá ao terminal para deslinkar quaisquer temas ou *apps* que estejam linkados. Para isso, basta digitar o seguinte comando:
+    ```
+    vtex unlink --all
+    ```
+4. Com o repositório já clonado, vá até a pasta com `cd store-theme`; linke o tema no seu *workspace*.
     ```
     vtex link
     ```
-4. Adicione ao manifesto do tema `"vtex.countdown"` como dependência. A versão dela está definida no manifesto da *app* (`0.0.1`). Feito isso, o JSON terá mais uma linha, como mostrado abaixo:
+5. Agora, com o tema linkado, é preciso também linkar a *app*. Para isso, vá até a pasta da *app*, `store-block`, repositório do Github que foi criado quando você iniciou o curso, e faça o *link*.
+    ```
+    vtex link
+    ```
+
+5. Para que a *app* seja utilizada no tema, é preciso adicioná-la às suas dependências, que como visto anteriormente, ficam no `manifest.json`. Dessa forma, adicione ao manifesto do tema, que se encontra na pasta `store-theme`, "vtex.countdown" como dependência. A versão dela está definida no manifesto da *app* (`0.0.1`). Feito isso, o JSON terá mais uma linha, como mostrado abaixo:
     ```diff
     {
         ...
@@ -70,7 +79,7 @@ Como você já tem familiaridade com o Store Framework, já sabe que montamos p�
         ...
     }
     ```
-5. Por fim, é preciso adicionar o bloco na loja. Dentro do arquivo `home.jsonc`, declare um bloco chamado `"countdown"`. 
+5. Por fim, é preciso adicionar o bloco na loja. Dentro do arquivo `store-theme/store/blocks/home/home.jsonc`, declare um bloco chamado `"countdown"`. 
     ```
     {
         "store.home": {
