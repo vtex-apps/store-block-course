@@ -24,7 +24,10 @@ ctx.clients.{{your_client}}
 1. Crie um arquivo em `node/clients` chamado `giphy.ts`.
 2. A partir do [*client* de exemplo](https://github.com/vtex-apps/service-example/blob/ffd7a86f928f9931a9353215eebb764cb3150695/node/clients/status.ts), crie um `GiphyClient` que se comunica com a API do Giphy na URL https://api.giphy.com/v1/gifs/
 3. O *client* precisa ter apenas um método chamado `translate` que aceita um `term: string` e retornará uma URL de GIF. Este método deverá chamar o _endpoint_ [translate](https://developers.giphy.com/docs/api/endpoint#translate) da API.
-**OBS.:** Use a `api_key` `dp2scGnUcDee5yLRI1qJMTRTAAJey9Tl` para testar seu _client_.
+
+    O *endpoint* **translate**, quando o retorno é bem sucedido, retorna um `data` (`GIF Object`), que é um objeto com diversas informações a respeito do GIF. Esta estrutura pode ser consultada [aqui](https://developers.giphy.com/docs/api/schema). Vale ressaltar que neste curso, é preciso utilizar um URL que apresente o GIF com a extensão `.gif`.
+
+    >Use a `api_key` `dp2scGnUcDee5yLRI1qJMTRTAAJey9Tl` para testar seu _client_.
 4. Após criar (e exportar) o *client* em `giphy.ts`, em `node/clients/index.ts` importe `Giphy from './giphy'` e adicione na classe `Clients`:
     ```typescript
     public get giphy() {
