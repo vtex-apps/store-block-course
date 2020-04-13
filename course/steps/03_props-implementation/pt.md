@@ -1,30 +1,32 @@
 # Tornando o bloco countdown customizável
 
 ## Introdução
-Agora que temos um `h1`, é possível utilizá-lo para mostrar informações que dependam de uma *prop* do componente. Para isso, alguns conceitos serão apresentados, já que são necessários para desenvolver uma aplicação.
+Agora que temos um elemento `h1` renderizado, é possível utilizá-lo para mostrar informações que dependam de uma *prop* do componente. Para isso, alguns conceitos serão apresentados, já que são necessários para desenvolver uma aplicação.
 
 ## Conceitos
-* O Hook
+* **Hook**
 
-    *Hooks* são APIs que permitem utilizar funcionalidades de React. Sem *hooks*, uma componente funcional em React, é simplesmente uma função que retorna uma tag escrita em `tsx`. *Hooks* permitem entre outras coisas, armazenar estado entre diferentes renderizações e executar efeitos colaterais. Obs.: eles não funcionam dentro de classes.
+    *Hooks* são APIs que permitem utilizar funcionalidades do React dentro de componentes funcionais. Sem os *hooks*, um componente funcional em React só consegue renderizar elementos de UI. *Hooks* permitem, entre outras coisas, armazenar estado entre diferentes renderizações e executar efeitos colaterais no ciclo de vida de um componente. Obs.: eles não funcionam dentro de classes.
     
     Exemplo:
-    ```tsx
+    ```typescript
     const [count, setCount] = useState(0);
     ```
 
-* Interface para definir as *props*
+* **Interface para *props***
     
-    Define as *props* e também os tipos associados.
-    ```tsx
-    interface CountdownProps {}
+    Define os tipos *Typescript* das props que o componente poderá receber, permitindo o *Intelissense*  da IDE sobre o componente que você criou.
+    ```typescript
+    interface CountdownProps {
+      exampleProp: string
+    }
     ```
 
-* Definição das configurações de um bloco
+* **Schema do bloco**
 
-    No VTEX IO, oferecemos uma ferramenta de gestão de conteúdo da loja, chamada Site Editor. Com essa ferramenta, encontrada no admin da VTEX, podemos alterar imagens e texto de componentes sem precisar modificar o código da loja.
+    No VTEX IO, oferecemos uma ferramenta de gestão de conteúdo da loja chamada **Site Edito**r. Com essa ferramenta, acessada através do *Admin VTEX*, podemos alterar imagens e texto dos blocos sem precisar modificar o código da loja.
 
-    Para que o seu bloco possa aceitar configurações do usuário, é utilizado um [JSON *schema*](https://json-schema.org/), que irá gerar um formulário para o Site Editor. Abaixo é possível ver um exemplo de *schema*:
+    Para que o seu bloco possa **aceitar configurações do usuário**, é preciso exportar um `schema` no componente React responsável por aquele bloco utilizando [JSON *schema*](https://json-schema.org/). Isso irá, automaticamente, gerar um formulário para o Site Editor relativo ao bloco que você está desenvolvendo. Abaixo é possível ver um exemplo de *schema*:
     ```js
     // react/Countdown.tsx
     Countdown.schema = {

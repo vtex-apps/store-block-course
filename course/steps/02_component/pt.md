@@ -1,20 +1,21 @@
 # Linkando uma app e utilizando-a no tema da loja
 
 ## Introdução
-Para desenvolver um bloco de frente de loja, similar aos que oferecemos nativamente no Store Framework, utilizamos a biblioteca de desenvolvimento de UIs `react`.
+Para desenvolver um bloco de frente de loja, similar aos que oferecemos nativamente no Store Framework, utilizamos a biblioteca de desenvolvimento de UIs **[React.js](https://reactjs.org/)**.
 
-### Um pouco sobre tecnologias
-É sabido que criar componentes que manipulem estado em `react` melhora a performance e tende a ser mais fácil, por ser menos verboso que *class components*. Portanto, nesse curso iremos utilizar sempre *function components* e *hooks* e recomendamos que você faça o mesmo sempre que vá começar um projeto novo em `react`
+### Um pouco sobre a tecnologia
 
-No VTEX IO, adotamos o `typescript` como linguagem *default* para projetos que normalmente utilizariam `javascript`. Apesar de ser necessário aprender sintaxes novas, acredita-se que o esforço é rapidamente recompensado. Ao utilizar `typescript`, ganha-se alta previsibilidade de *bugs*, por oferecer tipagem estática. Além disso, com as IDEs certas, é possível aumentar a velocidade de implementação através de um *code completion* mais esperto, com a tipagem de objetos no código.
+A unidade básica de desenvolvimento em **React** é o **componente**, onde pode ser implementada a interface visual do componente, como também sua lógica de estado, ou recuperação de dados. Seguindo as recomendações mais modernas de desenvolvimento, iremos focar no uso da [**API de Hooks**](https://reactjs.org/docs/hooks-intro.html) do *React*, não utilizando de *classes* para a construção dos componentes.
 
-Neste curso, utilizaremos somente `typescript`. Caso você não tenha familiaridade, será uma excelente oportunidade de experimentar essa linguagem.
+No VTEX IO, adotamos [**Typescript**](https://www.typescriptlang.org/) como linguagem padrão para programação *frontend*. Apesar de ser necessário aprender sintaxes novas, o esforço é rapidamente recompensado! Utilizando Typescript, ganha-se alta previsibilidade de *bugs*, por oferecer tipagem estática. Além disso, com as IDEs certas, é possível aumentar a velocidade de implementação através de um *code completion* mais esperto, com a tipagem de objetos no código.
+
+Neste curso, **será utilizado exclusivamente Typescript**. Caso você não tenha familiaridade com a linguagem, será uma excelente oportunidade de experimentá-la!
 
 ### Objetivo dessa Etapa
-Como você já tem familiaridade com o Store Framework, já sabe que montamos páginas na nossa loja ao compor blocos em JSON, como `shelf` e  `sku-selector`. Nesta etapa você irá criar um bloco que será utilizado no tema da *home page* de sua loja.
+Como você já tem familiaridade com o Store Framework, já sabe que utilizamos blocos, como `shelf` e  `sku-selector`, para a montagem de uma VTEX IO Store. Nesta etapa você irá criar um bloco que será utilizado no tema da *home page* de sua loja.
 
 ## Atividade
-1. No *template* clonado, vá para o arquivo `Countdown.tsx`:
+1. No *template* clonado localmente, abra o arquivo `Countdown.tsx`:
 
     ```tsx
     //react/Countdown.tsx

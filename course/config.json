@@ -2,12 +2,10 @@
   "title": "VTEX Store Block course",
   "tagline": "Learn how to create custom blocks on VTEX Store Framework",
   "description": "Using React and Graphql, you can export your components as VTEX blocks",
-  "languages": [
-    "pt"
-  ],
+  "languages": ["pt"],
   "steps": [
     {
-      "folder": "manifest",
+      "folder": "01_manifest",
       "title": {
         "pt": "Conhecendo uma app VTEX IO"
       },
@@ -17,7 +15,7 @@
       "challenge": "none"
     },
     {
-      "folder": "component",
+      "folder": "02_component",
       "title": {
         "pt": "Linkando uma app e utilizando-a no tema da loja"
       },
@@ -27,7 +25,7 @@
       "challenge": "none"
     },
     {
-      "folder": "props-implementation",
+      "folder": "03_props-implementation",
       "title": {
         "pt": "Tornando o bloco countdown customizável"
       },
@@ -37,7 +35,7 @@
       "challenge": "none"
     },
     {
-      "folder": "countdown-implementation",
+      "folder": "04_countdown-implementation",
       "title": {
         "pt": "Criando a funcionalidade do bloco countdown"
       },
@@ -47,7 +45,7 @@
       "challenge": "none"
     },
     {
-      "folder": "css-handles",
+      "folder": "05_css-handles",
       "title": {
         "pt": "Modificando o bloco countdown para ter um estilo configurável"
       },
@@ -57,7 +55,7 @@
       "challenge": "none"
     },
     {
-      "folder": "messages",
+      "folder": "06_messages",
       "title": {
         "pt": "Práticas de internacionalização no VTEX IO"
       },
@@ -67,7 +65,7 @@
       "challenge": "none"
     },
     {
-      "folder": "separating-title",
+      "folder": "07_separating-title",
       "title": {
         "pt": "Componentizando o bloco countdown"
       },
@@ -77,47 +75,7 @@
       "challenge": "none"
     },
     {
-      "folder": "what-is-graphql",
-      "title": {
-        "pt": "O que é GraphQL?"
-      },
-      "description": {
-        "pt": "Utilizado por todo VTEX IO, GraphQL é uma tecnologia essencial para criação de funcionalidades complexas nas lojas do VTEX IO"
-      },
-      "challenge": "none"
-    },
-    {
-      "folder": "defining-resolver",
-      "title": {
-        "pt": "Definindo um resolver GraphQL"
-      },
-      "description": {
-        "pt": "Neste passo você aprender o que é um resolver GraphQL e como definí-lo em sua app"
-      },
-      "challenge": "none"
-    },
-    {
-      "folder": "defining-client",
-      "title": {
-        "pt": "Definindo um client no VTEX IO"
-      },
-      "description": {
-        "pt": "Para se comunicar com outras apps VTEX ou serviços externos, neste passo você aprenderá como criar um client"
-      },
-      "challenge": "none"
-    },
-    {
-      "folder": "creating-gif-component",
-      "title": {
-        "pt": "Criando um bloco GIF"
-      },
-      "description": {
-        "pt": "Mapeando interface para um novo componente"
-      },
-      "challenge": "none"
-    },
-    {
-      "folder": "react-apollo",
+      "folder": "08_react-apollo",
       "title": {
         "pt": "Conectando back-end e front-end"
       },
