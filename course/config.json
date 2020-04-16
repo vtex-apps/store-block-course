@@ -80,7 +80,7 @@
         "pt": "Conectando back-end e front-end"
       },
       "description": {
-        "pt": "Extraindo o GIF da API do Giphy"
+        "pt": "Utilizando dados do catálogo da VTEX em seu componente"
       },
       "challenge": "none"
     }
