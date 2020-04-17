@@ -1,88 +1,82 @@
+
 # Conectando *back-end* e *front-end*
 
 ## Introdução
 
-O componente React que irá renderizar GIFs já foi feito. O que é preciso fazer agora é criar uma *query* para ser executada pelo *resolver* que foi criado nos passos anteriores. Para realizar queries GraphQL em React, é utilizado o **Apollo Client**, uma biblioteca de gerenciamento de estado que facilita a integração de uma API GraphQL com a aplicação *front-end*.
+Agora aprenderemos como recuperar dados do *backend* e exibí-los na interface. O VTEX IO utiliza [GraphQL](https://graphql.org/) como linguagem/tecnologia para transferência de dados, o que torna a programação dos nossos componentes bastante simples. Iremos modificar o nosso componente Countdown para buscar o *targetDate* do **campo `releaseDate` de um produto da VTEX**. Para realizar queries GraphQL em React, é utilizado o **Apollo Client**, uma biblioteca de gerenciamento de estado que facilita a integração de uma API GraphQL com a aplicação *front-end*.
 
-O time do **Apollo Client** disponibiliza uma integração nativa com React, por meio de *hooks*. Dessa forma, realizar uma *query* significa usar um *hook* que não só realizará as *queries* e fará o *fetch* dos dados, mas também proverá cache e atualização do estado da UI. Essa integração, chamada `react-apollo` já está declarada no `package.json`.
+A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, por meio de *hooks*. Dessa forma, realizar uma *query* significa usar um *hook* que não só realizará as *queries* e fará o *fetch* dos dados, mas também proverá cache e atualização do estado da UI. Essa integração, chamada `react-apollo` já está declarada no `package.json`.
 
-## Query de Gifs
+## Preparação
+- Para implementar esta funcionalidade, precisamos **adicionar o nosso bloco `countdown` na página de produto**, e também faremos nossos testes nessa página também. Para isso, faça o seguinte:
+1. Em seu tema clonado (`store-theme`) acesse o arquivo `store/blocks/product.jsonc` e, no bloco `flex-layout.col#right-col` adicione o bloco `countdown`, logo antes do `buy-button`:
+	```diff
+	    "product-gifts",
+	+	"countdown",
+	    "flex-layout.row#buy-button",
+	    "availability-subscriber",
+	```
+2. Rode `vtex link` em seu tema novamente (caso o processo já não esteja sendo executado).
+3. Pronto, agora o nosso bloco está na página de produto. Acesse alguma destas páginas e veja o componente `Countdown` renderizado.
 
-1. Crie uma pasta `react/queries` e nela adicione um arquivo `gifs.gql` que irá conter a *query* a ser feita. Em particular, essa *query* irá receber um termo, que será a palavra-chave a ser utilizada para procurar GIFs no Giphy. Ela chamará o *resolver* `gif`, implementado e testado no GraphiQL no passo anterior.
+## Query de Release Date
+
+1. Crie uma pasta `react/queries` e nela adicione um arquivo `productReleaseDate.graphqql` que irá conter a *query* a ser feita. Em particular, essa *query* irá receber um termo, que será **o slug do produto a ser recuperado a data de lançamento**. Ela chamará o *resolver* `product`, já disponível pela app `vtex.search-graphql`, e recuperaremos apenas o campo que precisamos.
     ```
-    query getGif ($term: String) {
-      gif(term:$term)
-    }
+    query productReleaseDate($slug: String){
+		  product(slug: $slug) {
+			    releaseDate
+		  }
+	}
     ```
-
-2. Defina a *prop* `term` na interface `GifProps` e a utilize como *prop* do componente React `Gif.tsx`. Não se esqueça de atribuir um valor padrão.
-
-3. Agora, é necessário importar o método `useQuery` e utilizá-lo para fazer a *query* que retornará a URL de um GIF. Além disso, também é preciso importar a *query*, definida anteriormente, que se encontra no arquivo `gifs.gql`.
+    > Perceba que a query precisará do *slug* do produto que buscamos. Para isso, **recuperaremos esta informação do contexto de Produt da VTEX**.
+2. Para utilizar essa query, é necessário **adicionar a app `vtex.search-graphql` como dependência em sua app.** Também precisaremos utilizar o hook `useProduct` para recuperar o slug do produto que está carregado na página. Para isso, no `manifest.json` de sua app, adicione em `dependencies`:
+    ```
+    "vtex.search-graphql": "0.x",
+    "vtex.product-context": "0.x"
+    ```
+4. Agora, é necessário importar os hook `useQuery`, para fazer a *query* que retornará o dado que descrevemos, e `useProduct`, para nos dar a informação sobre o slug do produto atual. Além disso, também é preciso importar a *query*, definida anteriormente, que se encontra no arquivo `productReleaseDate.graphqql`.
     ```diff
-    // react/Gif.tsx
+    // react/Countdown.tsx
     import React from 'react'
     +import { useQuery } from 'react-apollo'
+    +import useProduct from 'vtex.product-context/useProduct'
 
     import { useCssHandles } from 'vtex.css-handles'
 
-    +import getGif from './queries/gifs.gql'
+    +import productReleaseDateQuery from './graphql/productReleaseDate.graphql'
     ```
 
-4. Defina a query usando o `getGif` importado e o `useQuery`:
+5. Defina a query usando o `productReleaseDateQuery` importado e o `useQuery`, usando os dados do `useProduct()`:
 
     ```diff
-    + const { data, loading, error } = useQuery(getGif, {
-    +   variables: { term }
+    +const { product: { linkText } } = useProduct()
+    +const { data, loading, error } = useQuery(productReleaseDateQuery, {
+    +   variables: { 
+    +  		slug: linkText
+    +   }
     + })
     ```
-5. Em um primeiro momento, verifique se a *query* está funcionando através de `console.log(data)`, que deve mostrar a URL do `gif`.
+> `linkText` será igual a `'red-front-loading-washer'`, por exemplo, quando o seu componente for renderizado na página deste produto.
+6. Após enviar as modificações, acesse uma página de produto e verifique se a *query* está funcionando através de um `console.log({data})` após a chamada do `useQuery`, que deve mostrar algo como isso:
 
     ```ts
     {
       data: {
-        gif: "https://media2.giphy.com/media/3o72EX5QZ9N9d51dqo/giphy.gif?cid=96678fa42d14d68f9c3ebdfaff64b84de51f012598e0a2e9&rid=giphy.gif"
+        product: {
+	     releaseDate: '2019-01-01T00:00:00"',
+	     __typename:  "Product"
+        }
       }
     }
     ```
 
-6. Para ver o GIF na *home* da loja, é necessário adicionar uma imagem que possua como  `src` o valor retornado em `data.gif`.
-    ```tsx
-    // react/Gif.tsx
-    const Gif: StorefrontFunctionComponent<GifProps> = ({ term = 'VTEX' }) => {
-      const handles = useCssHandles(CSS_HANDLES)
-      const { data, loading, error } = useQuery(getGif, {
-        variables: { term }
-      })
-      return (
-        <div className={`${handles.gif} t-heading-2 fw3 w-100 c-muted-1 db tc`}>
-          <img src={data.gif} />
-        </div>
-      )
-    }
+7. Para fazer com que o Countdown marque as horas para o `releaseDate` do produto, mude o parâmetro da função `tick`. Você também pode remover as `props` recebidas no componente, já que não serão mais usadas.
+    ```diff
+    -tick(targetDate, setTime)
+    +tick(data?.product?.releaseDate || DEFAULT_TARGET_DATE, setTime)
     ```
 
-7. Por fim, altere o *schema* para adicionar o campo de `term` no *Site Editor* e, como feito anteriormente na etapa de internacionalização, defina as *strings* necessárias nos arquivos dentro da pasta `messages/`
-    ```ts
-    // react/Gif.tsx
-    Gif.schema = {
-      title: 'admin/gif.title',
-      description: 'admin/gif.description',
-      type: 'object',
-      properties: {
-        term: {
-          title: 'admin/gif.term.title',
-          description: 'admin/gif.term.description',
-          type: 'string',
-          default: null,
-        },
-      },
-    }
-    ```
+Resultado no produto *Red Front-Loading Washer*:
 
-Resultado na *home*:
-
-![image](https://user-images.githubusercontent.com/19495917/76253010-99657b00-6228-11ea-8766-bdd5882c1a49.gif)
-
-Resultado no *Site Editor*:
-
-![image](https://user-images.githubusercontent.com/19495917/76253108-cdd93700-6228-11ea-964c-2c238edc1afe.png)
+![image](https://user-images.githubusercontent.com/18706156/79596495-0fc28c00-80b7-11ea-8361-35075dba3bd5.png)
