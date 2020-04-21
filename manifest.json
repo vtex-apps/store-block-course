@@ -1,7 +1,7 @@
 {
   "name": "store-block",
   "vendor": "vtex",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "title": "Course App for custom block development teaching",
   "description": "VTEX Course App",
   "dependencies": {},
