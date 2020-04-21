@@ -1,5 +1,5 @@
 
-# Conectando *back-end* e *front-end*
+# Conectando *backend* e *frontend*
 
 ## Introdução
 

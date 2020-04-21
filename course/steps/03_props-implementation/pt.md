@@ -24,7 +24,7 @@ Agora que temos um elemento `h1` renderizado, é possível utilizá-lo para most
 
 * **Schema do bloco**
 
-    No VTEX IO, oferecemos uma ferramenta de gestão de conteúdo da loja chamada **Site Edito**r. Com essa ferramenta, acessada através do *Admin VTEX*, podemos alterar imagens e texto dos blocos sem precisar modificar o código da loja.
+    No VTEX IO, oferecemos uma ferramenta de gestão de conteúdo da loja chamada **Site Editor**. Com essa ferramenta, acessada através do *Admin VTEX*, podemos alterar imagens e texto dos blocos sem precisar modificar o código da loja.
 
     Para que o seu bloco possa **aceitar configurações do usuário**, é preciso exportar um `schema` no componente React responsável por aquele bloco utilizando [JSON *schema*](https://json-schema.org/). Isso irá, automaticamente, gerar um formulário para o Site Editor relativo ao bloco que você está desenvolvendo. Abaixo é possível ver um exemplo de *schema*:
     ```js
