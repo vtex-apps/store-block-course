@@ -81,9 +81,9 @@ Você já deve ter aprendido a usar o nosso **builder _messages_**, e será atra
      targetDate,
    }) => {
      const [timeRemaining, setTime] = useState<TimeSplit>({
-       hours: "00",
-       minutes: "00",
-       seconds: "00",
+       hours: '00',
+       minutes: '00',
+       seconds: '00',
      })
 
      const titleText = title || <FormattedMessage id="countdown.title" />
@@ -121,8 +121,8 @@ Você já deve ter aprendido a usar o nosso **builder _messages_**, e será atra
    +     default: null,
    +   },
        targetDate: {
-         title: 'Sou um título',
-         description: 'Sou uma descrição',
+         title: 'Data final',
+         description: 'Data final usada no contador',
          type: 'string',
          default: null,
        },
