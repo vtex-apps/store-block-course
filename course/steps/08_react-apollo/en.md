@@ -44,7 +44,7 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
     "vtex.product-context": "0.x"
     ```
 
-3.  Now, it is necessary to import the `useQuery` hooks, to make the _query_ that will return the data we described, and `useProduct`, to give us information about the current product slug. In addition, it is also necessary to import the _query_ defined previously, which is found in the file `productReleaseDate.graphqql`.
+3.  Now, it is necessary to import the `useQuery` hooks, to make the _query_ that will return the data we described, and `useProduct`, to give us information about the current product slug. In addition, it is also necessary to import the _query_ defined previously, which is found in the file `productReleaseDate.graphqql`. It is also important to notice that the prop `targetDate` will no longer be necessary.
 
     ```diff
     // react/Countdown.tsx
@@ -54,21 +54,39 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
 
     import { useCssHandles } from 'vtex.css-handles'
 
-    +import productReleaseDateQuery from './graphql/productReleaseDate.graphql'
+    +import productReleaseDateQuery from './queries/productReleaseDate.graphql'
     ```
 
 4.  Define the query using the `productReleaseDateQuery` importaded and the `useQuery`, using the `useProduct()` data:
 
-        ```diff
-        +const { product: { linkText } } = useProduct()
-        +const { data, loading, error } = useQuery(productReleaseDateQuery, {
-        +   variables: {
-        +  		slug: linkText
-        +   }
-        + })
-        ```
+      ```diff
+      + const { product: { linkText } } = useProduct()
+      + const { data, loading, error } = useQuery(productReleaseDateQuery, {
+      +   variables: {
+      +     slug: linkText
+      +   }
+      + })
+      ```
 
     > `linkText` will be the same as `'red-front-loading-washer'`, for example, when your component is rendered in this product's page.
+
+    Besides, it is important to deal with the cases in which there is no data fetched when using useQuery: *loading* and *error*. In those cases, it is possible to return a span, such as the example below:
+    ```tsx
+    if (loading) {
+      return (
+        <div>
+          <span>Loading...</span>
+        </div>
+      )
+    }
+    if (error) {
+      return (
+        <div>
+          <span>Error!</span>
+        </div>
+      )
+    }
+    ```
 
 5.  After sending the changes, access a product page and note that the _query_ is working through a `console.log ({data})` after calling `useQuery`, which should show something like this:
 

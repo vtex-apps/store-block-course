@@ -36,7 +36,7 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
     "vtex.search-graphql": "0.x",
     "vtex.product-context": "0.x"
     ```
-3.  Agora, é necessário importar os hook `useQuery`, para fazer a _query_ que retornará o dado que descrevemos, e `useProduct`, para nos dar a informação sobre o slug do produto atual. Além disso, também é preciso importar a _query_, definida anteriormente, que se encontra no arquivo `productReleaseDate.graphqql`.
+3.  Agora, é necessário importar os hook `useQuery`, para fazer a _query_ que retornará o dado que descrevemos, e `useProduct`, para nos dar a informação sobre o slug do produto atual. Além disso, também é preciso importar a _query_, definida anteriormente, que se encontra no arquivo `productReleaseDate.graphqql`. Vale ressaltar também que a *prop* `targetDate` não será mais necessária.
 
     ```diff
     // react/Countdown.tsx
@@ -46,21 +46,39 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
 
     import { useCssHandles } from 'vtex.css-handles'
 
-    +import productReleaseDateQuery from './graphql/productReleaseDate.graphql'
+    +import productReleaseDateQuery from './queries/productReleaseDate.graphql'
     ```
 
 4.  Defina a query usando o `productReleaseDateQuery` importado e o `useQuery`, usando os dados do `useProduct()`:
 
-        ```diff
-        +const { product: { linkText } } = useProduct()
-        +const { data, loading, error } = useQuery(productReleaseDateQuery, {
-        +   variables: {
-        +  		slug: linkText
-        +   }
-        + })
-        ```
+    ```diff
+    + const { product: { linkText } } = useProduct()
+    + const { data, loading, error } = useQuery(productReleaseDateQuery, {
+    +   variables: {
+    +     slug: linkText
+    +   }
+    + })
+    ```
 
     > `linkText` será igual a `'red-front-loading-washer'`, por exemplo, quando o seu componente for renderizado na página deste produto.
+
+    Além disso, é preciso tratar os casos de *loading* e *error* ao utilizar o *hook* `useQuery`. Para isso, é possível retornar um `span`em cada um dos casos, como no exemplo abaixo:
+    ```tsx
+    if (loading) {
+      return (
+        <div>
+          <span>Loading...</span>
+        </div>
+      )
+    }
+    if (error) {
+      return (
+        <div>
+          <span>Error!</span>
+        </div>
+      )
+    }
+    ```
 
 5.  Após enviar as modificações, acesse uma página de produto e verifique se a _query_ está funcionando através de um `console.log({data})` após a chamada do `useQuery`, que deve mostrar algo como isso:
 
