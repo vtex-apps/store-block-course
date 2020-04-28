@@ -47,7 +47,7 @@ Since you're already familiar to Store Framework, you know that we use blocks, l
     -   return <div></div>
     +   return (
     +     <div>
-    +       <h1>Coutndown Test</h1>
+    +       <h1>Countdown Test</h1>
     +     </div>
     +   )
     }
