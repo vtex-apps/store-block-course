@@ -42,16 +42,16 @@ Since you're already familiar to Store Framework, you know that we use blocks, l
 
 2. To see you component in the home page, link the theme in one terminal and the app in another. Add a `h1` tag inside the component and declare the block on the theme.
 
- ```diff
+    ```diff
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
-    -    return <div></div>
-    +    return (
-    +      <div>
-    +        <h1>Teste Countdown</h1>
-    +      </div>
-    +    )
+    -   return <div></div>
+    +   return (
+    +     <div>
+    +       <h1>Teste Countdown</h1>
+    +     </div>
+    +   )
     }
-  ```
+    ```
 
   >In order for a component to be seen in a functional store, you need to declare the block, the app defines, in the theme. For that, hereby, we need to first have a theme to add the app to. In this course, we'll use `vtex.store-theme`. To clone the repository just run a: 
 
