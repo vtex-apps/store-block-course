@@ -28,10 +28,10 @@ In this activity, the title will be separated and added to the store below the c
 
 ### Altering the `Countdown` component
 
-1. Remove the _imports_, the `title` from the interface and change the CSS _handles_ const:
+1. Remove the _imports_, the `title` from the interface and change the CSS _handles_ const, `CSS_HANDLES`:
 
    ```diff
-   import React, { Fragment, useState } from 'react'
+   import React, { useState } from 'react'
    import { TimeSplit } from './typings/global'
    import { tick } from './utils/time'
    import { useCssHandles } from 'vtex.css-handles'
@@ -47,7 +47,7 @@ In this activity, the title will be separated and added to the store below the c
    +const CSS_HANDLES = ['countdown']
    ```
 
-2. Now, in the component itself, remove the `title` as a _prop_ given and the const for the title text, besided changing wht is being rendered:
+2. Now, in the component itself, remove the `title` as a _prop_ given and also the title text constant, which changes what is being rendered:
 
    ```diff
    //Countdown.tsx
@@ -68,7 +68,6 @@ In this activity, the title will be separated and added to the store below the c
      tick(targetDate, setTime)
 
      return (
-       <Fragment>
          <div className={`${handles.container} t-heading-2 fw3 w-100 pt7 pb6 c-muted-1 db tc`}>
    -        <div className={`${handles.title} db tc`}>
    -          { titleText }
@@ -76,13 +75,12 @@ In this activity, the title will be separated and added to the store below the c
            <div className={`db tc`}>
              {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
            </div>
-   -      </div>
-       </Fragment>
+         </div>
      )
    }
    ```
 
-3. Al last, remove the title from the _schema_:
+3. At last, remove the title from the _schema_:
 
    ```diff
    Countdown.schema = {
@@ -91,13 +89,13 @@ In this activity, the title will be separated and added to the store below the c
      type: 'object',
      properties: {
    -   title: {
-   -     title: 'editor.countdown.title.title',
+   -     title: 'I am a title',
    -     type: 'string',
    -     default: null,
    -   },
        targetDate: {
-         title: 'editor.countdown.targetDate.title',
-         description: 'editor.countdown.targetDate.description',
+         title: 'Final date',
+         description: 'Final date used in the countdown',
          type: 'string',
          default: null,
        },
@@ -109,15 +107,15 @@ In this activity, the title will be separated and added to the store below the c
 
 1. Create a new file in the `/react` directory, named `Title.tsx`, it will be the new title component. In it, some _imports_ are needed. The basic structure of the code is very similar to the `Countdown` component's.
 
-2. Add the _imports_ needed and the CSS _handles_ const:
+2. Add the _imports_ needed and the CSS _handles_ constant:
 
    ```tsx
    //Title.tsx
-   import React from "react";
-   import { FormattedMessage } from "react-intl";
-   import { useCssHandles } from "vtex.css-handles";
+   import React from "react"
+   import { FormattedMessage } from "react-intl"
+   import { useCssHandles } from "vtex.css-handles"
 
-   const CSS_HANDLES = ["title"] as const;
+   const CSS_HANDLES = ["title"] as const
    ```
 
 3. Change the component's function:
@@ -126,7 +124,7 @@ In this activity, the title will be separated and added to the store below the c
    //Title.tsx
    const Title: StorefrontFunctionComponent<TitleProps> = ({ title }) => {
      const handles = useCssHandles(CSS_HANDLES);
-     const titleText = title || <FormattedMessage id="countdown.title" />;
+     const titleText = title || <FormattedMessage id="countdown.title" />
 
      return (
        <div
@@ -134,8 +132,8 @@ In this activity, the title will be separated and added to the store below the c
        >
          {titleText}
        </div>
-     );
-   };
+     )
+   }
    ```
 
 4. Add the interface, the _schema_ and the _export_:
@@ -143,7 +141,7 @@ In this activity, the title will be separated and added to the store below the c
    ```tsx
    //Title.tsx
    interface TitleProps {
-     title: string;
+     title: string
    }
 
    Title.schema = {
@@ -152,14 +150,14 @@ In this activity, the title will be separated and added to the store below the c
      type: "object",
      properties: {
        title: {
-         title: "editor.countdown.title.title",
+         title: "I am a title",
          type: "string",
          default: null,
        },
      },
-   };
+   }
 
-   export default Title;
+   export default Title
    ```
 
 ### Changing the `interfaces.json` file
@@ -179,19 +177,21 @@ By now, there are two components in the _app_: the title and the countdown. Howe
 
 ### Adding internationalization
 
-It is also needed to add to the _Messages_ the translations whose keys are the _strings_ of the _schema_ that we included in the `Title.tsx` file above. As seen in the _Messages_ step, go to the `/messages` folder and add the necessary translations to each file (`pt.json`, `es.json` and`en.json`). Below is an example for the case of the `en.json` file:
+It is also needed to add to the _Messages_ the translations whose keys are the _strings_ of the _schema_ that we included in the `Title.tsx` file above. As seen in the _Messages_ step, go to the `/messages` folder and add the necessary translations to each file (`pt.json`, `es.json` and `en.json`). Below is an example for the case of the `en.json` file:
 
 ```diff
  {
-+  "countdown.title": "Countdown",
+   "countdown.title": "Countdown",
    "editor.countdown.title": "Countdown",
-   "editor.countdown.description": "Countdown component"
+   "editor.countdown.description": "Countdown component",
++  "editor.countdown-title.title": "Countdown title",
++  "editor.countdown-title.description": "Title component",
  }
 ```
 
 ### Adding the new block to the store home
 
-Finally, to see the changes, go back to the theme to change it to include the new block. To do so, simply add the title to _home_! Same as the countdown, it is necessary to add `countdown.title` as a block in the store-theme file`home.jsonc`.
+Finally, to see the changes, go back to the theme to change it to include the new block. To do so, simply add the title to _home_! Same as the countdown, it is necessary to add `countdown.title` as a block in the store-theme file `home.jsonc`.
 
 ```diff
 //home.jsonc
@@ -208,4 +208,4 @@ Finally, to see the changes, go back to the theme to change it to include the ne
 ```
 
 Done! Now let's see how the result should look like:
-![image](https://user-images.githubusercontent.com/19495917/75560163-6d294d80-5a23-11ea-859d-35a8239ddfad.png)
+![image](https://user-images.githubusercontent.com/19495917/80533839-a2dfa980-8974-11ea-80bb-2628bc10d8cc.png)

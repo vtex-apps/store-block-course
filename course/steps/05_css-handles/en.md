@@ -22,14 +22,14 @@ A lot of the Tachyons' definitions can be changed, so that your store will have 
 
    ```tsx
    // react/Countdown.tsx
-   import { useCssHandles } from "vtex.css-handles";
+   import { useCssHandles } from "vtex.css-handles"
    ```
 
 2. Besides, define in a _Array_ all necessary _handles_ (in this case, only `'countdown'` will be used):
 
    ```tsx
    // react/Countdown.tsx
-   const CSS_HANDLES = ["countdown"];
+   const CSS_HANDLES = ["countdown"]
    ```
 
 3. Use the `useCssHandles` in the component `Countdown` to define the `countdown` _handle_:
