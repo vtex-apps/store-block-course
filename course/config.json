@@ -2,85 +2,101 @@
   "title": "VTEX Store Block course",
   "tagline": "Learn how to create custom blocks on VTEX Store Framework",
   "description": "Using React and Graphql, you can export your components as VTEX blocks",
-  "languages": ["pt"],
+  "languages": ["pt", "en"],
   "steps": [
     {
       "folder": "01_manifest",
       "title": {
-        "pt": "Conhecendo uma app VTEX IO"
+        "pt": "Getting to know an app on VTEX IO",
+        "en": ""
       },
       "description": {
-        "pt": "Neste passo, você irá aprender como se organizam os arquivos em uma app VTEX IO e o que cada campo no manifest.json significa"
+        "pt": "Neste passo, você irá aprender como se organizam os arquivos em uma app VTEX IO e o que cada campo no manifest.json significa",
+        "en": ""
       },
       "challenge": "none"
     },
     {
       "folder": "02_component",
       "title": {
-        "pt": "Linkando uma app e utilizando-a no tema da loja"
+        "pt": "Linking an app and using it on a store's theme",
+        "en": ""
       },
       "description": {
-        "pt": "Após modificar algo no código da app, iremos linká-la e verificar o resultado na loja, após haver adicionado a app no tema"
+        "pt": "Após modificar algo no código da app, iremos linká-la e verificar o resultado na loja, após haver adicionado a app no tema",
+        "en": ""
       },
       "challenge": "none"
     },
     {
       "folder": "03_props-implementation",
       "title": {
-        "pt": "Tornando o bloco countdown customizável"
+        "pt": "Making the countdown block customizable",
+        "en": ""
       },
       "description": {
-        "pt": "Através da API de props do React, você aprendenrá como tornar seus blocos configuráveis com o Store Framework"
+        "pt": "Através da API de props do React, você aprendenrá como tornar seus blocos configuráveis com o Store Framework",
+        "en": ""
       },
       "challenge": "none"
     },
     {
       "folder": "04_countdown-implementation",
       "title": {
-        "pt": "Criando a funcionalidade do bloco countdown"
+        "pt": "Criando a funcionalidade do bloco countdown",
+        "en": ""
       },
       "description": {
-        "pt": "Utilizando os hooks do React.js, iremos finalizar a implementação do bloco countdown"
+        "pt": "Utilizando os hooks do React.js, iremos finalizar a implementação do bloco countdown",
+        "en": ""
       },
       "challenge": "none"
     },
     {
       "folder": "05_css-handles",
       "title": {
-        "pt": "Modificando o bloco countdown para ter um estilo configurável"
+        "pt": "Modificando o bloco countdown para ter um estilo configurável",
+        "en": ""
       },
       "description": {
-        "pt": "O VTEX IO oferece uma maneira para seus blocos poderem ter um estilo CSS customizável: CSS Handles. Também veremos sobre a biblioteca de CSS funcional Tachyons"
+        "pt": "O VTEX IO oferece uma maneira para seus blocos poderem ter um estilo CSS customizável: CSS Handles. Também veremos sobre a biblioteca de CSS funcional Tachyons",
+        "en": ""
       },
       "challenge": "none"
     },
     {
       "folder": "06_messages",
       "title": {
-        "pt": "Práticas de internacionalização no VTEX IO"
+        "pt": "Práticas de internacionalização no VTEX IO",
+        "en": ""
       },
       "description": {
-        "pt": "Para que os nossos blocos sejam usados por todo mundo, deveremos nos atentar às boas práticas de internacionalização suportadas pelo VTEX IO"
+        "pt": "Para que os nossos blocos sejam usados por todo mundo, deveremos nos atentar às boas práticas de internacionalização suportadas pelo VTEX IO",
+        "en": ""
       },
       "challenge": "none"
     },
     {
       "folder": "07_separating-title",
       "title": {
-        "pt": "Componentizando o bloco countdown"
+        "pt": "Componentizando o bloco countdown",
+        "en": ""
       },
       "description": {
-        "pt": "Para que os blocos que criamos sejam flexíveis, devemos atentar a granularidade dos componentes visuais de cada bloco."
+        "pt": "Para que os blocos que criamos sejam flexíveis, devemos atentar a granularidade dos componentes visuais de cada bloco.",
+        "en": ""
       },
       "challenge": "none"
     },
     {
       "folder": "08_react-apollo",
       "title": {
-        "pt": "Conectando backend e frontend"
+        "pt": "Conectando backend e frontend",
+        "en": ""
       },
       "description": {
-        "pt": "Utilizando dados do catálogo da VTEX em seu componente"
+        "pt": "Utilizando dados do catálogo da VTEX em seu componente",
+        "en": ""
       },
       "challenge": "none"
     }
