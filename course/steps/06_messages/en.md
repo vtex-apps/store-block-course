@@ -4,7 +4,7 @@
 
 With the customized block in the store, we need to learn to **internationalize** the content presented.
 
-It is important to remember that blocks must always follow good localization practices, and **must not show _hardcoded _** strings, but ones that are sensitive to the language that the store operates.
+It is important to remember that blocks must always follow good localization practices, and **must not show *hardcoded*** strings, but ones that are sensitive to the language that the store operates.
 
 Don't worry, you won't need to add translations of all texts for the various languages in which the Store Framework is used. Therefore, in this stage, will be presented concepts about the internationalization of _apps_ and how to do it.
 
@@ -12,7 +12,7 @@ Don't worry, you won't need to add translations of all texts for the various lan
 
 The concept of _messages_ makes it easy to add new languages ​​to the theme. The _Messages_ centralize all translation services on the platform. Given a text to be translated, _Messages_ will first check the user-defined context, then check the translations of the _apps_ and, finally, go through the automatic translation system.
 
-In the directory structure, you can see that there is a folder called `messages`, which has three main files:`pt.json`, `en.json` and`es.json`, each responsible for the translations: Portuguese, English and Spanish, respectively. In addition, in order to provide better automatic translations, the `context.json` file is used, which is responsible for avoiding ambiguities.
+In the directory structure, you can see that there is a folder called `messages`, which has three main files: `pt.json`, `en.json` and`es.json`, each responsible for the translations: Portuguese, English and Spanish, respectively. In addition, in order to provide better automatic translations, the `context.json` file is used, which is responsible for avoiding ambiguities.
 
 To use such definitions, the translation files mentioned above are JSON, whose keys are messages and values ​​are translations.
 
@@ -68,14 +68,14 @@ You must have learned how to use our **builder _messages_**, and it will be thro
 
 4. In your component's code, `Countdown.tsx`, **import the FormattedMessage**
 
-   ```diff
-   +	import { FormattedMessage } from 'react-intl'
+   ```tsx
+   import { FormattedMessage } from 'react-intl'
    ```
 
 5. Add a const that will be your title:
 
    ```tsx
-   const titleText = title || <FormattedMessage id="countdown.title" />;
+   const titleText = title || <FormattedMessage id="countdown.title" />
    ```
 
 6. Now, join the title to the countdown to render. To do so, define a container outside. Besides, the text for the title will be passes using the _prop_ `title`:
@@ -86,15 +86,15 @@ You must have learned how to use our **builder _messages_**, and it will be thro
      targetDate,
    }) => {
      const [timeRemaining, setTime] = useState<TimeSplit>({
-       hours: "00",
-       minutes: "00",
-       seconds: "00",
+       hours: '00',
+       minutes: '00',
+       seconds: '00',
      });
 
-     const titleText = title || <FormattedMessage id="countdown.title" />;
-     const handles = useCssHandles(CSS_HANDLES);
+     const titleText = title || <FormattedMessage id="countdown.title" />
+     const handles = useCssHandles(CSS_HANDLES)
 
-     tick(targetDate, setTime);
+     tick(targetDate, setTime)
 
      return (
        <div className={`${handles.container} t-heading-2 fw3 w-100 c-muted-1`}>
@@ -110,7 +110,7 @@ You must have learned how to use our **builder _messages_**, and it will be thro
    Note that three **new** _handles_ are used: _container_, _countdown_ and _title_. Therefore, remember to declare them in the const `CSS_HANDLES`, seen in the previous step:
 
    ```tsx
-   const CSS_HANDLES = ["container", "countdown", "title"];
+   const CSS_HANDLES = ["container", "countdown", "title"]
    ```
 
 7. At last, it is needed to add the `title` _prop_ in the _schema_:
@@ -122,13 +122,13 @@ You must have learned how to use our **builder _messages_**, and it will be thro
      type: 'object',
      properties: {
    +   title: {
-   +     title: 'Sou um título',
+   +     title: 'I am a title',
    +     type: 'string',
    +     default: null,
    +   },
        targetDate: {
-         title: 'Sou um título',
-         description: 'Sou uma descrição',
+         title: 'Final date',
+         description: 'Final date used in the countdown',
          type: 'string',
          default: null,
        },
@@ -136,6 +136,7 @@ You must have learned how to use our **builder _messages_**, and it will be thro
    }
    ```
 
-Done! Now, to try out your store in another languages, you just need to add the _query string_ `/?cultureInfo=pt-br` or `/?cultureInfo=en-ar` on the URL, for example. By using this URL, the expected result is this one:
+Done! Now, to try out your store in another languages, you just need to add the _query string_ `/?cultureInfo=pt-br` or `/?cultureInfo=es-ar` on the URL, for example. By using the first URL, the expected result is this one:
 
-![image](https://user-images.githubusercontent.com/19495917/75484759-23d7f000-5988-11ea-8b0a-63a5fce4ea7e.png)
+![image](https://user-images.githubusercontent.com/19495917/80527977-99057880-896b-11ea-9305-8921d580a1f1.png)
+
