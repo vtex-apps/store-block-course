@@ -81,8 +81,8 @@ Now we have an `h1` element rendered, it's possible to used it to display inform
     type: 'object',
     properties: {
   +   targetDate: {
-  +      title: 'Data final',
-  +      description: 'Data final utilizada no contador',
+  +      title: 'Final date',
+  +      description: 'Final date used in the countdown',
   +      type: 'string',
   +      default: null,
   +   },
@@ -92,9 +92,10 @@ Now we have an `h1` element rendered, it's possible to used it to display inform
 
 All set! Now you can change the text content through *Site Editor*. Go ahead to the *Site Editor* and click on `Countdown` on the side menu, this will open an edit menu, like the shown bellow:
 
-<img src="https://user-images.githubusercontent.com/19495917/74963531-a09b2500-53f0-11ea-84a4-85a27bb752f4.png" width="350" height="750"/>
+![image](https://user-images.githubusercontent.com/19495917/80523072-e382f700-8963-11ea-892d-3922a99de487.png)
 
 Now, in the field below the title, type the date in the format `AAAA-MM-DD` and see the change, that will then show the text you've typed! 
 
-![image](https://user-images.githubusercontent.com/19495917/74963805-1acba980-53f1-11ea-8091-d05cea1341ea.png)
+![image](https://user-images.githubusercontent.com/19495917/80523458-85a2df00-8964-11ea-9e74-f6d2c9cf5ab2.png)
+
 
