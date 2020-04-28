@@ -12,7 +12,7 @@ Now we have an `h1` element rendered, it's possible to used it to display inform
     e.g: 
 
     ```typescript
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0)
     ```
     
 * ***props* interface**

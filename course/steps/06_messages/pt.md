@@ -71,7 +71,7 @@ Você já deve ter aprendido a usar o nosso **builder _messages_**, e será atra
    ```
 5. Adicione uma constante que será o seu título:
    ```tsx
-   const titleText = title || <FormattedMessage id="countdown.title" />;
+   const titleText = title || <FormattedMessage id="countdown.title" />
    ```
 6. Agora, junte o título e o contador para renderizá-los. Para isso, defina um container por fora. Além disso, o texto do título será passado através da _prop_ `title`:
 
@@ -84,12 +84,12 @@ Você já deve ter aprendido a usar o nosso **builder _messages_**, e será atra
        hours: "00",
        minutes: "00",
        seconds: "00",
-     });
+     })
 
-     const titleText = title || <FormattedMessage id="countdown.title" />;
-     const handles = useCssHandles(CSS_HANDLES);
+     const titleText = title || <FormattedMessage id="countdown.title" />
+     const handles = useCssHandles(CSS_HANDLES)
 
-     tick(targetDate, setTime);
+     tick(targetDate, setTime)
 
      return (
        <div className={`${handles.container} t-heading-2 fw3 w-100 c-muted-1`}>
@@ -98,14 +98,14 @@ Você já deve ter aprendido a usar o nosso **builder _messages_**, e será atra
            {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
          </div>
        </div>
-     );
-   };
+     )
+   }
    ```
 
    Note que são utilizados três _handles_ **novos**: _container_, _countdown_ e _title_. Dessa forma, lembre-se de declará-los na constante `CSS_HANDLES`, vista na etapa anterior:
 
    ```tsx
-   const CSS_HANDLES = ["container", "countdown", "title"];
+   const CSS_HANDLES = ["container", "countdown", "title"]
    ```
 
 7. Por fim, é preciso adicionar a _prop_ de `title` no _schema_:

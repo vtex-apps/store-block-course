@@ -123,7 +123,7 @@ In this activity, the title will be separated and added to the store below the c
    ```tsx
    //Title.tsx
    const Title: StorefrontFunctionComponent<TitleProps> = ({ title }) => {
-     const handles = useCssHandles(CSS_HANDLES);
+     const handles = useCssHandles(CSS_HANDLES)
      const titleText = title || <FormattedMessage id="countdown.title" />
 
      return (

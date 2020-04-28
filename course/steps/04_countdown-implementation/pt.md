@@ -13,7 +13,7 @@ Agora que o básico do nosso componente está funcional, é hora de implementar 
 Voltando ao exemplo apresentado na etapa anterior, podemos mostrar na prática os conceitos abordados anteriormente. Para lembrar do exemplo, veja o código abaixo:
 
 ```tsx
-const [count, setCount] = useState(0);
+const [count, setCount] = useState(0)
 ```
 
 No trecho acima é importante observar três coisas: 

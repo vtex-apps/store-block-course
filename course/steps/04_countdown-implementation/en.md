@@ -12,7 +12,7 @@ It is called within the functional component to update and consume the component
 Seeing the example provided the previous step we can understand these concepts: 
 
 ```tsx
-const [count, setCount] = useState(0);
+const [count, setCount] = useState(0)
 ```
 
 In the above code piece, you might observe three things:

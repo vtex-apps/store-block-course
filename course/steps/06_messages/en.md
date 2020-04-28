@@ -89,7 +89,7 @@ You must have learned how to use our **builder _messages_**, and it will be thro
        hours: '00',
        minutes: '00',
        seconds: '00',
-     });
+     })
 
      const titleText = title || <FormattedMessage id="countdown.title" />
      const handles = useCssHandles(CSS_HANDLES)
@@ -103,8 +103,8 @@ You must have learned how to use our **builder _messages_**, and it will be thro
            {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
          </div>
        </div>
-     );
-   };
+     )
+   }
    ```
 
    Note that three **new** _handles_ are used: _container_, _countdown_ and _title_. Therefore, remember to declare them in the const `CSS_HANDLES`, seen in the previous step:
