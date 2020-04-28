@@ -53,23 +53,22 @@ Since you're already familiar to Store Framework, you know that we use blocks, l
     }
     ```
 
-  >In order for a component to be seen in a functional store, you need to declare the block, the app defines, in the theme. For that, hereby, we need to first have a theme to add the app to. In this course, we'll use `vtex.store-theme`. To clone the repository just run a: 
-
-  ```
-  git clone https://github.com/vtex-apps/store-theme.git
-  ```
+    >In order for a component to be seen in a functional store, you need to declare the block, the app defines, in the theme. For that, hereby, we need to first have a theme to add the app to. In this course, we'll use `vtex.store-theme`. To clone the repository just run a:
+    ```
+    git clone https://github.com/vtex-apps/store-theme.git
+    ```
 
 3. To avoid conflicts, go to your terminal and unlink any theme or apps you have linked. To do that, head just run the following command: 
 
-  ```
-  vtex unlink --all
-  ```
+    ```
+    vtex unlink --all
+    ```
 
 4. With the repository cloned, go to its folder (`cd store-theme`) and link the theme on your workspace: 
 
-  ```
-  vtex link
-  ```
+    ```
+    vtex link
+    ```
 
 5. In order for the app to be used on the theme, we have to add it to the theme's dependencies, that, as stated before, is in the `manifest.json`. Therefore, head to the theme's manifest in `store-theme` folder and add `vtex.countdown` as a dependency. Its version is defined in its manifest (`0.0.1`). The manifest will then have one extra line like it is defined bellow: 
 
