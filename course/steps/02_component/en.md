@@ -47,7 +47,7 @@ Since you're already familiar to Store Framework, you know that we use blocks, l
     -   return <div></div>
     +   return (
     +     <div>
-    +       <h1>Teste Countdown</h1>
+    +       <h1>Coutndown Test</h1>
     +     </div>
     +   )
     }
@@ -102,5 +102,5 @@ The expected result is to find a h1 in the top of the store, you can see it belo
 
 <!-- TODO: Correct the image translation !-->
 
-![image](https://user-images.githubusercontent.com/19495917/74960422-11d7d980-53eb-11ea-9d32-f0aa1340f0af.png)
+![image](https://user-images.githubusercontent.com/19495917/80492927-0e0c8a00-893b-11ea-8a1d-aaad2874a014.png)
 
