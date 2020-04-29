@@ -10,7 +10,7 @@ Agora que temos um elemento `h1` renderizado, é possível utilizá-lo para most
     
     Exemplo:
     ```typescript
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0)
     ```
 
 * **Interface para *props***
