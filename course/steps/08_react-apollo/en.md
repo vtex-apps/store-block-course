@@ -64,7 +64,8 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
       + const { data, loading, error } = useQuery(productReleaseDateQuery, {
       +   variables: {
       +     slug: linkText
-      +   }
+      +   },
+      +   ssr: false
       + })
       ```
 
@@ -88,7 +89,7 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
     }
     ```
 
-5.  After sending the changes, access a product page and note that the _query_ is working through a `console.log ({data})` after calling `useQuery`, which should show something like this:
+5.  After sending the changes, access a product page and note that the _query_ is working through a `console.log({data})` after calling `useQuery`, which should show something like this:
 
     ```ts
     {

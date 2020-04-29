@@ -56,13 +56,14 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
     + const { data, loading, error } = useQuery(productReleaseDateQuery, {
     +   variables: {
     +     slug: linkText
-    +   }
+    +   },
+    +   ssr: false
     + })
     ```
 
-    > `linkText` será igual a `'red-front-loading-washer'`, por exemplo, quando o seu componente for renderizado na página deste produto.
+    > `linkText` será igual a `'red-analogic-coffee-and-tea-machine'`, por exemplo, quando o seu componente for renderizado na página deste produto.
 
-    Além disso, é preciso tratar os casos de *loading* e *error* ao utilizar o *hook* `useQuery`. Para isso, é possível retornar um `span`em cada um dos casos, como no exemplo abaixo:
+    Além disso, é preciso tratar os casos de *loading* e *error* ao utilizar o *hook* `useQuery`. Para isso, é possível retornar um `span` em cada um dos casos, como no exemplo abaixo:
     ```tsx
     if (loading) {
       return (
@@ -74,11 +75,21 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
     if (error) {
       return (
         <div>
-          <span>Error!</span>
+          <span>Erro!</span>
         </div>
       )
     }
+    if (!product) {
+      return (
+        <div>
+          <span>Não há contexto de produto</span>
+        </div>
+      )
+    }
+
     ```
+
+    
 
 5.  Após enviar as modificações, acesse uma página de produto e verifique se a _query_ está funcionando através de um `console.log({data})` após a chamada do `useQuery`, que deve mostrar algo como isso:
 
