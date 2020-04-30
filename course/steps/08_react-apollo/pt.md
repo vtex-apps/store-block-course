@@ -22,7 +22,7 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
 
 ## Query de Release Date
 
-1.  Crie uma pasta `react/queries` e nela adicione um arquivo `productReleaseDate.graphqql` que irá conter a _query_ a ser feita. Em particular, essa _query_ irá receber um termo, que será **o slug do produto a ser recuperado a data de lançamento**. Ela chamará o _resolver_ `product`, já disponível pela app `vtex.search-graphql`, e recuperaremos apenas o campo que precisamos.
+1.  Crie uma pasta `react/queries` e nela adicione um arquivo `productReleaseDate.graphql` que irá conter a _query_ a ser feita. Em particular, essa _query_ irá receber um termo, que será **o slug do produto a ser recuperado a data de lançamento**. Ela chamará o _resolver_ `product`, já disponível pela app `vtex.search-graphql`, e recuperaremos apenas o campo que precisamos.
     ```
     query productReleaseDate($slug: String){
     	  product(slug: $slug) {
@@ -36,7 +36,7 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
     "vtex.search-graphql": "0.x",
     "vtex.product-context": "0.x"
     ```
-3.  Agora, é necessário importar os hook `useQuery`, para fazer a _query_ que retornará o dado que descrevemos, e `useProduct`, para nos dar a informação sobre o slug do produto atual. Além disso, também é preciso importar a _query_, definida anteriormente, que se encontra no arquivo `productReleaseDate.graphqql`. Vale ressaltar também que a *prop* `targetDate` não será mais necessária.
+3.  Agora, é necessário importar os hook `useQuery`, para fazer a _query_ que retornará o dado que descrevemos, e `useProduct`, para nos dar a informação sobre o slug do produto atual. Além disso, também é preciso importar a _query_, definida anteriormente, que se encontra no arquivo `productReleaseDate.graphql`. Vale ressaltar também que a *prop* `targetDate` não será mais necessária.
 
     ```diff
     // react/Countdown.tsx
@@ -49,6 +49,8 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
     +import productReleaseDateQuery from './queries/productReleaseDate.graphql'
     ```
 
+    > É importante notar que há a possibilidade do VS Code mostrar um erro ao fazer o *import* do `product-context`.
+
 4.  Defina a query usando o `productReleaseDateQuery` importado e o `useQuery`, usando os dados do `useProduct()`:
 
     ```diff
@@ -60,10 +62,11 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
     +   ssr: false
     + })
     ```
+    Como mencionado anteriormente, ambos são *hooks*, o que significa que devem ser adicionados dentro de um componente funcional React, no caso, o `Countdown`.
 
     > `linkText` será igual a `'red-analogic-coffee-and-tea-machine'`, por exemplo, quando o seu componente for renderizado na página deste produto.
 
-    Além disso, é preciso tratar os casos de *loading* e *error* ao utilizar o *hook* `useQuery`. Para isso, é possível retornar um `span` em cada um dos casos, como no exemplo abaixo:
+    Além disso, é preciso tratar os casos de *loading* e *error* antes de retornar o componente principal do contador ao utilizar o *hook* `useQuery`. Para isso, é possível retornar um `span` em cada um dos casos, como no exemplo abaixo, dentro do componente `Countdown`:
     ```tsx
     if (loading) {
       return (
@@ -89,8 +92,6 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
 
     ```
 
-    
-
 5.  Após enviar as modificações, acesse uma página de produto e verifique se a _query_ está funcionando através de um `console.log({data})` após a chamada do `useQuery`, que deve mostrar algo como isso:
 
     ```ts
@@ -111,5 +112,6 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
     ```
 
 Resultado no produto _Red Front-Loading Washer_:
+> No caso de você se deparar com casos em que o contador está contando para cima ou até mesmo com valores negativos, não se preocupe! Isso está relacionado ao fato de que o `releaseDate`pode estar no passado.
 
 ![image](https://user-images.githubusercontent.com/18706156/79596495-0fc28c00-80b7-11ea-8361-35075dba3bd5.png)
