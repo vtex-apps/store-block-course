@@ -85,9 +85,10 @@ Agora que temos um elemento `h1` renderizado, é possível utilizá-lo para most
     ```
 Pronto! Agora você pode alterar o conteúdo do texto através do *Site Editor*. Vamos ver como ficou? Vá até o *Site Editor* e clique em `Countdown` no menu lateral, isso abrirá o menu de edição da *app*, que será como a imagem abaixo.
 
-<img src="https://user-images.githubusercontent.com/19495917/74963531-a09b2500-53f0-11ea-84a4-85a27bb752f4.png" width="350" height="750"/>
+![image](https://user-images.githubusercontent.com/19495917/80977387-0cd7d300-8dfb-11ea-87e4-35218eab524b.png)
 
 Agora, no campo abaixo do título, digite uma data no formato `AAAA-MM-DD` e veja a alteração, que passará a exibir o texto que você digitou. 
 
-![image](https://user-images.githubusercontent.com/19495917/74963805-1acba980-53f1-11ea-8091-d05cea1341ea.png)
+![image](https://user-images.githubusercontent.com/19495917/80977331-f6ca1280-8dfa-11ea-81f6-b7b551a8c41f.png)
+
 

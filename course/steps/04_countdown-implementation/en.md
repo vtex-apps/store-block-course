@@ -32,20 +32,24 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
 1. We need to import a few functions and types to continue: 
     First, let's import the `useState` hook:
     ```tsx
+    //react/Countdown.tsx
     import React, { useState } from 'react'
     ```    
     Besides that, it's necessary to import the `TimeSplit` type:
     ```tsx
+    //react/Countdown.tsx
     import { TimeSplit } from './typings/global'
     ```
     Lastly, you need an `util` function that will update the countdown:
     ```tsx
+    //react/Countdown.tsx
     import { tick } from './utils/time'
     ```
 
 2. Add the state update *hook* (`useState`):
 
     ```diff
+    //react/Countdown.tsx
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) => {
     +   const [timeRemaining, setTime] = useState<TimeSplit>({
     +     hours: '00',
@@ -64,11 +68,13 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
 3. Add a default constant `targetDate` for the edge case where the prop is not defined:
     
     ```typescript
+    //react/Countdown.tsx
     const DEFAULT_TARGET_DATE = (new Date('2020-06-25')).toISOString()
     ```
 
 4. Use the `tick` function and the `DEFAULT_TARGET_DATE` constant to make the countdown work:
     ```diff
+    //react/Countdown.tsx
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
       const [timeRemaining, setTime] = useState<TimeSplit>({
         hours: '00',
@@ -88,6 +94,7 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
 
 5. Change the `h1` so that it shows the countdown that we've created. For that, we need to use the `timeRemaining` current state:
     ```diff
+    //react/Countdown.tsx
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
       const [timeRemaining, setTime] = useState<TimeSplit>({
         hours: '00',
