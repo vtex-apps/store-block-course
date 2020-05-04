@@ -56,9 +56,9 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
 
     +import productReleaseDateQuery from './queries/productReleaseDate.graphql'
     ```
-    > It is important to higlight that there is the possibility of VS Code showing an error while importing `product-context`.
+    > It is important to higlight that there is the possibility of your IDE showing an error while importing `product-context`.
 
-4.  Define the query using the `productReleaseDateQuery` importaded and the `useQuery`, using the `useProduct()` data:
+4.  Define the query using the `productReleaseDateQuery` importaded and the `useQuery`, using the `useProduct()` data. As mentioned before, both are  hooks, which means that they must be added inside a React functional component. In this case, `Countdown`.
 
       ```diff
       + const { product: { linkText } } = useProduct()
@@ -69,8 +69,6 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
       +   ssr: false
       + })
       ```
-
-    As mentioned before, both are  hooks, which means that they must be added inside a React functional component. In this case, `Countdown`.
 
     > `linkText` will be the same as `'red-front-loading-washer'`, for example, when your component is rendered in this product's page.
 

@@ -30,19 +30,11 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
 
 ## Activity
 1. We need to import a few functions and types to continue: 
-    First, let's import the `useState` hook:
+
     ```tsx
     //react/Countdown.tsx
     import React, { useState } from 'react'
-    ```    
-    Besides that, it's necessary to import the `TimeSplit` type:
-    ```tsx
-    //react/Countdown.tsx
     import { TimeSplit } from './typings/global'
-    ```
-    Lastly, you need an `util` function that will update the countdown:
-    ```tsx
-    //react/Countdown.tsx
     import { tick } from './utils/time'
     ```
 
