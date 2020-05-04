@@ -57,7 +57,6 @@ Grande parte das definições de Tachyons podem ser alteradas, de forma que sua 
 4. Por fim, é preciso utilizar o *handle* no componente a fim de ver a customização. Para isso, é necessário utilizar a prop `className` com as classes a serem utilizadas e as classes de Tachyons, para os estilos globais.
     ```diff
     // react/Countdown.tsx
-
     import React from 'react'
     ...
     

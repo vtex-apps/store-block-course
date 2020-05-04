@@ -25,6 +25,7 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
 
 1. Remova os *imports*, o `title` da interface e altere a constante do CSS *handles*:
     ```diff
+    //react/Countdown.tsx
     import React, { useState } from 'react'
     import { TimeSplit } from './typings/global'
     import { tick } from './utils/time'
@@ -42,7 +43,7 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
     ```
 2. Agora, no componente React em si, é preciso retirar o `title` como *prop* recebida e a constante do texto do título, além de alterar o que é renderizado:
     ```diff
-    //Countdown.tsx
+    //react/Countdown.tsx
     - const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ title, targetDate = DEFAULT_TARGET_DATE }) => {
     + const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
       const [
@@ -73,6 +74,7 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
     ```
 3. Por fim, retire o título do *schema*:
     ```diff
+    //react/Countdown.tsx
     Countdown.schema = {
       title: 'editor.countdown.title',
       description: 'editor.countdown.description',
@@ -99,7 +101,7 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
 
 2. Adicione os *imports* necessários e a constante do CSS *handles*:
     ```tsx
-    //Title.tsx
+    //react/Title.tsx
     import React from 'react'
     import { FormattedMessage } from 'react-intl'
     import { useCssHandles } from 'vtex.css-handles'
@@ -108,7 +110,7 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
     ```
 3. Altere a função do componente:
     ```tsx
-    //Title.tsx
+    //react/Title.tsx
     const Title: StorefrontFunctionComponent<TitleProps> = ({title}) => {
       const handles = useCssHandles(CSS_HANDLES)
       const titleText = title || <FormattedMessage id="countdown.title" />
@@ -122,7 +124,7 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
     ```
 4. Adicione a interface, o *schema* e o *export*:
     ```tsx
-    //Title.tsx
+    //react/Title.tsx
     interface TitleProps {
       title: string
     }
@@ -144,7 +146,7 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
     ```
 
 ### Alterando o arquivo `interfaces.json`
-  Nesta altura, há dois componentes na *app*: o título e o contador. Porém, é preciso alterar o arquivo `interfaces.json`. É preciso declarar os componentes separadamente. No início, nossa interface tinha apenas o `Countdown`. É necessário adicionar o outro componente:
+  Nesta altura, há dois componentes na *app*: o título e o contador. Porém, é preciso alterar o arquivo `interfaces.json`, que se encontra na pasta `store`. É preciso declarar os componentes separadamente. No início, nossa interface tinha apenas o `Countdown`. É necessário adicionar o outro componente:
   ```diff
   {
     "countdown": {
@@ -168,7 +170,7 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
 ```
 
 ### Adicionando o novo bloco na home da loja
-Por fim, para ver as mudanças, volte ao tema para alterá-lo a fim de incluir o novo bloco. Para isso, basta adicionar à *home* o título! Assim como feito para o contador, é necessário adicionar o `countdown.title` como um bloco no arquivo `home.jsonc` do store-theme.
+Por fim, para ver as mudanças, volte ao tema para alterá-lo a fim de incluir o novo bloco. Para isso, basta adicionar à *home* o título! Assim como feito para o contador, é necessário adicionar o `countdown.title` como um bloco no tema da loja, ou seja, no arquivo `home.jsonc` do store-theme.
 ```diff
 //home.jsonc
  {

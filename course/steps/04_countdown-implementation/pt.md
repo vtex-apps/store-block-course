@@ -32,23 +32,18 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
 
 ## Atividades
 1. Precisamos importar algumas funções e tipos para continuar:
-    
-    Primeiro, vamos importar o *hook*:
+
     ```tsx
+    //react/Countdown.tsx
     import React, { useState } from 'react'
-    ```    
-    Além disso, é necessário importar o tipo `TimeSplit`:
-    ```tsx
     import { TimeSplit } from './typings/global'
-    ```
-    Por fim, é oferecida uma função `util` que atualizará a contagem regressiva:
-    ```tsx
     import { tick } from './utils/time'
     ```
 
 2. Adicione o *hook* de atualização de estado (`useState`)
 
     ```diff
+    //react/Countdown.tsx
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) => {
     +   const [timeRemaining, setTime] = useState<TimeSplit>({
     +     hours: '00',
@@ -68,11 +63,13 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
 3. Adicione uma `targetDate` padrão para o caso de não haver um valor inicial definido. Para isso, declare uma constante que será utilizada como padrão:
     
     ```typescript
+    //react/Countdown.tsx
     const DEFAULT_TARGET_DATE = (new Date('2020-06-25')).toISOString()
     ```
 
 4. Utilize a função `tick` e a constante `DEFAULT_TARGET_DATE`  para fazer o contador:
     ```diff
+    //react/Countdown.tsx
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
       const [timeRemaining, setTime] = useState<TimeSplit>({
         hours: '00',
@@ -92,6 +89,7 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
 
 5. Altere o `h1` para que ele exiba o contador que criamos. Para isso, precisamos utilizar o estado atual `timeRemaining`:
     ```diff
+    //react/Countdown.tsx
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
       const [timeRemaining, setTime] = useState<TimeSplit>({
         hours: '00',

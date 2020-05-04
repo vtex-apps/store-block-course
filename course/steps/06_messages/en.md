@@ -22,7 +22,7 @@ To use such definitions, the translation files mentioned above are JSON, whose k
 
 You must have learned how to use our **builder _messages_**, and it will be through it that internationalized _strings_ will be added to the components.
 
-1. To do so, **in the directory _messages_**, add now a message for the **title of the component**:
+1. To do so, **in the directory `/messages`**, add now a message for the **title of the component**:
 
    `messages/pt.json`
 
@@ -69,18 +69,21 @@ You must have learned how to use our **builder _messages_**, and it will be thro
 4. In your component's code, `Countdown.tsx`, **import the FormattedMessage**
 
    ```tsx
+   //react/Countdown.tsx
    import { FormattedMessage } from 'react-intl'
    ```
 
 5. Add a const that will be your title:
 
    ```tsx
+   //react/Countdown.tsx
    const titleText = title || <FormattedMessage id="countdown.title" />
    ```
 
 6. Now, join the title to the countdown to render. To do so, define a container outside. Besides, the text for the title will be passes using the _prop_ `title`:
 
    ```tsx
+   //react/Countdown.tsx
    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
      title,
      targetDate,
@@ -116,6 +119,7 @@ You must have learned how to use our **builder _messages_**, and it will be thro
 7. At last, it is needed to add the `title` _prop_ in the _schema_:
 
    ```diff
+   //react/Countdown.tsx
    Countdown.schema = {
      title: 'editor.countdown.title',
      description: 'editor.countdown.description',

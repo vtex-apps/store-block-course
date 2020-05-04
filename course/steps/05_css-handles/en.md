@@ -61,7 +61,6 @@ A lot of the Tachyons' definitions can be changed, so that your store will have 
 
    ```diff
    // react/Countdown.tsx
-
    import React from 'react'
    ...
 

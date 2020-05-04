@@ -25,7 +25,7 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
 
 ## Release Date Query
 
-1.  Create a folder `react/queries` and add a `productReleaseDate.graphqql` file to it that will contain the _query_ to be made. In particular, this _query_ will receive a term, which will be **the product slug to be retrieved at the launch date**. It will call the _resolver_ `product`, already available through the`vtex.search-graphql` app, and we will retrieve only the field we need.
+1.  Create a folder `react/queries` and add a `productReleaseDate.graphql` file to it that will contain the _query_ to be made. In particular, this _query_ will receive a term, which will be **the product slug to be retrieved at the launch date**. It will call the _resolver_ `product`, already available through the`vtex.search-graphql` app, and we will retrieve only the field we need.
 
     ```
     query productReleaseDate($slug: String){
@@ -44,7 +44,7 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
     "vtex.product-context": "0.x"
     ```
 
-3.  Now, it is necessary to import the `useQuery` hooks, to make the _query_ that will return the data we described, and `useProduct`, to give us information about the current product slug. In addition, it is also necessary to import the _query_ defined previously, which is found in the file `productReleaseDate.graphqql`. It is also important to notice that the prop `targetDate` will no longer be necessary.
+3.  Now, it is necessary to import the `useQuery` hooks, to make the _query_ that will return the data we described, and `useProduct`, to give us information about the current product slug. In addition, it is also necessary to import the _query_ defined previously, which is found in the file `productReleaseDate.graphql`. It is also important to notice that the prop `targetDate` will no longer be necessary.
 
     ```diff
     // react/Countdown.tsx
@@ -56,8 +56,9 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
 
     +import productReleaseDateQuery from './queries/productReleaseDate.graphql'
     ```
+    > It is important to higlight that there is the possibility of your IDE showing an error while importing `product-context`.
 
-4.  Define the query using the `productReleaseDateQuery` importaded and the `useQuery`, using the `useProduct()` data:
+4.  Define the query using the `productReleaseDateQuery` importaded and the `useQuery`, using the `useProduct()` data. As mentioned before, both are  hooks, which means that they must be added inside a React functional component. In this case, `Countdown`.
 
       ```diff
       + const { product: { linkText } } = useProduct()
@@ -71,7 +72,7 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
 
     > `linkText` will be the same as `'red-front-loading-washer'`, for example, when your component is rendered in this product's page.
 
-    Besides, it is important to deal with the cases in which there is no data fetched when using useQuery: *loading* and *error*. In those cases, it is possible to return a span, such as the example below:
+    Besides, it is important to deal with the cases in which there is no data fetched when using useQuery and before returning the main component: *loading* and *error* In those cases, it is possible to return a span in the countdown component, such as the example below:
     ```tsx
     if (loading) {
       return (
@@ -110,5 +111,6 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
     ```
 
 Result using the _Red Front-Loading Washer_ product:
+> In case of having cases that the countdown is going up or with negative values, don't worry! It's related to the fact that some `releaseDate` can be in the past.
 
 ![image](https://user-images.githubusercontent.com/18706156/79596495-0fc28c00-80b7-11ea-8361-35075dba3bd5.png)
