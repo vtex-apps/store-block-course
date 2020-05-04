@@ -49,7 +49,7 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
     +import productReleaseDateQuery from './queries/productReleaseDate.graphql'
     ```
 
-    > É importante notar que há a possibilidade do VS Code mostrar um erro ao fazer o *import* do `product-context`.
+    > É importante notar que há a possibilidade da sua IDE mostrar um erro ao fazer o *import* do `product-context`.
 
 4.  Defina a query usando o `productReleaseDateQuery` importado e o `useQuery`, usando os dados do `useProduct()`:
 
