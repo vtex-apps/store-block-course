@@ -2,7 +2,7 @@
   "title": "VTEX Store Block course",
   "tagline": "Learn how to create custom blocks on VTEX Store Framework",
   "description": "Using React and Graphql, you can export your components as VTEX blocks",
-  "languages": ["pt", "en"],
+  "languages": ["en", "pt"],
   "steps": [
     {
       "folder": "01_manifest",
