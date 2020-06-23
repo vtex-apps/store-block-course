@@ -6,7 +6,7 @@ To develop a store front block, like the ones provided natively in Store Framewo
 
 ## A little about the tool
 
-*React*'s basic development unit is a **component**, in which should be implemented all-in-one the logical operation, visual interface and data retrieval of an UI element. Following the most recent recommendation, we will focus our usage in the [**Hook API**](https:/**/reactjs.org/docs/hooks-intro.html), not using *class* definition for component building. 
+*React*'s basic development unit is a **component**, in which should be implemented all-in-one the logical operation, visual interface and data retrieval of an UI element. Following the most recent recommendation, we will focus our usage in the [**Hook API**](https://reactjs.org/docs/hooks-intro.html), not using *class* definition for component building. 
 
 In VTEX IO, we adopt [**Typescript**](https://www.typescriptlang.org/) as default language for *frontend* programming. Despite the complexity of learning new syntaxes, the effort is quickly rewarded! Using Typescript, the bug anticipation is enhanced, because of its static typing. Besides that, with the right IDEs, it's possible to increase the development speed with a smarter *code completion* of the code objects. 
 
