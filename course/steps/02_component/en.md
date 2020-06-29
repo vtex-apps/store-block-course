@@ -16,6 +16,15 @@ In this course, we'll use Typescript exclusively. If you're not familiar with th
 
 Since you're already familiar to Store Framework, you know that we use blocks, like `shelf` and `sku-selector`, to create a VTEX IO store. In this step you're going to create a block that is going to be used in your store's home page theme.
 
+## Setting up our test bot
+It's important for you to have out test bot installed in this course repository so as for us to see your progress, even though it does not contains any tests or evaluations on each step. So as to install it, follow the steps below:
+
+1. Open [our test bot installation page](https://github.com/apps/vtex-course-hub) and click on **Configure**;
+2. Select the **Only selected repositories** option, then click on **Select repositories** and type in `store-block`;
+3. Click on `{{ user.username }}/store-block` and then on **Install**.
+
+    <img src="https://user-images.githubusercontent.com/19495917/86020968-f31fca00-b9fe-11ea-9776-ccab355663b5.png" width="350" />
+
 ## Activity
 
 1. In the local template cloned, open up the `Countdown.tsx` file:
@@ -40,7 +49,7 @@ Since you're already familiar to Store Framework, you know that we use blocks, l
     export default Countdown
     ```
 
-2. To see you component in the home page, link the theme in one terminal and the app in another. Add a `h1` tag inside the component and declare the block on the theme.
+2. Add a `h1` tag inside the component and link it in your terminal, using the command `vtex link`.
 
     ```diff
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
@@ -53,7 +62,7 @@ Since you're already familiar to Store Framework, you know that we use blocks, l
     }
     ```
 
-    >In order for a component to be seen in a functional store, you need to declare the block, the app defines, in the theme. For that, hereby, we need to first have a theme to add the app to. In this course, we'll use `vtex.store-theme`. To clone the repository just run a:
+    >**IMPORTANT**: In order to the component that you've just linked to be seen in a functional store, you need to declare the block that the app defines in a theme. For that, hereby, we need to first have a theme to add the app to. In this course, we'll use `vtex.store-theme`. To clone the repository just run a:
     ```
     git clone https://github.com/vtex-apps/store-theme.git
     ```
@@ -70,7 +79,9 @@ Since you're already familiar to Store Framework, you know that we use blocks, l
     vtex link
     ```
 
-5. In order for the app to be used on the theme, we have to add it to the theme's dependencies, that, as stated before, is in the `manifest.json`. Therefore, head to the theme's manifest in `store-theme` folder and add `vtex.countdown` as a dependency. Its version is defined in its manifest (`0.0.1`). The manifest will then have one extra line like it is defined bellow: 
+    > **IMPORTANT**: Just to emphasize, at this point, you need to have two terminals opened and running `vtex link`. The first one contains the link of the custom block that you're creating and the second one refers to the `store-theme`, the theme you're using to insert your custom block on.
+
+5. Now, with both links active (theme and custom block), in order for the app to be used on the theme, we have to add it to the theme's dependencies, that, as stated before, is in the `manifest.json`. Therefore, head to the theme's manifest in `store-theme` folder and add `vtex.countdown` as a dependency. Its version is defined in its manifest (`0.0.1`). The manifest will then have one extra line like it is defined bellow: 
 
     ```diff
     {
@@ -99,8 +110,6 @@ Since you're already familiar to Store Framework, you know that we use blocks, l
     ```
 
 The expected result is to find a h1 in the top of the store, you can see it below: 
-
-<!-- TODO: Correct the image translation !-->
 
 ![image](https://user-images.githubusercontent.com/19495917/80492927-0e0c8a00-893b-11ea-8a1d-aaad2874a014.png)
 
