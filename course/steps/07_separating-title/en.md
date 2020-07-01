@@ -49,34 +49,36 @@ In this activity, the title will be separated and added to the store below the c
 
 2. Now, in the component itself, remove the `title` as a _prop_ given and also the title text constant, which changes what is being rendered:
 
-   ```diff
-   //react/Countdown.tsx
-   - const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ title, targetDate = DEFAULT_TARGET_DATE }) => {
-   + const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
-     const [
-       timeRemaining,
-       setTime
-     ] = useState<TimeSplit>({
-       hours: '00',
-       minutes: '00',
-       seconds: '00'
-     })
+    ```diff
+    //react/Countdown.tsx
+    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
+    - title,
+      targetDate = DEFAULT_TARGET_DATE,
+    }) => {
+      const [
+        timeRemaining,
+        setTime
+      ] = useState<TimeSplit>({
+        hours: '00',
+        minutes: '00',
+        seconds: '00'
+      })
 
-   - const titleText = title || <FormattedMessage id="countdown.title" />
-     const handles = useCssHandles(CSS_HANDLES)
+    - const titleText = title || <FormattedMessage id="countdown.title" />
+      const handles = useCssHandles(CSS_HANDLES)
 
-     tick(targetDate, setTime)
+      tick(targetDate, setTime)
 
-     return (
-         <div className={`${handles.container} t-heading-2 fw3 w-100 pt7 pb6 c-muted-1 db tc`}>
-   -        <div className={`${handles.title} db tc`}>
-   -          { titleText }
-   -        </div>
-           <div className={`db tc`}>
-             {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
-           </div>
-         </div>
-     )
+      return (
+    -   <div className={`${handles.container} t-heading-2 fw3 w-100 pt7 pb6 c-muted-1 db tc`}>
+    -     <div className={`${handles.title} db tc`}>
+    -       { titleText }
+    -     </div>
+          <div className={`${handles.countdown} db tc`}>
+            {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
+          </div>
+    -   </div>
+      )
    }
    ```
 

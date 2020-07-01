@@ -44,8 +44,10 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
 2. Agora, no componente React em si, é preciso retirar o `title` como *prop* recebida e a constante do texto do título, além de alterar o que é renderizado:
     ```diff
     //react/Countdown.tsx
-    - const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ title, targetDate = DEFAULT_TARGET_DATE }) => {
-    + const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
+    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
+    - title,
+      targetDate = DEFAULT_TARGET_DATE,
+    }) => {
       const [
         timeRemaining,
         setTime
@@ -61,17 +63,17 @@ Nessa atividade, será separado o título e adicionado à nossa loja embaixo do 
       tick(targetDate, setTime)
 
       return (
-          <div className={`${handles.container} t-heading-2 fw3 w-100 pt7 pb6 c-muted-1 db tc`}>
-    -        <div className={`${handles.title} db tc`}>
-    -          { titleText }
-    -        </div>
-            <div className={`db tc`}>
-              {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
-            </div>
+    -   <div className={`${handles.container} t-heading-2 fw3 w-100 pt7 pb6 c-muted-1 db tc`}>
+    -     <div className={`${handles.title} db tc`}>
+    -       { titleText }
+    -     </div>
+          <div className={`${handles.countdown} db tc`}>
+            {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
           </div>
+    -   </div>
       )
-    }
-    ```
+   }
+   ```
 3. Por fim, retire o título do *schema*:
     ```diff
     //react/Countdown.tsx
