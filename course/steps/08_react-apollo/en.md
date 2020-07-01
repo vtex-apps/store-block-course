@@ -49,20 +49,20 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
     ```diff
     // react/Countdown.tsx
     import React from 'react'
+    ...
     +import { useQuery } from 'react-apollo'
+
     +import useProduct from 'vtex.product-context/useProduct'
 
-    import { useCssHandles } from 'vtex.css-handles'
-
-    +import productReleaseDateQuery from './queries/productReleaseDate.graphql'
+    +import productReleaseDate from './queries/productReleaseDate.graphql'
     ```
     > It is important to higlight that there is the possibility of your IDE showing an error while importing `product-context`.
 
-4.  Define the query using the `productReleaseDateQuery` importaded and the `useQuery`, using the `useProduct()` data. As mentioned before, both are  hooks, which means that they must be added inside a React functional component. In this case, `Countdown`.
+4.  Define the query using the `productReleaseDate` importaded and the `useQuery`, using the `useProduct()` data. As mentioned before, both are  hooks, which means that they must be added inside a React functional component. In this case, `Countdown`.
 
       ```diff
       + const { product: { linkText } } = useProduct()
-      + const { data, loading, error } = useQuery(productReleaseDateQuery, {
+      + const { data, loading, error } = useQuery(productReleaseDate, {
       +   variables: {
       +     slug: linkText
       +   },
