@@ -79,7 +79,7 @@ It's important for you to have out test bot installed in this course repository 
     vtex link
     ```
 
-    > **IMPORTANT**: Just to emphasize, at this point, you need to have two terminals opened and running `vtex link`. The first one contains the link of the custom block that you're creating and the second one refers to the `store-theme`, the theme you're using to insert your custom block on.
+    > **IMPORTANT**: At this point, you need to have two terminals opened and running `vtex link`. The first one contains the link of the custom block that you're creating and the second one refers to the `store-theme`, the theme you're using to insert your custom block on.
 
 5. Now, with both links active (theme and custom block), in order for the app to be used on the theme, we have to add it to the theme's dependencies, that, as stated before, is in the `manifest.json`. Therefore, head to the theme's manifest in `store-theme` folder and add `vtex.countdown` as a dependency. Its version is defined in its manifest (`0.0.1`). The manifest will then have one extra line like it is defined bellow: 
 
