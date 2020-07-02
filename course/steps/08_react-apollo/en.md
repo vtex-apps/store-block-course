@@ -58,7 +58,7 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
     ```
     > It is important to higlight that there is the possibility of your IDE showing an error while importing `product-context`.
 
-4.  Define the query using the `productReleaseDate` importaded and the `useQuery`, using the `useProduct()` data. As mentioned before, both are  hooks, which means that they must be added inside a React functional component. In this case, `Countdown`.
+4.  Define the query using the `productReleaseDate` imported and the `useQuery` hook, you can find the product data in `useProduct` hook. Since they are (hooks)[https://reactjs.org/docs/hooks-intro.html], they only work inside react functional components. 
 
       ```diff
       + const { product: { linkText } } = useProduct()
