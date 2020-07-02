@@ -53,7 +53,7 @@ Since you're already familiar to Store Framework, you know that we use blocks, l
     }
     ```
 
-    >**IMPORTANT**: In order to the component that you've just linked to be seen in a functional store, you need to declare the block that the app defines in a theme. For that, hereby, we need to first have a theme to add the app to. In this course, we'll use `vtex.store-theme`. To clone the repository just run a:
+    >**IMPORTANT**: In order to the component that you've just linked to be seen in a functional store, you need to declare the block that the app defines in a theme. For that, hereby, we need to first have a theme to add the app to. In this course, we'll use the [Store Theme](https://github.com/vtex-apps/store-theme.git). To clone the repository just run a:
     ```
     git clone https://github.com/vtex-apps/store-theme.git
     ```

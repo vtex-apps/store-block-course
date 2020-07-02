@@ -49,7 +49,7 @@ Como você já tem familiaridade com o Store Framework, já sabe que utilizamos 
     }
     ```
 
-    >**IMPORTANTE**: Para que o componente seja visto funcionando na loja, é preciso declarar o bloco que a *app* define no tema. Em primeiro lugar, será necessário ter um tema para adicionar a *app*, para isso, será necessário cloná-lo do *Github*. Nesse curso, o `store-theme` será utilizado. Para clonar o repositório, basta executar o seguinte comando:
+    >**IMPORTANTE**: Para que o componente seja visto funcionando na loja, é preciso declarar o bloco que a *app* define no tema. Em primeiro lugar, será necessário ter um tema para adicionar a *app*, para isso, será necessário cloná-lo do *Github*. Nesse curso, o [Store Theme](https://github.com/vtex-apps/store-theme.git) será utilizado. Para clonar o repositório, basta executar o seguinte comando:
 
     ```
     git clone https://github.com/vtex-apps/store-theme.git
