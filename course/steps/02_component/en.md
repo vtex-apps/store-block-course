@@ -49,7 +49,7 @@ It's important for you to have out test bot installed in this course repository 
     export default Countdown
     ```
 
-2. Add a `h1` tag inside the component and link it in your terminal, using the command `vtex link`.
+2. Add an `h1` tag inside the component and link it in your terminal, using the command `vtex link`.
 
     ```diff
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
@@ -112,4 +112,3 @@ It's important for you to have out test bot installed in this course repository 
 The expected result is to find a h1 in the top of the store, you can see it below: 
 
 ![image](https://user-images.githubusercontent.com/19495917/80492927-0e0c8a00-893b-11ea-8a1d-aaad2874a014.png)
-
