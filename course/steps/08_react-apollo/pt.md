@@ -51,7 +51,7 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
 
     > É importante notar que há a possibilidade da sua IDE mostrar um erro ao fazer o *import* do `product-context`.
 
-4.  Defina a query usando o `productReleaseDate` importado e o `useQuery`, usando os dados do `useProduct()`. Como mencionado anteriormente, ambos são *hooks*, o que significa que devem ser adicionados dentro de um componente funcional React, no caso, o `Countdown`.
+4.  Defina a query usando o `productReleaseDate` importado e o `useQuery`. Os dados de produto podem ser encontrados em `useProduct`. Ambos são (*hooks*)[https://reactjs.org/docs/hooks-intro.html], e portanto, devem ser adicionados dentro de um componente funcional React.
 
     ```diff
     + const { product: { linkText } } = useProduct()
