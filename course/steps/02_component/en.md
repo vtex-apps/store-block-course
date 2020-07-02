@@ -16,15 +16,6 @@ In this course, we'll use Typescript exclusively. If you're not familiar with th
 
 Since you're already familiar to Store Framework, you know that we use blocks, like `shelf` and `sku-selector`, to create a VTEX IO store. In this step you're going to create a block that is going to be used in your store's home page theme.
 
-## Setting up our test bot
-It's important for you to have out test bot installed in this course repository so as for us to see your progress, even though it does not contains any tests or evaluations on each step. So as to install it, follow the steps below:
-
-1. Open [our test bot installation page](https://github.com/apps/vtex-course-hub) and click on **Configure**;
-2. Select the **Only selected repositories** option, then click on **Select repositories** and type in `store-block`;
-3. Click on `{{ user.username }}/store-block` and then on **Install**.
-
-    <img src="https://user-images.githubusercontent.com/19495917/86020968-f31fca00-b9fe-11ea-9776-ccab355663b5.png" width="350" />
-
 ## Activity
 
 1. In the local template cloned, open up the `Countdown.tsx` file:

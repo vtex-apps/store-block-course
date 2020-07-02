@@ -14,15 +14,6 @@ Neste curso, **será utilizado exclusivamente Typescript**. Caso você não tenh
 ### Objetivo dessa etapa
 Como você já tem familiaridade com o Store Framework, já sabe que utilizamos blocos, como `shelf` e  `sku-selector`, para a montagem de uma VTEX IO Store. Nesta etapa você irá criar um bloco que será utilizado no tema da *home page* de sua loja.
 
-## Configurando nosso *bot* de testes
-É importante que você tenha nosso *bot* de testes instalado no repositório deste curso, de forma que possamos acompanhar a sua evolução ao longo do mesmo, mesmo que este seja um curso que não contenha correções automáticas de cada um dos passos. Para fazer a instalação, siga os passos abaixo:
-
-1. Abra [a página de instalação do nosso *bot* de correção](https://github.com/apps/vtex-course-hub) e clique em ***Configure***;
-2. Selecione a opção ***Only selected repositories***. Então clique em ***Select repositories*** e digite `store-block`;
-3. Clique em `{{ user.username }}/store-block` e depois em ***Install***.
-
-    <img src="https://user-images.githubusercontent.com/19495917/86020968-f31fca00-b9fe-11ea-9776-ccab355663b5.png" width="350" />
-
 ## Atividade
 1. No *template* clonado localmente, abra o arquivo `Countdown.tsx`:
 
