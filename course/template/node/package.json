@@ -8,6 +8,7 @@
     "typescript": "3.7.3"
   },
   "resolutions": {
-    "**/**/apollo-server-core": "^2.14.2"
+    "**/**/minimist": "^0.2.1",
+    "**/**/lodash": "^4.17.17"
   }
 }
