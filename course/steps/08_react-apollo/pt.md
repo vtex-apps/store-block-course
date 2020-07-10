@@ -115,3 +115,9 @@ Resultado no produto _Red Front-Loading Washer_:
 > No caso de você se deparar com casos em que o contador está contando para cima ou até mesmo com valores negativos, não se preocupe! Isso está relacionado ao fato de que o `releaseDate`pode estar no passado.
 
 ![image](https://user-images.githubusercontent.com/18706156/79596495-0fc28c00-80b7-11ea-8361-35075dba3bd5.png)
+
+---
+## Muito bem!
+Esse é o último passo do curso de Store Block, você avançou muito bem e esperamos que tenha aprendido bastante até esse momento. **Parabéns!**
+
+Se você deseja continuar aprendendo mais em como desenvolver utilizando o VTEX IO, nós o encorajamos a começar nosso próximo curso, que foca em ensinar como desenvolver serviços no VTEX IO. Você pode encontrá-lo em: [VTEX IO Service Course on Learning Lab](https://lab.github.com/vtex-trainings/vtex-io-service-course).

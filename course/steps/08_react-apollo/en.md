@@ -114,3 +114,9 @@ Result using the _Red Front-Loading Washer_ product:
 > In case of having cases that the countdown is going up or with negative values, don't worry! It's related to the fact that some `releaseDate` can be in the past.
 
 ![image](https://user-images.githubusercontent.com/18706156/79596495-0fc28c00-80b7-11ea-8361-35075dba3bd5.png)
+
+---
+## Well done!
+This is the last step of the Store Block course, you did really well and we hope you've learned a lot until this moment. **Congratulations!**
+
+If you want to continue learning more about how to develop using VTEX IO, we encourage you to start our next course, which focus on teaching how to develop services on top of VTEX IO. You can find it in the [VTEX IO Service Course on Learning Lab](https://lab.github.com/vtex-trainings/vtex-io-service-course).
