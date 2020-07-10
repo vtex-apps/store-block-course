@@ -70,12 +70,19 @@ Você já deve ter aprendido a usar o nosso **builder _messages_**, e será atra
    //react/Countdown.tsx
    +  import { FormattedMessage } from 'react-intl'
    ```
-5. Adicione uma constante que será o seu título:
+5. Adicione uma nova _prop_ ao `CountdownProps`:
+    ```diff
+    interface CountdownProps {
+    + title: string
+      targetDate: string
+    }
+    ```
+6. Adicione uma constante que será o seu título:
    ```tsx
    //react/Countdown.tsx
    const titleText = title || <FormattedMessage id="countdown.title" />
    ```
-6. Agora, junte o título e o contador para renderizá-los. Para isso, defina um container por fora. Além disso, o texto do título será passado através da _prop_ `title`:
+7. Agora, junte o título e o contador para renderizá-los. Para isso, defina um container por fora. Além disso, o texto do título será passado através da _prop_ `title`:
 
    ```tsx
    //react/Countdown.tsx
@@ -112,7 +119,7 @@ Você já deve ter aprendido a usar o nosso **builder _messages_**, e será atra
    const CSS_HANDLES = ["container", "countdown", "title"]
    ```
 
-7. Por fim, é preciso adicionar a _prop_ de `title` no _schema_:
+8. Por fim, é preciso adicionar a _prop_ de `title` no _schema_:
    ```diff
    //react/Countdown.tsx
    Countdown.schema = {

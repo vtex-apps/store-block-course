@@ -49,20 +49,20 @@ The **Apollo Client** lib offers native integration with React, through _hooks_.
     ```diff
     // react/Countdown.tsx
     import React from 'react'
+    ...
     +import { useQuery } from 'react-apollo'
+
     +import useProduct from 'vtex.product-context/useProduct'
 
-    import { useCssHandles } from 'vtex.css-handles'
-
-    +import productReleaseDateQuery from './queries/productReleaseDate.graphql'
+    +import productReleaseDate from './queries/productReleaseDate.graphql'
     ```
     > It is important to higlight that there is the possibility of your IDE showing an error while importing `product-context`.
 
-4.  Define the query using the `productReleaseDateQuery` importaded and the `useQuery`, using the `useProduct()` data. As mentioned before, both are  hooks, which means that they must be added inside a React functional component. In this case, `Countdown`.
+4.  Define the query using the `productReleaseDate` imported and the `useQuery` hook, you can find the product data in `useProduct` hook. Since they are (hooks)[https://reactjs.org/docs/hooks-intro.html], they only work inside react functional components. 
 
       ```diff
       + const { product: { linkText } } = useProduct()
-      + const { data, loading, error } = useQuery(productReleaseDateQuery, {
+      + const { data, loading, error } = useQuery(productReleaseDate, {
       +   variables: {
       +     slug: linkText
       +   },
@@ -114,3 +114,9 @@ Result using the _Red Front-Loading Washer_ product:
 > In case of having cases that the countdown is going up or with negative values, don't worry! It's related to the fact that some `releaseDate` can be in the past.
 
 ![image](https://user-images.githubusercontent.com/18706156/79596495-0fc28c00-80b7-11ea-8361-35075dba3bd5.png)
+
+---
+## Well done!
+This is the last step of the Store Block course, you did really well and we hope you've learned a lot until this moment. **Congratulations!**
+
+If you want to continue learning more about how to develop using VTEX IO, we encourage you to start our next course, which focus on teaching how to develop services on top of VTEX IO. You can find it in the [VTEX IO Service Course on Learning Lab](https://lab.github.com/vtex-trainings/vtex-io-service-course).

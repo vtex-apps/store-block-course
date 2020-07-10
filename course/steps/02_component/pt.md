@@ -11,7 +11,7 @@ No VTEX IO, adotamos [**Typescript**](https://www.typescriptlang.org/) como ling
 
 Neste curso, **será utilizado exclusivamente Typescript**. Caso você não tenha familiaridade com a linguagem, será uma excelente oportunidade de experimentá-la!
 
-### Objetivo dessa Etapa
+### Objetivo dessa etapa
 Como você já tem familiaridade com o Store Framework, já sabe que utilizamos blocos, como `shelf` e  `sku-selector`, para a montagem de uma VTEX IO Store. Nesta etapa você irá criar um bloco que será utilizado no tema da *home page* de sua loja.
 
 ## Atividade
@@ -37,7 +37,7 @@ Como você já tem familiaridade com o Store Framework, já sabe que utilizamos 
     export default Countdown
     ```
 
-2. Para ver o seu componente na *home page*, linke o tema em um terminal e a app em outro terminal. Adicione uma *tag* `h1` dentro do nosso componente e declarar o bloco no tema.
+2. Adicione uma *tag* `h1` dentro do nosso componente e *linke* a app em seu terminal.
     ```diff
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
     -    return <div></div>
@@ -49,7 +49,7 @@ Como você já tem familiaridade com o Store Framework, já sabe que utilizamos 
     }
     ```
 
-    >Para que o componente seja visto funcionando na loja, é preciso declarar o bloco que a *app* define no tema. Em primeiro lugar, será necessário ter um tema para adicionar a *app*, para isso, será necessário cloná-lo do *Github*. Nesse curso, o `store-theme` será utilizado. Para clonar o repositório, basta executar o seguinte comando:
+    >**IMPORTANTE**: Para que o componente seja visto funcionando na loja, é preciso declarar o bloco que a *app* define no tema. Em primeiro lugar, será necessário ter um tema para adicionar a *app*, para isso, será necessário cloná-lo do *Github*. Nesse curso, o [Store Theme](https://github.com/vtex-apps/store-theme.git) será utilizado. Para clonar o repositório, basta executar o seguinte comando:
 
     ```
     git clone https://github.com/vtex-apps/store-theme.git
@@ -63,12 +63,10 @@ Como você já tem familiaridade com o Store Framework, já sabe que utilizamos 
     ```
     vtex link
     ```
-5. Agora, com o tema linkado, é preciso também linkar a *app*. Para isso, vá até a pasta da *app*, `store-block`, repositório do Github que foi criado quando você iniciou o curso, e faça o *link*.
-    ```
-    vtex link
-    ```
 
-5. Para que a *app* seja utilizada no tema, é preciso adicioná-la às suas dependências, que como visto anteriormente, ficam no `manifest.json`. Dessa forma, adicione ao manifesto do tema, que se encontra na pasta `store-theme`, "vtex.countdown" como dependência. A versão dela está definida no manifesto da *app* (`0.0.1`). Feito isso, o JSON terá mais uma linha, como mostrado abaixo:
+    >**IMPORTANTE**: Apenas para frisar, nesse ponto do passo, você terá dois terminais abertos e rodando `vtex link`. O primeiro é referente ao *link* do bloco customizado que você está criando. Já o segundo se refere ao tema utilizado em questão, `store-theme`, onde você inserirá o seu bloco customizado.
+
+5. Agora, com os dois *links* ativos (tema e bloco customizado), para que a *app* seja utilizada no tema, é preciso adicioná-la às suas dependências, que como visto anteriormente, ficam no `manifest.json`. Dessa forma, adicione ao manifesto do tema, que se encontra na pasta `store-theme`, "vtex.countdown" como dependência. A versão dela está definida no manifesto da *app* (`0.0.1`). Feito isso, o JSON terá mais uma linha, como mostrado abaixo:
     ```diff
     {
         ...
