@@ -1,95 +1,41 @@
-# Criando a funcionalidade do bloco countdown
+# Modifying the countdown block to have configurable styles
 
-## Introdução
-Agora que o básico do nosso componente está funcional, é hora de implementar efetivamente o contador. Para isso, é preciso utilizar um *hook* do React, chamado `useState`;
+## Introduction
 
+Now that we have implemented the `countdown`, how about adding a little customization? In this step, you will learn basic concepts about CSS _handles_ and Tachyons to customize the style of your _app_.
 
-## O *hook* `useState` 
+### CSS Handles
 
-É chamado dentro de um componente funcional para atualizar e consumir o *state* de um componente. O *state* simboliza o estado atual de um componente. 
+CSS _handles_ are used to customize your store's components through CSS classes in the theme code. All settings are defined through the _app_ `vtex.css-handles`, responsible for declaring all the customization points of your block.
 
->O `useState` retorna um par: o valor do estado atual e uma função para atualizá-lo.
+By defining the names of your _handles_ and adding them to their respective HTML elements, it is possible to give the theme's user customization points that allow them to create flexible _layouts_.
 
-Voltando ao exemplo apresentado na etapa anterior, podemos mostrar na prática os conceitos abordados anteriormente. Para lembrar do exemplo, veja o código abaixo:
+### Tachyons
 
-```tsx
-const [count, setCount] = useState(0)
-```
+Tachyons is a _framework_ for functional CSS. Unlike other known _frameworks_, like Bootstrap, it does not have "pre-built" UI components. In fact, its purpose is, precisely, separate the CSS rules into small, reusable parts. This type of strategy is commonly known as _Subatomic Design System_ and, if you are interested, you can find a reference [in this link](https://daneden.me/2018/01/05/subatomic-design-systems/). This strategy makes _frameworks_ like Tachyons very flexible, scalable and fast.
 
-No trecho acima é importante observar três coisas: 
-* Na variável `count`, é possível consumir o estado atual;
-* `setCount` é uma função para atualizá-lo;
-* `0` é o valor do estado inicial
+A lot of the Tachyons' definitions can be changed, so that your store will have a more customized style. To do this, just define a JSON file in the `styles/configs` folder; this information can be found in more detail at: [Customizing styles on VTEX IO](https://developers.vtex.com/docs/vtex-io-documentation-5-customizingstyles).
 
+## Activity
 
-```tsx
-const [timeRemaining, setTime] = useState<TimeSplit>({
-  hours: '00', 
-  minutes: '00', 
-  seconds: '00'
-})
-```
-
-## Atividades
-1. Precisamos importar algumas funções e tipos para continuar:
+1. First, import the `useCssHandles` _hook_. To do so, return to `Countdown.tsx` and do the _import_:
 
     ```tsx
-    //react/Countdown.tsx
-    import React, { useState } from 'react'
-    import { TimeSplit } from './typings/global'
-    import { tick } from './utils/time'
+    // react/Countdown.tsx
+    import { useCssHandles } from "vtex.css-handles"
     ```
 
-2. Adicione o *hook* de atualização de estado (`useState`)
+2. Now, define in a _Array_ all necessary _handles_ (in this case, only `'countdown'` will be used):
+
+    ```tsx
+    // react/Countdown.tsx
+    const CSS_HANDLES = ["countdown"]
+    ```
+
+3. After defining the array, let's use the `useCssHandles` in the component `Countdown` to define the `countdown` _handle_:
 
     ```diff
-    //react/Countdown.tsx
-    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate }) => {
-    +   const [timeRemaining, setTime] = useState<TimeSplit>({
-    +     hours: '00',
-    +     minutes: '00',
-    +     seconds: '00'
-    +   })
-
-        return (
-          <div>
-            { targetDate }
-          </div>
-        ) 
-    }
-    ```
-    >Observe os detalhes: `timeRemaining` é o estado atual, `setTime` é a função de atualização do estado, `TimeSplit` é o tipo e, por fim, o objeto `{hours: '00', minutes: '00', seconds: '00'}` é o estado inicial do componente.
-
-3. Adicione uma `targetDate` padrão para o caso de não haver um valor inicial definido. Para isso, declare uma constante que será utilizada como padrão:
-    
-    ```typescript
-    //react/Countdown.tsx
-    const DEFAULT_TARGET_DATE = (new Date('2020-06-25')).toISOString()
-    ```
-
-4. Utilize a função `tick` e a constante `DEFAULT_TARGET_DATE`  para fazer o contador:
-    ```diff
-    //react/Countdown.tsx
-    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
-      const [timeRemaining, setTime] = useState<TimeSplit>({
-        hours: '00',
-        minutes: '00',
-        seconds: '00'
-    })
-
-    + tick(targetDate, setTime)
-
-      return (
-        <div>
-          { targetDate }
-        </div>
-      ) 
-    }
-    ```
-
-5. Altere o `h1` para que ele exiba o contador que criamos. Para isso, precisamos utilizar o estado atual `timeRemaining`:
-    ```diff
-    //react/Countdown.tsx
+    // react/Countdown.tsx
     const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
       const [timeRemaining, setTime] = useState<TimeSplit>({
         hours: '00',
@@ -97,20 +43,48 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
         seconds: '00'
       })
 
+    + const handles = useCssHandles(CSS_HANDLES)
+
       tick(targetDate, setTime)
 
       return (
-        <div>   
-    -     <h1>{ targetDate }</h1>
-    +     <h1>{ `${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}` }</h1>
+        <div>
+          <h1>
+            { `${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}` }
+          </h1>
         </div>
-      ) 
+      )
     }
     ```
-    > A formatação da *string* do contador está no formato `HH:MM:SS`, feita através do *split* em `hours`, `minutes` e `seconds`.
 
-Assim, com essas alterações, veremos a atualização em tempo real do contador! O resultado na *home* é esse:
+4. At last, it is needed to use the _handle_ in the component to see the customization. For this, use the prop `className` with the classes to be used and the Tachyons classes, for global styles.
 
-![image](https://user-images.githubusercontent.com/19495917/75474406-b3c06e80-5975-11ea-82ec-89ab27504873.png)
+    ```diff
+    // react/Countdown.tsx
+    import React from 'react'
+    ...
 
-<img src="https://user-images.githubusercontent.com/19495917/75474511-e0748600-5975-11ea-825d-7e9a20f95362.gif" width="500" height="320"/>
+    const Countdown: StorefrontFunctionComponent<CountdownProps> = ({ targetDate = DEFAULT_TARGET_DATE }) => {
+      const [timeRemaining, setTime] = useState<TimeSplit>({
+        hours: '00',
+        minutes: '00',
+        seconds: '00'
+      })
+
+      const handles = useCssHandles(CSS_HANDLES)
+
+      tick(targetDate, setTime)
+
+      return (
+    +   <div className={`${handles.countdown} c-muted-1 db tc`}>
+          {`${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
+        </div>
+      )
+    }
+    ```
+
+Let's see the result?
+
+![image](https://user-images.githubusercontent.com/19495917/75475280-457cab80-5977-11ea-938e-d3c2b532e891.png)
+
+<img src="https://user-images.githubusercontent.com/19495917/75475388-7a88fe00-5977-11ea-9d35-c13482f1e61c.gif" width="500" height="400"/>
