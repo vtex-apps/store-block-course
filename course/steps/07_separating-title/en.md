@@ -22,6 +22,8 @@ When defining an _app_ in the interface, the `component` property is responsible
 }
 ```
 
+## Activity
+
 Now, you are going to separate the title from the countdown block and add it to the store below the countdown.
 
 ### Altering the `Countdown` component

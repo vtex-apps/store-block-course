@@ -19,6 +19,8 @@ Exemplo de `interfaces.json`:
 }
 ```
 
+## Atividade
+
 Agora, você irá separar o título do bloco do contador e adicioná-lo à nossa loja embaixo do contador.
 
 ### Alterando o componente `Countdown`
