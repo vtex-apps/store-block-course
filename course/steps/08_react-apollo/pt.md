@@ -14,7 +14,7 @@ A biblioteca **Apollo Client** disponibiliza uma integração nativa com React, 
 
     ```diff
         "product-gifts",
-    +	"countdown",
+    +	  "countdown",
         "flex-layout.row#buy-button",
         "availability-subscriber",
     ```
