@@ -3,6 +3,30 @@
 ## Introduction
 Now we covered the component's basics, it's time to implement the countdown effectively. For that, we need to use a React hook called `useState`.
 
+## The `useState` *hook*
+
+It is called within the functional component to update and consume the component *state*. The *state* represents the component's current state.
+
+>The `useState` returns a pair: the current state value and a function to update it.
+Seeing the example provided the previous step we can understand these concepts: 
+
+```tsx
+const [count, setCount] = useState(0)
+```
+
+In the above code piece, you might observe three things:
+* In the `count` variables, it's possible to get the current state;
+* `setCount` is a function used for updating it;
+* `0` is its initial state;
+
+```tsx
+const [timeRemaining, setTime] = useState<TimeSplit>({
+  hours: '00', 
+  minutes: '00', 
+  seconds: '00'
+})
+```
+
 > It is called within the functional component to update and consume the component *state*. The *state* represents the component's current state. The `useState` returns a pair: the current state value and a function to update it. 
 
 ## Activity
