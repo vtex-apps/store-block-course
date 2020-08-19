@@ -8,7 +8,8 @@ Now we covered the component's basics, it's time to implement the countdown effe
 It is called within the functional component to update and consume the component *state*. The *state* represents the component's current state.
 
 >The `useState` returns a pair: the current state value and a function to update it.
-Seeing the example provided the previous step we can understand these concepts: 
+
+Seeing the example provided on the previous step we can understand these concepts:
 
 ```tsx
 const [count, setCount] = useState(0)
@@ -26,8 +27,6 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
   seconds: '00'
 })
 ```
-
-> It is called within the functional component to update and consume the component *state*. The *state* represents the component's current state. The `useState` returns a pair: the current state value and a function to update it. 
 
 ## Activity
 
