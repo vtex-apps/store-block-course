@@ -8,7 +8,7 @@ Agora que o básico do nosso componente está funcional, é hora de implementar 
 
 É chamado dentro de um componente funcional para atualizar e consumir o *state* de um componente. O *state* simboliza o estado atual de um componente. 
 
->O `useState` retorna um par: o valor do estado atual e uma função para atualizá-lo.
+> O `useState` retorna um par: o valor do estado atual e uma função para atualizá-lo.
 
 Voltando ao exemplo apresentado na etapa anterior, podemos mostrar na prática os conceitos abordados anteriormente. Para lembrar do exemplo, veja o código abaixo:
 
@@ -30,15 +30,17 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
 })
 ```
 
-## Atividades
+## Atividade
 1. Precisamos importar algumas funções e tipos para continuar:
 
     ```tsx
     //react/Countdown.tsx
     import React, { useState } from 'react'
     import { TimeSplit } from './typings/global'
-    import { tick } from './utils/time'
+    import { tick, getTwoDaysFromNow } from './utils/time'
     ```
+
+    > A função `getTwoDaysFromNow` será utilizada para tratar condições de borda. Será explicado mais tarde neste passo.
 
 2. Adicione o *hook* de atualização de estado (`useState`)
 
@@ -60,11 +62,11 @@ const [timeRemaining, setTime] = useState<TimeSplit>({
     ```
     >Observe os detalhes: `timeRemaining` é o estado atual, `setTime` é a função de atualização do estado, `TimeSplit` é o tipo e, por fim, o objeto `{hours: '00', minutes: '00', seconds: '00'}` é o estado inicial do componente.
 
-3. Adicione uma `targetDate` padrão para o caso de não haver um valor inicial definido. Para isso, declare uma constante que será utilizada como padrão:
+3. Adicione uma `targetDate` padrão para o caso de não haver um valor inicial definido. Vamos utilizar para isto uma data que é definida como dois dias a partir da data atual e ela será calculada em uma função utilitária que foi previamente importada da pasta `/utils`:
     
     ```typescript
     //react/Countdown.tsx
-    const DEFAULT_TARGET_DATE = (new Date('2020-06-25')).toISOString()
+    const DEFAULT_TARGET_DATE = getTwoDaysFromNow()
     ```
 
 4. Utilize a função `tick` e a constante `DEFAULT_TARGET_DATE`  para fazer o contador:

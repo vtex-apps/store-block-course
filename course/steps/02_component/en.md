@@ -17,7 +17,7 @@ In this course, we'll use Typescript exclusively. If you're not familiar with th
 Since you're already familiar to Store Framework, you know that we use blocks, like `shelf` and `sku-selector`, to create a VTEX IO store. In this step you're going to create a block that is going to be used in your store's home page theme.
 
 ## Setting up our test bot
-It's important for you to have out test bot installed in this course repository so as for us to see your progress, even though it does not contains any tests or evaluation on each step. So as to install it, follow the steps below:
+It's important for you to have our test bot installed in this course repository so we can see your progress, even though it does not contains any tests or evaluation on each step. So as to install it, follow the steps below:
 
 1. Open [our test bot installation page](https://github.com/apps/vtex-course-hub) and click on **Configure**;
 2. Select the **Only selected repositories** option, then click on **Select repositories** and type in `store-block`;
