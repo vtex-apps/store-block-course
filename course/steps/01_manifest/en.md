@@ -1,6 +1,6 @@
 # Getting to know an app on VTEX IO
 
-> **This content was moved to another place. Soon we'll no longer support these courses and learning portal**
+> **This content was moved to another place. We no longer support these courses and learning portal**
 
 Hi, y'all! This course was moved to our new public learning portal, where you can find not only this course, but others that were developed to present you with new content! Besides that, there is also information regarding the instructions for the initial set up.
 

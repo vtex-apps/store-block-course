@@ -1,6 +1,6 @@
 # Conhecendo uma *app* VTEX IO
 
-> **Este conteúdo foi movido para um outro lugar. Em breve, não daremos mais suporte a estes cursos e a este canal de aprendizado**
+> **Este conteúdo foi movido para um outro lugar. Não damos mais suporte a estes cursos e a este canal de aprendizado**
 
 Olá! Este courso foi movido para o nosso novo portal de cursos, onde você encontrará, além deste curso, muitos outros que foram desenvolvidos para apresentar novos conteúdos para vocês! Além disso, também há instruções para o _set up_ inicial.
 
