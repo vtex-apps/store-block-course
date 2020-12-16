@@ -1,4 +1,4 @@
-# Conhecendo uma *app* VTEX IO
+# Curso de blocos customizados
 
 > **Este conteúdo foi movido para um outro lugar. Não damos mais suporte a estes cursos e a este canal de aprendizado**
 
